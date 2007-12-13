@@ -3,8 +3,8 @@
 \title{Plot of p-values from permutations under increasing or decreasing alternatives }
 \description{
 The function calculates the p-values using permutations under increasing
-and decreasing ordered alternatives for one gene. The p-values (p^up and
-p^down) are obtained from the plot of null distribution and observed statistics.
+and decreasing ordered alternatives for one gene. The p-values (\eqn{p^{up}}{p^up} and
+\eqn{p^{down}}{p^down}) are obtained from the plot of null distribution and observed statistics.
 }
 \usage{
 IsopvaluePlot(x, y, niter, seed, stat = c("E2", "Williams", "Marcus", "M", "ModifM"))
