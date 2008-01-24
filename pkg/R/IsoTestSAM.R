@@ -1,0 +1,31 @@
+###########################################################
+############### Iso SAM Function ##########################
+###########################################################
+
+# output:
+# list of significant genes
+#    col 1: Probe.ID
+#    col 2: row number
+#    col 3: q value
+
+IsoTestSAM <- function(x, y, niter, seed, FDR, stat) {
+   qqstat <- Isoqqstat(x, y, niter, seed)
+   allfdr <- f.allfdr(qqstat, , stat)
+   del.table <- data.frame(allfdr)
+   min_fdr <- min(del.table[, 5])
+   if (min_fdr > FDR) {
+      FDR <- min_fdr
+      delta <- min(del.table[del.table[,5] <= FDR,1])
+   } else {
+      delta <- min(del.table[del.table[,5] <= FDR,1])
+   }
+   qval <- f.qval(delta,allfdr,qqstat,stat)
+   q.value <- qval[[1]]
+   sign.list <- q.value[q.value[,2] <= FDR,]
+   sign.genes <- cbind(row.names(y[sign.list[,1],]), sign.list)
+   sign.genes1 <- data.frame(sign.genes[order(sign.list[,2]),])
+   row.names(sign.genes1) <- 1:nrow(sign.genes1)
+   names(sign.genes1) <- c("Probe.ID", "row.number", "qvalue")
+
+   return(sign.genes1)
+}
