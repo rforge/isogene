@@ -40,7 +40,7 @@ Isoqqstat <- function(x, y, niter, seed){
       to5[, i] <- sort(yyy)
       # print(i)
    }
-   L <- IsoGenem(x, y)
+   L <- IsoGenem(x, as.matrix(y))
 
    ## E2
    d <- apply(cbind(L[[1]], L[[6]]), 1, max)
