@@ -2,8 +2,9 @@
 \alias{IsoTestSAM}
 \title{Obtaining the list of significant genes using the SAM procedure}
 \description{
-  The function obtains the list of significant genes using the SAM procedure for the five test statistics (the
-  global likelihood test, Williams, Marcus, M, and the modified M).
+  The function obtains the list of significant genes using the SAM
+  procedure for the five test statistics (the global likelihood
+  test, Williams, Marcus, M, and the modified M).
 }
 \usage{
 
