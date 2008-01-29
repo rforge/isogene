@@ -108,5 +108,5 @@ Isoqval <- function (delta, allfdr, qqstat, stat) {
       res <- rbind(nnnew[m1:m2, cols],n2[, cols])
       sign.list <- rbind(n2[, cols])
    }
-   return(res, sign.list)
+   return(list(res, sign.list))
 }

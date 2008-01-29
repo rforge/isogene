@@ -10,16 +10,17 @@
 
 IsoTestSAM <- function(x, y, niter, seed, FDR, stat) {
    qqstat <- Isoqqstat(x, y, niter, seed)
-   allfdr <- f.allfdr(qqstat, , stat)
+   allfdr <- Isoallfdr(qqstat, , stat)
    del.table <- data.frame(allfdr)
-   min_fdr <- min(del.table[, 5])
+   min_fdr <- min(na.exclude(del.table[, 5]))
    if (min_fdr > FDR) {
       FDR <- min_fdr
-      delta <- min(del.table[del.table[,5] <= FDR,1])
+      delta <- min(na.exclude(del.table[del.table[,5] <= FDR,1]))
+      print("FDR cannot be obtained in this dataset")
    } else {
-      delta <- min(del.table[del.table[,5] <= FDR,1])
+      delta <- min(na.exclude(del.table[del.table[,5] <= FDR,1]))
    }
-   qval <- f.qval(delta,allfdr,qqstat,stat)
+   qval <- Isoqval(delta,allfdr,qqstat,stat)
    q.value <- qval[[1]]
    sign.list <- q.value[q.value[,2] <= FDR,]
    sign.genes <- cbind(row.names(y[sign.list[,1],]), sign.list)

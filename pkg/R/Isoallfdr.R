@@ -55,7 +55,7 @@ Isoallfdr <- function(qqstat, ddelta, stat) {
    nsn <- array(0, c(length(ddelta), 2))
    for (i in 1:k2){
       low <- max(qstat[qstat[,1] < 0, 1][qstat[qstat[,1] < 0, 3] < - ddelta[i]])
-      if (low == "-Inf") { # use  !is.finite(low) combined with negative ??
+      if (low != "-Inf") { # use  !is.finite(low) combined with negative ??
          which.low <- which(qstat[qstat[,1] < 0, 1] == low)
          low.point[i] <- which.low[length(which.low)]
          # max(sort(as.numeric(grep("TRUE",as.character(test.low)))))
@@ -78,6 +78,7 @@ Isoallfdr <- function(qqstat, ddelta, stat) {
       sn[i] <- sum(qstat[,1] > 0) + 1 - sum(up.point[i]) + sum(low.point[i])
       qq <- c(rep(1, nrow(dperm)) %*% ((dperm > cup[i]) | (dperm < clow[i])))
       nsn[i, ] <- quantile(qq, c(0.5, 0.9))
+             
     }
     prun <- quantile(dperm, c(0.25, 0.75))
     p <- min(sum(qstat[,1] < prun[2] & qstat[,1] > prun[1]) / (nrow(qstat) *0.5), 1)
