@@ -14,7 +14,7 @@ Isoqval(delta, allfdr, qqstat, stat)
   \item{allfdr}{the delta table obtained from function Isoallfdr}
   \item{qqstat}{output from function Isoqqstat containing the test statistics of permutations}
     \item{stat}{choose one of the five test statistics to use}
-
+}
 \value{
    A list of components
   \item{res}{returns the list genes with descending q-values of the SAM procedure in two columns: the first column is the row number of the genes and the second column is the p-values}
