@@ -23,9 +23,10 @@ IsoBHPlot(rp, FDR, stat = c("E2", "Williams", "Marcus",
 A plot of adjusted p-values using BH and BY procedures will be produced.
 }
 \references{
-  Testing for Trend in Dose-Response Microarray Experiments: a
-  Comparison of Testing Procedures, Multiplicity, and Resampling-Based
-  Inference, Lin et al. 2007, Stat. App. in Gen. & Mol. Bio. 0000,00}
+Testing for Trend in Dose-Response Microarray Experiments: a Comparison
+of Testing Procedures, Multiplicity, and Resampling-Based Inference, Lin
+et al. 2007, Stat. App. in Gen. & Mol. Bio., 6(1), article 26.
+    }
 \author{Lin et al.}
 \seealso{ \code{\link{IsoTestBH}},  \code{\link{IsoRawp}} }
 \examples{

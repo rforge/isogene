@@ -37,9 +37,11 @@ IsoGenem(x, y)
   (indicated by "u") or decreasing (indicated by "d") trend.}
 
 }
-\references{Testing for Trend in Dose-Response Microarray Experiments: a
-  Comparison of Testing Procedures, Multiplicity, and Resampling-Based
-  Inference, Lin et al. 2007, Stat. App. in Gen. \& Mol. Bio. 0000,00}
+\references{
+Testing for Trend in Dose-Response Microarray Experiments: a Comparison
+of Testing Procedures, Multiplicity, and Resampling-Based Inference, Lin
+et al. 2007, Stat. App. in Gen. & Mol. Bio., 6(1), article 26.
+}
 \author{Lin et al. }
 \note{
   This function calculates the five test statistics for both increasing

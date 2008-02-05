@@ -33,11 +33,7 @@ IsoStatSAM(x, y, niter, seed)
 \item{to5}{the matrix of the test statistic values from permutations using the modified M test: each column of the matrix corresponds to the sorted test statistic from each permutation in an ascending order. }
 
 }
-\references{
-Testing for Trend in Dose-Response Microarray Experiments: a Comparison
-of Testing Procedures, Multiplicity, and Resampling-Based Inference, Lin
-et al. 2007, Stat. App. in Gen. & Mol. Bio., 6(1), article 26.
-  }
+
 \author{Lin et al.}
 \note{
   This function calculates the SAM test statistics to be used in the SAM procedure for the five test statistics. To use the SAM procedure, the number of genes in the dataset is preferably larger than 500. 

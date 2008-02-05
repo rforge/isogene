@@ -23,11 +23,7 @@ IsoSAMPlot(qqstat, allfdr, FDR, stat)
 returns four plots produced using the SAM procedure.
 
 }
-\references{
-Testing for Trend in Dose-Response Microarray Experiments: a Comparison
-of Testing Procedures, Multiplicity, and Resampling-Based Inference, Lin
-et al. 2007, Stat. App. in Gen. & Mol. Bio., 6(1), article 26.
-  }
+
 \author{Lin et al.}
 \note{
   This function produces four plots using the SAM procedure for the five test statistics. To use the SAM procedure, the number of genes in the dataset is preferably larger than 500.

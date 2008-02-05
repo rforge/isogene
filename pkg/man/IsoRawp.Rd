@@ -38,9 +38,11 @@ A list of components
    column is the probe ID, the second to the last columns contain the
    raw p-values for each test statistic}
 }
-\references{ Testing for Trend in Dose-Response Microarray Experiments:
-  a Comparison of Testing Procedures, Multiplicity, and Resampling-Based
-  Inference, Lin et al. 2007, Stat. App. in Gen. & Mol. Bio. 0000,00}
+\references{ 
+Testing for Trend in Dose-Response Microarray Experiments: a Comparison
+of Testing Procedures, Multiplicity, and Resampling-Based Inference, Lin
+et al. 2007, Stat. App. in Gen. & Mol. Bio., 6(1), article 26.
+  }
 \author{ Lin et al. }
 \note{ 
 For each gene, the one-sided p-values are calculated from min($p^{Up}$,
