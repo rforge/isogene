@@ -7,3 +7,10 @@ function(x,y) {
     
     title(paste("Gene: ",row.names(y), sep = ""))
 }
+
+x <- c(1,1,1,2,2,2,3,3,3,4,4,4)
+y <- rnorm(12, 1,1)
+m.y <- tapply(y, as.factor(x), mean)
+
+IsoPlot1(x,y)
+lines(c(1,2,3,4), m.y)
