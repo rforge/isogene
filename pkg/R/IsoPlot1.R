@@ -13,4 +13,3 @@ y <- rnorm(12, 1,1)
 m.y <- tapply(y, as.factor(x), mean)
 
 IsoPlot1(x,y)
-lines(c(1,2,3,4), m.y)
