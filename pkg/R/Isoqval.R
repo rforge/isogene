@@ -18,9 +18,9 @@ Isoqval <- function (delta, allfdr, qqstat, stat) {
    if (stat == "M") qstat <- qqstat[[7]]
    if (stat == "ModifM") qstat <- qqstat[[9]]
 
-   low <- max(qstat[qstat[,1] < 0, 1][qstat[qstat[,1] < 0, 3] < - delta])
+   low <- max(qstat[qstat[, 1] < 0, 1][qstat[qstat[,1] < 0, 3] < - delta])
    if (low != "-Inf") {
-      which.low <- which(qstat[qstat[,1]<0,1] == low)
+      which.low <- which(qstat[qstat[, 1] < 0, 1] == low)
       low.point <- which.low[length(which.low)]
    }
    if (low == "-Inf") {
@@ -74,7 +74,7 @@ Isoqval <- function (delta, allfdr, qqstat, stat) {
    }
    if (low.point > 1 & is.numeric(fdr)) {
       n1 <- nnnew[1:low.point,]
-      n1[n1[,3]> -delta, 4] <- fdr
+      n1[n1[, 3]> -delta, 4] <- fdr
    }
    if (up.point == nrow(qstat)+1 & is.numeric(fdr)) {
       n2 <- NULL
@@ -100,11 +100,11 @@ Isoqval <- function (delta, allfdr, qqstat, stat) {
       res <- rbind(n1[, cols], nnnew[m1:m2, cols], n2[,cols])
       sign.list <- rbind(n1[, cols], n2[, cols])
    }
-   if (is.numeric(fdr) & is.numeric(n1) & is.numeric(n2) == F) { ## TV: == F ? what is this supposed to be ?
+   if (is.numeric(fdr) & is.numeric(n1) & !is.numeric(n2)) { ## TV: == F ? what is this supposed to be ?
       res <- rbind(n1[,cols], nnnew[m1:m2, cols])
       sign.list <- rbind(n1[,cols])
    }
-   if (is.numeric(fdr) & is.numeric(n1) == F & is.numeric(n2)) { ## TV: == F ?
+   if (is.numeric(fdr) & !is.numeric(n1) & is.numeric(n2)) { ## TV: == F ?
       res <- rbind(nnnew[m1:m2, cols],n2[, cols])
       sign.list <- rbind(n2[, cols])
    }

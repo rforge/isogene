@@ -34,13 +34,14 @@ returns four plots produced using the SAM procedure.
 
 \examples{
   set.seed(1234)
-  x <- c(rep(1,3),rep(2,3),rep(3,3))
-  y1 <- matrix(rnorm(9000, 1,1),1000,9) ## 1000 genes with no trends
-  y2 <- matrix(c(rnorm(3000, 1,1),rnorm(3000,2,1),rnorm(3000,3,1)),1000,9) ## 1000 genes with increasing trends
-  y <- data.frame(rbind(y1, y2)) ##y needs to be a data frame
+  x <- c(rep(1, 3), rep(2, 3), rep(3, 3))
+  y1 <- matrix(rnorm(90, 1, 1), 10, 9)  # 10 genes with no trends
+  y2 <- matrix(c(rnorm(30, 1, 1), rnorm(30, 2, 1), 
+                 rnorm(30, 3, 1)), 10, 9)  # 10 genes with increasing trends
+  y <- data.frame(rbind(y1, y2))  # y needs to be a data frame
   qqstat <- Isoqqstat(x, y, niter=100, seed=123)
-  allfdr <- Isoallfdr(qqstat,,stat="E2")
-  qval <- Isoqval(delta=0.294,allfdr,qqstat,stat="E2")
-  IsoSAMPlot(qqstat, allfdr, FDR=0.1, stat="E2")
-    }
+  allfdr <- Isoallfdr(qqstat, , stat = "E2")
+  qval <- Isoqval(delta = 0.294, allfdr, qqstat, stat = "E2")
+  IsoSAMPlot(qqstat, allfdr, FDR = 0.1, stat = "E2")
+}
 \keyword{hplot}

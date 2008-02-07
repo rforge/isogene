@@ -39,10 +39,9 @@ IsoTestSAM(x, y, niter, seed, FDR, stat)
 \examples{
   set.seed(1234)
   x <- c(rep(1,3),rep(2,3),rep(3,3))
-  y1 <- matrix(rnorm(9000, 1,1),1000,9) ## 1000 genes with no trends
-  y2 <- matrix(c(rnorm(3000, 1,1),rnorm(3000,2,1),rnorm(3000,3,1)),1000,9) ## 1000 genes with increasing trends
+  y1 <- matrix(rnorm(90, 1,1),10,9) ## 10 genes with no trends
+  y2 <- matrix(c(rnorm(30, 1,1),rnorm(30,2,1),rnorm(30,3,1)),10,9) ## 10 genes with increasing trends
   y <- data.frame(rbind(y1, y2)) ##y needs to be a data frame
-  SAM.obj <- IsoTestSAM(x, y, niter=100, seed=123, FDR=0.09, stat="E2")
-
-  }
+  SAM.obj <- IsoTestSAM(x, y, niter=10, seed=123, FDR=0.09, stat="E2")
+}
 \keyword{htest}

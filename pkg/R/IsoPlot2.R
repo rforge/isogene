@@ -1,5 +1,4 @@
-IsoPlot2 <-
-function(x,y) {
+IsoPlot2 <- function(x, y) {
     y1 <- as.numeric(y)[order(x)]
     m.y <- tapply(y1,as.factor(sort(x)),mean)
 
@@ -13,7 +12,7 @@ function(x,y) {
     plot(sort(x), y1, xlab = "dose", ylab = "gene expression") # typo # y1 already coerced to numeric..
     points(sort(unique(x)), m.y, pch = "+", cex = 0.85)
 
-    if (dire == "u"){ # if else..
+    if (dire == "u"){ 
       points(unx, y.is.u, pch = "*", cex = 0.85)
       lines(unx, y.is.u, lty = 1,col = 4)
     } else {
