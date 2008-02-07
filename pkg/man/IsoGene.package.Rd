@@ -9,7 +9,7 @@ IsoGene
 Library IsoGene aims to identify for genes with a monotonic trend in the
 expression levels with respect to the increasing doses using several
 test statistics. They include the global likelihood ratio test
-(E^2, Bartholomew 1961, Barlow et al. 1972 and Robertson et al. 1988),
+(\eqn{E^2}{E^2}, Bartholomew 1961, Barlow et al. 1972 and Robertson et al. 1988),
 Williams (1971, 1972), Marcus (1976), the M (Hu et al. 2005) and the
 modified M (Lin et al. 2007). The p-values of the five test statistics
 are obtained using permutation and they are adjusted using BH (Benjamini

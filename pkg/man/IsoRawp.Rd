@@ -45,9 +45,11 @@ et al. 2007, Stat. App. in Gen. & Mol. Bio., 6(1), article 26.
   }
 \author{ Lin et al. }
 \note{ 
-For each gene, the one-sided p-values are calculated from min($p^{Up}$,
-$p^{Down}$) and the two sided p-values are calculated from
-min{2*min($p^{Up}$,$p^{Down}$),1}, where $p^{Up}$ and $p^{Down}$ are the
+For each gene, the one-sided p-values are calculated from 
+\eqn{\min(p^{Up}, p^{Down}}{min(p^Up, p^Down)} and the 
+two sided p-values are calculated from 
+\eqn{\min\{2 * \min(p^{Up},p^{Down}), 1\}}{min{2 * min(p^Up, p^Down), 1}}, 
+where \eqn{p^{Up}}{p^Up} and \eqn{p^{Down}}{p^Down} are the
 p-values calculated for each ordered alternative.
 }
 \seealso{\code{\link{IsoTestBH}}}
@@ -55,9 +57,10 @@ p-values calculated for each ordered alternative.
 \dontrun{
   set.seed(1234)
   x <- c(rep(1,3),rep(2,3),rep(3,3))
-  y1 <- matrix(rnorm(90, 1,1),10,9) ## 10 genes with no trends
-  y2 <- matrix(c(rnorm(30, 1,1),rnorm(30,2,1),rnorm(30,3,1)),10,9) ## 10 genes with increasing trends
-  y <- data.frame(rbind(y1, y2)) ##y needs to be a data frame 
+  y1 <- matrix(rnorm(90, 1,1),10,9)  # 10 genes with no trends
+  y2 <- matrix(c(rnorm(30, 1,1), rnorm(30,2,1),
+                 rnorm(30,3,1)), 10, 9)  # 10 genes with increasing trends
+  y <- data.frame(rbind(y1, y2))  # y needs to be a data frame 
   rp <- IsoRawp(x, y, niter = 1000, seed = 1234)
   rp
 }
