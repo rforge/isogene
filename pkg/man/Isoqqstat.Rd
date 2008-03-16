@@ -19,14 +19,14 @@
   A list with components 
   
 \item{aa1}{the matrix of the observed test statistic values using the
-	likelihood ratio test with 4 columns: the first column is the sorted
-	observed test statistic values in an ascending order, the second is
-	the mean expected test statistic values obtained from permutations,
-	the third column is the difference between the first and the second
-	column, and the last column is the rankings of the genes in an
+	likelihood ratio test with 4 columns: the first column contains the 
+	observed test statistic values sorted in ascending order, the second
+	contains the mean expected test statistic values obtained from permutations,
+	the third column contains the difference between the first and the second
+	column, and the last column gives the ranking of the genes in 
 	ascending order.}
 \item{to1}{the matrix of the test statistic values from permutations
-	using the liklihood ratio test: each column of the matrix corresponds
+	using the likelihood ratio test: each column of the matrix corresponds
 	to the sorted test statistic from each permutation in an ascending order.}
 \item{aa2}{the matrix of the observed test statistic values using
 	Williams' test with 4 columns: the first column is the sorted observed
@@ -72,7 +72,7 @@
 \note{
   This function calculates the SAM test statistics to be used in the SAM
 	procedure for the five test statistics. To use the SAM procedure, the
-	number of genes in the dataset is preferably larger than 500. 
+	number of genes in the data set is preferably larger than 500. 
 }
 \seealso{\code{\link{isoreg}}, \code{\link{Isoallfdr}},
 	       \code{\link{Isoqval}},\code{\link{IsoTestSAM}},\code{\link{IsoSAMPlot}}}
