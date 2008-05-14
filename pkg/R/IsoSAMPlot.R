@@ -64,12 +64,36 @@ IsoSAMPlot <- function(qqstat, allfdr, FDR, stat){
    }
                                             
    plot(expected, observed)
-   abline(0, 1, col = "blue")
-   abline(delta, 1, lty = 5, col = "red")
-   q.mat <- qqstat[[1]][order(expected),]
+   abline(0, 1)
+   abline(delta, 1, lty = 5, col = "blue")
+   abline(-delta, 1, lty = 5, col = "blue")
+   if (stat == "E2") {
+   q.mat <- qqstat[[1]][order(expected),]}
+
+   if (stat == "Williams") {
+   q.mat <- qqstat[[3]][order(expected),]}
+
+   if (stat == "Marcus") {
+   q.mat <- qqstat[[5]][order(expected),]}
+
+   if (stat == "M") {
+   q.mat <- qqstat[[7]][order(expected),]}
+
+   if (stat == "ModifM") {
+   q.mat <- qqstat[[9]][order(expected),]}
+
+
+   if (sum(q.mat[,3] >= delta)>0) {
    x.exp <- min(q.mat[q.mat[,3] >= delta,2])
-   y.obs <- q.mat[q.mat[,2] == x.exp, 1]
-   points(q.mat[q.mat[,2] >= x.exp,2], q.mat[q.mat[,1] >= y.obs,1], col = "red" )
+ #  y.obs <- q.mat[which(q.mat[,2] == x.exp), 1]
+   points(q.mat[q.mat[,2] >= x.exp,2], q.mat[q.mat[,2] >= x.exp,1], col = "red") }
+
+    if (sum(q.mat[,3] <= -delta)>0) {
+   x.exp <- max(q.mat[q.mat[,3] <= -delta ,2])
+  # y.obs <- q.mat[which(q.mat[,2] == x.exp), 1]
+   points(q.mat[q.mat[,2] <= x.exp,2], q.mat[q.mat[,2] <= x.exp,1], col = "red") }
+
+
    legend(min(expected), max(observed), paste("delta=", delta, sep=""), lty = 5)
-   title("d: plot of expected vs. observed statistics")
+   title("d: observed vs. expected statistics")
 }

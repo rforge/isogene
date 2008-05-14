@@ -54,7 +54,9 @@ Isoallfdr <- function(qqstat, ddelta, stat) {
    low.point <- up.point <- clow <- cup <- sn <- NULL
    nsn <- array(0, c(length(ddelta), 2))
    for (i in 1:k2){
-      low <- max(qstat[qstat[,1] < 0, 1][qstat[qstat[,1] < 0, 3] < - ddelta[i]])
+      if (sum(qstat[qstat[,1] < 0, 3] < - ddelta[i])>0){
+      low <- max(qstat[qstat[,1] < 0, 1][qstat[qstat[,1] < 0, 3] < - ddelta[i]])} else
+      {low <- -Inf}
       if (low != "-Inf") { # use  !is.finite(low) combined with negative ??
          which.low <- which(qstat[qstat[,1] < 0, 1] == low)
          low.point[i] <- which.low[length(which.low)]
@@ -65,7 +67,11 @@ Isoallfdr <- function(qqstat, ddelta, stat) {
          low.point[i] <- 0
       }
       clow[i] <- low
-      up <- min(qstat[qstat[,1] > 0, 1][qstat[qstat[,1] > 0,3] > ddelta[i] ])
+
+      if (sum(qstat[qstat[,1] > 0,3] > ddelta[i])>0){ 
+      up <- min(qstat[qstat[,1] > 0, 1][qstat[qstat[,1] > 0,3] > ddelta[i] ]) } else
+      {up <- Inf}
+
       if (up != "Inf") {
         which.up <- which(qstat[qstat[,1]>0,1] == up)
         up.point[i] <- which.up[1]

@@ -35,6 +35,8 @@ The package includes the following functions:
    p-values using permuations}
  \item{\code{\link{IsoTestBH}}}{BH or BY procedure to adjust p-values
    while controlling FDR}
+  \item{\code{\link{IsoGenemSAM}}}{calculates the SAM test statistic}  
+  \item{\code{\link{Isofudge}}}{calculates the fudge factor in the SAM test statistic}  
   \item{\code{\link{Isoqqstat}}}{calculates the SAM test statistic using permutations}  
   \item{\code{\link{Isoallfdr}}}{obtains the delta table in the SAM procedure}
   \item{\code{\link{Isoqval}}}{the SAM procedure to obtain q-values}
@@ -60,7 +62,7 @@ et al. 2007, Stat. App. in Gen. & Mol. Bio., 6(1), article 26.
 \keyword{package}
 \seealso{
   \code{\link[<multtest>:<multtest>-package]{<multtest>}},
-  \code{\link{IsoGene1}},   \code{\link{IsoGenem}},\code{\link{IsoRawp}}, \code{\link{IsoTestBH}},
-  \code{\link{Isoqqstat}},\code{\link{Isoallfdr}},\code{\link{Isoqval}},\code{\link{IsoTestSAM}},
+  \code{\link{IsoGene1}},   \code{\link{IsoGenem}},\code{\link{IsoRawp}}, \code{\link{IsoTestBH}}, \code{\link{IsoGenemSAM}},
+  \code{\link{Isofudge}}, \code{\link{Isoqqstat}},\code{\link{Isoallfdr}},\code{\link{Isoqval}},\code{\link{IsoTestSAM}},
   \code{\link{IsoSAMPlot}},\code{\link{IsoBHPlot}}, \code{\link{IsoPlot1}}, \code{\link{IsoPlot2}}.
 }

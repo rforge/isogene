@@ -18,7 +18,12 @@ Isoqval <- function (delta, allfdr, qqstat, stat) {
    if (stat == "M") qstat <- qqstat[[7]]
    if (stat == "ModifM") qstat <- qqstat[[9]]
 
-   low <- max(qstat[qstat[, 1] < 0, 1][qstat[qstat[,1] < 0, 3] < - delta])
+   obs.stat <- qstat[order(qstat[,4]),1]
+   
+    if (sum(qstat[qstat[,1] < 0, 3] < - delta)>0){
+   low <- max(qstat[qstat[, 1] < 0, 1][qstat[qstat[,1] < 0, 3] < - delta])} else {
+   low <- -Inf}
+
    if (low != "-Inf") {
       which.low <- which(qstat[qstat[, 1] < 0, 1] == low)
       low.point <- which.low[length(which.low)]
@@ -27,7 +32,12 @@ Isoqval <- function (delta, allfdr, qqstat, stat) {
       low <- min(qstat[,1])
       low.point <- 0
    }
-   up <- min(qstat[qstat[,1] > 0, 1][qstat[qstat[,1] > 0, 3] > delta ])
+
+
+   if (sum(qstat[qstat[,1] > 0, 3] > delta)>0) {
+   up <- min(qstat[qstat[,1] > 0, 1][qstat[qstat[,1] > 0, 3] > delta ])} else{
+   up <- Inf}
+
    if (up == "Inf") {
       up <- max(qstat[qstat[,1] > 0, 1])
       up.point <- nrow(qstat) + 1
@@ -86,7 +96,7 @@ Isoqval <- function (delta, allfdr, qqstat, stat) {
       n2 <- nnnew[up.point:nrow(qstat),]
       n2[n2[, 3] < delta,4] <- fdr
    }
-   res <- sign.list <- NULL
+   res <- sign.list <- res1 <- sign.list1 <- NULL
    m1 <- low.point + 1
    m2 <- up.point - 1
    cols <- c(1,4)
@@ -96,17 +106,25 @@ Isoqval <- function (delta, allfdr, qqstat, stat) {
    if (is.numeric(fdr) & is.numeric(n2)) {
       n2[n2[,4] > fdr,4] <- fdr
    }
-   if (is.numeric(fdr) & is.numeric(n1) & is.numeric(n2)) {
+   if (is.numeric(fdr) & is.numeric(n1) & is.numeric(n2)) {  ##both up and down-regulated genes
       res <- rbind(n1[, cols], nnnew[m1:m2, cols], n2[,cols])
+      res1 <- cbind(res[,1],obs.stat[res[,1]],res[,2])
       sign.list <- rbind(n1[, cols], n2[, cols])
+      sign.list1 <- cbind(sign.list[,1],obs.stat[sign.list[,1]],sign.list[,2])
    }
-   if (is.numeric(fdr) & is.numeric(n1) & !is.numeric(n2)) { ## TV: == F ? what is this supposed to be ?
+   if (is.numeric(fdr) & is.numeric(n1) & !is.numeric(n2)) { ## only download reguatled genes
       res <- rbind(n1[,cols], nnnew[m1:m2, cols])
+      res1 <- cbind(res[,1],obs.stat[res[,1]],res[,2])
       sign.list <- rbind(n1[,cols])
+      sign.list1 <- cbind(sign.list[,1],obs.stat[sign.list[,1]],sign.list[,2])
+
    }
-   if (is.numeric(fdr) & !is.numeric(n1) & is.numeric(n2)) { ## TV: == F ?
+   if (is.numeric(fdr) & !is.numeric(n1) & is.numeric(n2)) { ## only up-regulated genes
       res <- rbind(nnnew[m1:m2, cols],n2[, cols])
+      res1 <- cbind(res[,1],obs.stat[res[,1]],res[,2])
       sign.list <- rbind(n2[, cols])
+      sign.list1 <- cbind(sign.list[,1],obs.stat[sign.list[,1]],sign.list[,2])
+
    }
-   return(list(res, sign.list))
+   return(list(res1, sign.list1))
 }

@@ -2,7 +2,8 @@ IsoGenem <-
 function(x, y)
 {
 
-  if(!is.matrix(y)){
+ y <- as.matrix(y)
+  if(dim(y)[[1]]==1){
     IsoGene1(x = x, y = y)
   } else {
   

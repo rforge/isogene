@@ -1,6 +1,7 @@
 # input :
 #    x : doses
-#    y : gene matrix
+#    y : gene expression matrix
+#    fudge: fudge factor value
 #    niter : number of permutation, >100 is good, =500 is sufficient
 #    seed : random seed
 # output:
@@ -16,34 +17,34 @@
 #    [[9]] observed stat of ModifM
 #    [[10]] permutation stat matrix of ModifM
 
-Isoqqstat <- function(x, y, niter, seed){
+Isoqqstat <- function(x, y, fudge, niter, seed){
    ## permutations
    set.seed(seed)
    xiter.index <- t(sapply(1:niter, function(i) sample(x)))  # TV: sample stuff to remove, cf. other code
    to1 <- to2 <- to3 <- to4 <- to5 <- matrix(0, nrow(y), niter)
-   for (i in 1:niter){
-      yyy0 <- IsoGenem(xiter.index[i,], as.matrix(y))
+   
+   if (fudge=="pooled") {fudge.factor=Isofudge(x,y)}
+   if (fudge==0) {fudge.factor=c(rep(0,5))}
 
-      yyy <- apply(cbind(yyy0[[1]], yyy0[[6]]), 1, max)
-      to1[, i] <- sort(yyy)
 
-      yyy <- apply(cbind(yyy0[[2]], yyy0[[7]]), 1, max)
-      to2[, i] <- sort(yyy)
+     for (i in 1:niter){
+      yyy0 <- IsoGenemSAM(xiter.index[i,], as.matrix(y), fudge.factor)
 
-      yyy <- apply(cbind(yyy0[[3]], yyy0[[8]]), 1, max)
-      to3[, i] <- sort(yyy)
+      to1[, i] <- sort(yyy0[[1]])
 
-      yyy <- apply(cbind(yyy0[[4]], yyy0[[9]]), 1, max)
-      to4[, i] <- sort(yyy)
+      to2[, i] <- sort(yyy0[[2]])
 
-      yyy <- apply(cbind(yyy0[[5]], yyy0[[10]]), 1, max)
-      to5[, i] <- sort(yyy)
+      to3[, i] <- sort(yyy0[[3]])
+
+      to4[, i] <- sort(yyy0[[4]])
+
+      to5[, i] <- sort(yyy0[[5]])
       # print(i)
    }
-   L <- IsoGenem(x, as.matrix(y))
+   L <- IsoGenemSAM(x, as.matrix(y), fudge.factor)
 
    ## E2
-   d <- apply(cbind(L[[1]], L[[6]]), 1, max)
+   d <- L[[1]]
    d.sort.list <- sort.list(d)
    d.sort <- d[d.sort.list]
    # Calculate the expected SAM score
@@ -51,7 +52,7 @@ Isoqqstat <- function(x, y, niter, seed){
    aa1 = cbind(d.sort, perm.mean, d.sort - perm.mean, d.sort.list)
 
    ## Williams
-   d <- apply(cbind(L[[2]], L[[7]]), 1, max)
+   d <- L[[2]]
    d.sort.list <- sort.list(d)
    d.sort <- d[d.sort.list]
    # Calculate the expected SAM score
@@ -59,7 +60,7 @@ Isoqqstat <- function(x, y, niter, seed){
    aa2 = cbind(d.sort, perm.mean, d.sort - perm.mean, d.sort.list)
 
    ## Marcus
-   d <- apply(cbind(L[[3]], L[[8]]), 1, max)
+   d <- L[[3]]
    d.sort.list <- sort.list(d)
    d.sort <- d[d.sort.list]
    #Calculate the expected SAM score
@@ -67,7 +68,7 @@ Isoqqstat <- function(x, y, niter, seed){
    aa3 = cbind(d.sort, perm.mean, d.sort - perm.mean, d.sort.list)
 
    ## M
-   d <- apply(cbind(L[[4]], L[[9]]), 1, max)
+   d <- L[[4]]
    d.sort.list <- sort.list(d)
    d.sort <- d[d.sort.list]
    # Calculate the expected SAM score
@@ -75,7 +76,7 @@ Isoqqstat <- function(x, y, niter, seed){
    aa4 = cbind(d.sort, perm.mean, d.sort - perm.mean, d.sort.list)
 
    ## MM
-   d <- apply(cbind(L[[5]], L[[10]]), 1, max)
+   d <- L[[5]]
    d.sort.list <- sort.list(d)
    d.sort <- d[d.sort.list]
 

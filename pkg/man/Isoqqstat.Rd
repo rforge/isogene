@@ -1,17 +1,18 @@
 \name{Isoqqstat}
 \alias{Isoqqstat}
-\title{Implementation of five test statistics in the SAM procedure}
+\title{Implementation of five SAM test statistics in the SAM procedure}
 \description{
   The function calculates SAM test statistics from permutations for the
 	five test statistics (the global likelihood test, Williams, Marcus, M,
 	and the modified M).
 }
 \usage{
-  Isoqqstat(x, y, niter, seed)
+  Isoqqstat(x, y, fudge, niter, seed)
 }
 \arguments{
   \item{x}{indicates the dose levels}
   \item{y}{gene expression for all genes}
+  \item{fudge}{the fudge factor value to be used in the SAM test statistics: either fudge="pooled" then it is calculated by the function, or fudge=0 then no fudge factor is used}
   \item{niter}{number of permutations used in the SAM procedure}
   \item{seed}{random seed to generate the permutations}
 }
@@ -74,7 +75,7 @@
 	procedure for the five test statistics. To use the SAM procedure, the
 	number of genes in the data set is preferably larger than 500. 
 }
-\seealso{\code{\link{isoreg}}, \code{\link{Isoallfdr}},
+\seealso{\code{\link{isoreg}}, \code{\link{Isoallfdr}}, \code{\link{IsoGenemSAM}}
 	       \code{\link{Isoqval}},\code{\link{IsoTestSAM}},\code{\link{IsoSAMPlot}}}
 \examples{
   set.seed(1234)
@@ -83,7 +84,7 @@
   y2 <- matrix(c(rnorm(3000, 1,1), rnorm(3000,2,1), rnorm(3000,3,1)),
                1000, 9)  # 1000 genes with increasing trends
   y <- data.frame(rbind(y1, y2))  # y needs to be a data frame
-  qqstat <- Isoqqstat(x, y, niter = 100, seed = 123)
+  qqstat <- Isoqqstat(x, y, fudge=¡±pooled¡±, niter = 100, seed = 123)
 }
 \keyword{htest}
 
