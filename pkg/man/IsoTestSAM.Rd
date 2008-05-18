@@ -40,8 +40,8 @@ and the last column is the q-values of the SAM procedure.
 \examples{
   set.seed(1234)
   x <- c(rep(1,3),rep(2,3),rep(3,3))
-  y1 <- matrix(rnorm(90, 1,1),10,9) ## 10 genes with no trends
-  y2 <- matrix(c(rnorm(30, 1,1),rnorm(30,2,1),rnorm(30,3,1)),10,9) ## 10 genes with increasing trends
+  y1 <- matrix(rnorm(4500, 1,1),500,9) ## 500 genes with no trends
+  y2 <- matrix(c(rnorm(1500, 1,1),rnorm(1500,2,1),rnorm(1500,3,1)),500,9) ## 500 genes with increasing trends
   y <- data.frame(rbind(y1, y2)) ##y needs to be a data frame
   SAM.obj <- IsoTestSAM(x, y, fudge=0, niter=100, seed=123, FDR=0.05, stat="E2") ##no fudge factor is used
 }

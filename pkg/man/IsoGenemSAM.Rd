@@ -36,6 +36,6 @@ et al. 2007, Stat. App. in Gen. & Mol. Bio., 6(1), article 26.
   This function calculates the five test statistics for both increasing
   and decreasing ordered alternatives for all the genes (rows in the data set). 
 }
-\seealso{\code{\link{isoreg}}, \code{\link{IsoGene1}}, \code{\link{f.fudge}}}
+\seealso{\code{\link{isoreg}}, \code{\link{IsoGene1}}, \code{\link{Isofudge}}}
 \keyword{htest}
 
