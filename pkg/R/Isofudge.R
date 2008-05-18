@@ -1,3 +1,25 @@
+  xcv <- function(x) sqrt(var(x))/mean(x)   ##CV
+
+  xmad <- function(x) median(abs(x-median(x)))
+  ##calculate the fudge factor
+    xfudge <- function(x.dif,si2) {
+     ## mean difference x.dif 
+     ## sd si2 
+      xs.alpha <- quantile(si2,(0:20)/20)
+      xs.perc <- quantile(si2,(0:100)/100)
+      xs.perc.gr <- as.numeric(cut(si2,breaks=xs.perc,include.lowest=T))
+      xs.mad <- matrix(0, length(xs.alpha),length(xs.perc)-1)
+      for (ii in 1:100)
+               {
+             k0 <- xs.perc.gr==ii
+             xs.mad[,ii] <- apply(x.dif[k0]/outer(si2[k0],xs.alpha,"+"),2,xmad)
+                          }
+       xs.cv <- apply(xs.mad,1,xcv)
+       xfudge <- xs.alpha[sort.list(xs.cv)[1]]
+      return(xfudge)
+     }
+
+
 Isofudge <- function(x,y){
 
   y <- as.matrix(y)
@@ -52,30 +74,6 @@ Isofudge <- function(x,y){
   SSIS.dir[direction=="u"] <- SSIS.u1[direction=="u"]
   SSIS.dir[direction=="d"] <- SSIS.d1[direction=="d"]
 
-
-
-
-  xcv <- function(x) sqrt(var(x))/mean(x)   ##CV
-
-  xmad <- function(x) median(abs(x-median(x)))
-  ##calculate the fudge factor
-    xfudge <- function(x.dif,si2) {
-     ## mean difference x.dif 
-     ## sd si2 
-      xs.alpha <- quantile(si2,(0:20)/20)
-      xs.perc <- quantile(si2,(0:100)/100)
-      xs.perc.gr <- as.numeric(cut(si2,breaks=xs.perc,include.lowest=T))
-      xs.mad <- matrix(0, length(xs.alpha),length(xs.perc)-1)
-      for (ii in 1:100)
-               {
-             k0 <- xs.perc.gr==ii
-             xs.mad[,ii] <- apply(x.dif[k0]/outer(si2[k0],xs.alpha,"+"),2,xmad)
-                          }
-       xs.cv <- apply(xs.mad,1,xcv)
-       xfudge <- xs.alpha[sort.list(xs.cv)[1]]
-      return(xfudge)
-     }
-
   E2.dif <- SST0-SSIS.dir
   E2.si2 <- SST0
 
@@ -83,7 +81,7 @@ Isofudge <- function(x,y){
   W.si2 <- sqrt(2*SST/(sum(n.p)-n.g)/(n.g-1)) 
  
   W.C.dif <- iso.u[,n.g] - iso.u[,1]
-  W.si2 <- sqrt(2*SST/(sum(n.p)-n.g)/(n.g-1)) 
+  W.C.si2 <- sqrt(2*SST/(sum(n.p)-n.g)/(n.g-1)) 
 
   M.dif <- iso.u[,n.g] - iso.u[,1]
   M.si2 <- sqrt(SSIS.dir/(sum(n.p)-n.g)) 
@@ -93,7 +91,7 @@ Isofudge <- function(x,y){
 
   fudge.E2 <- xfudge(E2.dif,E2.si2)
   fudge.Williams <- xfudge(W.dif, W.si2)
-  fudge.Marcus <- xfudge(M.dif,M.si2)
+  fudge.Marcus <- xfudge(W.C.dif,W.C.si2)
   fudge.M <- xfudge(M.dif,M.si2)
   fudge.I <- xfudge(I.dif, I.si2)  
   
