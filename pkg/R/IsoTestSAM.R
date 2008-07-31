@@ -22,9 +22,9 @@ IsoTestSAM <- function(x, y, fudge, niter, seed, FDR, stat) {
    }
    qval <- Isoqval(delta,allfdr,qqstat,stat)
    q.value <- qval[[1]]
-   sign.list <- q.value[q.value[,3] <= FDR,]
+   sign.list <- q.value[q.value[,3] <= FDR,,drop=FALSE] # TV: no drop for one row matrices
    sign.genes <- cbind(row.names(y[sign.list[,1],]), sign.list)
-   sign.genes1 <- data.frame(sign.genes[order(sign.list[,2]),])
+   sign.genes1 <- data.frame(sign.genes[order(sign.list[,2]),,drop=FALSE]) # TV: no drop for one row matrices
    row.names(sign.genes1) <- 1:nrow(sign.genes1)
    names(sign.genes1) <- c("Probe.ID", "row.number","stat.val","qvalue")
 
