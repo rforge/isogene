@@ -1,17 +1,15 @@
 IsoRawp <- function(x, y, niter, seed) {
 
-### 
-    
-if (niter > 2500) {
-  jmatsize <- 2500 # put into function argument
-  nmats <- floor(niter / jmatsize)
-  endmat <- c(1:nmats * jmatsize, niter)
-  begmat <- c(1, endmat[-length(endmat)] + 1)
-} else {               ##added
-  nmats <- 1   
-  begmat <- 1
-  endmat <- niter
-}
+  if (niter > 2500) {
+    jmatsize <- 2500 # TODO turn into function argument
+    nmats <- floor(niter / jmatsize)
+    endmat <- c(1:nmats * jmatsize, niter)
+    begmat <- c(1, endmat[-length(endmat)] + 1)
+  } else {               
+    nmats <- 1   
+    begmat <- 1
+    endmat <- niter
+  }
   
   y <- data.matrix(y, rownames.force = TRUE)
   
@@ -40,16 +38,16 @@ if (niter > 2500) {
 
   # browser()
 
-  exp.E.up  <- ffm("exp.E.up",  dim = c(nrow(y), niter))    ##cf
-  exp.W.up  <- ffm("exp.W.up",  dim = c(nrow(y), niter))
-  exp.WC.up <- ffm("exp.WC.up", dim = c(nrow(y), niter))
-  exp.M.up  <- ffm("exp.M.up",  dim = c(nrow(y), niter))
-  exp.I.up  <- ffm("exp.I.up",  dim = c(nrow(y), niter))
-  exp.E.dn  <- ffm("exp.E.dn",  dim = c(nrow(y), niter))
-  exp.W.dn  <- ffm("exp.W.dn",  dim = c(nrow(y), niter))
-  exp.WC.dn <- ffm("exp.WC.dn", dim = c(nrow(y), niter))
-  exp.M.dn  <- ffm("exp.M.dn",  dim = c(nrow(y), niter))
-  exp.I.dn  <- ffm("exp.I.dn",  dim = c(nrow(y), niter))
+  exp.E.up  <- ff("exp.E.up",  dim = c(nrow(y), niter))    ##cf
+  exp.W.up  <- ff("exp.W.up",  dim = c(nrow(y), niter))
+  exp.WC.up <- ff("exp.WC.up", dim = c(nrow(y), niter))
+  exp.M.up  <- ff("exp.M.up",  dim = c(nrow(y), niter))
+  exp.I.up  <- ff("exp.I.up",  dim = c(nrow(y), niter))
+  exp.E.dn  <- ff("exp.E.dn",  dim = c(nrow(y), niter))
+  exp.W.dn  <- ff("exp.W.dn",  dim = c(nrow(y), niter))
+  exp.WC.dn <- ff("exp.WC.dn", dim = c(nrow(y), niter))
+  exp.M.dn  <- ff("exp.M.dn",  dim = c(nrow(y), niter))
+  exp.I.dn  <- ff("exp.I.dn",  dim = c(nrow(y), niter))
 
   set.seed(seed)
   x.niter <- t(replicate(niter, sample(x)))
@@ -124,9 +122,7 @@ if (niter > 2500) {
       
       eval(finalcall)
     }  
- }
-   
-   
+  }
 
   rm(suby)
   rm(res)
@@ -160,8 +156,8 @@ if (niter > 2500) {
 
   raw.p.two <- raw.p.one
   raw.p.two[,2:6] <- 2 * (raw.p.one[,2:6])
-#  raw.p.two[,2:6] <- sapply(raw.p.two[,2:6],
-#                            function(x) x[x > 1] <- 1) # names ?
+  #  raw.p.two[,2:6] <- sapply(raw.p.two[,2:6],
+  #                            function(x) x[x > 1] <- 1) # names ?
   
   raw.p.two[,2:6][raw.p.two[,2:6]>1] <- 1
   

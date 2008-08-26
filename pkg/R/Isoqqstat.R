@@ -20,26 +20,20 @@
 Isoqqstat <- function(x, y, fudge, niter, seed){
    ## permutations
    set.seed(seed)
-   xiter.index <- t(sapply(1:niter, function(i) sample(x)))  # TV: sample stuff to remove, cf. other code
+   xiter.index <- t(sapply(1:niter, function(i) sample(x)))  # TODO TV: sample stuff to remove, cf. other code
    to1 <- to2 <- to3 <- to4 <- to5 <- matrix(0, nrow(y), niter)
    
    if (fudge=="pooled") {fudge.factor=Isofudge(x,y)}
    if (fudge==0) {fudge.factor=c(rep(0,5))}
 
+   for (i in 1:niter){
+     yyy0 <- IsoGenemSAM(xiter.index[i,], as.matrix(y), fudge.factor)
 
-     for (i in 1:niter){
-      yyy0 <- IsoGenemSAM(xiter.index[i,], as.matrix(y), fudge.factor)
-
-      to1[, i] <- sort(yyy0[[1]])
-
-      to2[, i] <- sort(yyy0[[2]])
-
-      to3[, i] <- sort(yyy0[[3]])
-
-      to4[, i] <- sort(yyy0[[4]])
-
-      to5[, i] <- sort(yyy0[[5]])
-      # print(i)
+     to1[, i] <- sort(yyy0[[1]])
+     to2[, i] <- sort(yyy0[[2]])
+     to3[, i] <- sort(yyy0[[3]])
+     to4[, i] <- sort(yyy0[[4]])
+     to5[, i] <- sort(yyy0[[5]])
    }
    L <- IsoGenemSAM(x, as.matrix(y), fudge.factor)
 
@@ -63,7 +57,7 @@ Isoqqstat <- function(x, y, fudge, niter, seed){
    d <- L[[3]]
    d.sort.list <- sort.list(d)
    d.sort <- d[d.sort.list]
-   #Calculate the expected SAM score
+   # Calculate the expected SAM score
    perm.mean <- apply(to3,1,mean)
    aa3 = cbind(d.sort, perm.mean, d.sort - perm.mean, d.sort.list)
 

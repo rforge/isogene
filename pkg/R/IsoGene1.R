@@ -1,11 +1,9 @@
-IsoGene1 <-
-function(x, y)
-{
-  ordx <- order(x) # compute once
+IsoGene1 <- function(x, y){
+  ordx <- order(x)
   x <- x[ordx]
   y <- y[ordx]  # reverse order (sorted two times)
 
-  unx <- unique(x) # compute once
+  unx <- unique(x)
       
   y.m <- tapply(y, as.factor(x), mean)
   y.m.tot <- rep(mean(y), length(unx))
@@ -59,16 +57,16 @@ function(x, y)
   # dfi=length(unique(y.is.d))   
 
             ## do not return a list directly like that
-   res <-  list(E2.up = Esquare.up,
-                Williams.up = as.numeric(w.up),
-                Marcus.up = as.numeric(w.c.up),
-                M.up = as.numeric(m.up),
-                ModM.up = as.numeric(i.up),
-                E2.dn = Esquare.dn,
-                Williams.dn = as.numeric(w.dn),
-                Marcus.dn = as.numeric(w.c.dn),
-                M.dn = as.numeric(m.dn),
-                ModM.dn = as.numeric(i.dn),
-                direction = direction)
+  res <-  list(E2.up = Esquare.up,
+               Williams.up = as.numeric(w.up),
+               Marcus.up = as.numeric(w.c.up),
+               M.up = as.numeric(m.up),
+               ModM.up = as.numeric(i.up),
+               E2.dn = Esquare.dn,
+               Williams.dn = as.numeric(w.dn),
+               Marcus.dn = as.numeric(w.c.dn),
+               M.dn = as.numeric(m.dn),
+               ModM.dn = as.numeric(i.dn),
+               direction = direction)
   return(res)
 }
