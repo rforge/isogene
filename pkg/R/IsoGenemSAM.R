@@ -4,11 +4,11 @@ IsoGenemSAM <- function(x, y, fudge.factor){
   if(dim(y)[[1]]==1){
     warning("There is only one gene in the data set.")
   } else {  
-    ordx <- order(x) # compute once
+    ordx <- order(x)
     x <- x[ordx]
-    y <- y[,ordx]  # reverse order (sorted two times)
+    y <- y[, ordx]
   
-    unx <- unique(x) # compute once
+    unx <- unique(x)
     
     ydf <- as.data.frame(t(y))
     y.m <- do.call("cbind", unclass(by(ydf, x, mean)))
@@ -20,16 +20,11 @@ IsoGenemSAM <- function(x, y, fudge.factor){
   
     n.p <- table(x)
     n.g <- length(n.p)
-  
-    ###################################################
      
     rep.iso.d <- y.is.d[, rep(1:length(n.p),n.p)]
     rep.iso.u <- y.is.u[, rep(1:length(n.p),n.p)]
     
     y.m.all <- y.m[, rep(1:length(n.p), n.p)]
-  
-    ########################################################
-  
   
     SST0 <- rowSums((y - rowMeans(y))^2)
   
@@ -53,10 +48,11 @@ IsoGenemSAM <- function(x, y, fudge.factor){
   
        
     Esquare <- (SST0-SSIS.dir)/(SST0+fudge.factor[[1]])
-    w <- (iso.u[,n.g] - y.m[,1]) / (sqrt(2*SST/(sum(n.p)-n.g)/(n.g-1)) +fudge.factor[[2]])
-    w.c <- (iso.u[,n.g] - iso.u[,1]) / (sqrt(2*SST/(sum(n.p)-n.g)/(n.g-1)) +fudge.factor[[3]])
-    m <- (iso.u[,n.g] - iso.u[,1]) / (sqrt(SSIS.dir/(sum(n.p)-n.g)) +fudge.factor[[4]])
-    i <- (iso.u[,n.g] - iso.u[,1]) / (sqrt(SSIS.dir/(sum(n.p) - apply(iso.u, 1, function(x) length(unique(x))))) + fudge.factor[[5]])
+    n.pSum <- sum(n.p)
+    w <- (iso.u[,n.g] - y.m[,1]) / (sqrt(2*SST/(n.pSum-n.g)/(n.g-1)) + fudge.factor[[2]])
+    w.c <- (iso.u[,n.g] - iso.u[,1]) / (sqrt(2*SST/(n.pSum-n.g)/(n.g-1)) + fudge.factor[[3]])
+    m <- (iso.u[,n.g] - iso.u[,1]) / (sqrt(SSIS.dir/(n.pSum-n.g)) + fudge.factor[[4]])
+    i <- (iso.u[,n.g] - iso.u[,1]) / (sqrt(SSIS.dir/(n.pSum - apply(iso.u, 1, function(x) length(unique(x))))) + fudge.factor[[5]])
   
     res <-  list(E2 = Esquare,
                   Williams = as.numeric(w),

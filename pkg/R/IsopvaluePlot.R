@@ -63,7 +63,7 @@ IsopvaluePlot <- function(x, y, niter, seed, stat=c("E2","Williams","Marcus","M"
         xlim = c(min(exp.dn,obs.dn), max(exp.dn,obs.dn)), xlab = paste(stat))
    dx <- density(exp.dn, from = min(exp.dn), to = max(exp.dn))
    abline(v = obs.dn, col = 7, lwd = 3)
-   # lines(c(obs.dn,obs.dn),c(0,max(dx$y/2)),lwd=3,col=7)
+
    lines(dx$x, dx$y, lwd = 3, col = 5)
    title(paste("Gene", Probe.ID, ":p-value^{down}=", rawp.dn, sep = '')) 
 }

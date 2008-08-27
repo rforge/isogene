@@ -33,10 +33,8 @@ IsoRawp <- function(x, y, niter, seed) {
   nchunks <- 10  ## still memory problem
   chunklength <- floor(nrow(y) / nchunks)
 
-  endpos <- c(1: (nchunks-1) * chunklength,nrow(y))   ##changed
+  endpos <- c(1: (nchunks-1) * chunklength, nrow(y))   ##changed
   begpos <- c(1, endpos[-length(endpos)] + 1)
-
-  # browser()
 
   exp.E.up  <- ff("exp.E.up",  dim = c(nrow(y), niter))    ##cf
   exp.W.up  <- ff("exp.W.up",  dim = c(nrow(y), niter))
@@ -104,8 +102,6 @@ IsoRawp <- function(x, y, niter, seed) {
       exp.I.dn[begchunk:endchunk,jbegmat:jendmat] <-
         sapply(res, function(x) x[[10]])        
     }
-
-
   
     for (i in seq(along = ffmatrices)){
       lhs <- as.list(quote(OBSVEC[begchunk:endchunk]))

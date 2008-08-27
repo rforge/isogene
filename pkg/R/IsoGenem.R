@@ -7,7 +7,7 @@ IsoGenem <- function(x, y){
     
     ordx <- order(x)
     x <- x[ordx]
-    y <- y[, ordx] # reverse order (sorted two times)
+    y <- y[, ordx]
   
     unx <- unique(x)
     
@@ -21,16 +21,11 @@ IsoGenem <- function(x, y){
   
     n.p <- table(x)
     n.g <- length(n.p)
-  
-    ###################################################
      
     rep.iso.d <- y.is.d[, rep(1:length(n.p),n.p)]
     rep.iso.u <- y.is.u[, rep(1:length(n.p),n.p)]
     
     y.m.all <- y.m[, rep(1:length(n.p), n.p)]
-  
-    ########################################################
-  
   
     SST0 <- rowSums((y - rowMeans(y))^2)
   
@@ -43,33 +38,27 @@ IsoGenem <- function(x, y){
   
     direction <- ifelse(SSIS.u1 <= SSIS.d1, "u", "d")
              
-    lambda1.up <- SSIS.u1 / SST0 # no brackets
+    lambda1.up <- SSIS.u1 / SST0
     Esquare.up <- 1 - lambda1.up
     iso.u <- y.is.u
            
-    ##################################################
-      
     w.up <- (y.is.u[,n.g] - y.m[,1]) / sqrt(2*SST/(sum(n.p)-n.g)/(n.g-1))
     w.c.up <- (y.is.u[,n.g] - y.is.u[,1]) / sqrt(2*SST/(sum(n.p)-n.g)/(n.g-1))
     m.up <- (y.is.u[,n.g] - y.is.u[,1]) / sqrt(SSIS.u1/(sum(n.p)-n.g))
     i.up <- (y.is.u[,n.g] - y.is.u[,1]) /
       sqrt(SSIS.u1/(sum(n.p) - apply(y.is.u, 1, function(x) length(unique(x)))))
   
-       #  dfi=length(unique(y.is.u)) 
-  
-    lambda1.dn <- SSIS.d1 / SST0 # no brackets needed
+    lambda1.dn <- SSIS.d1 / SST0
     Esquare.dn <- 1 - lambda1.dn
     iso.u <- y.is.d
   
-    ##################################################
-     
-    w.dn <- (y.is.d[,n.g]-y.m[,1])/ sqrt(2*SST / (sum(n.p)-n.g)/(n.g-1))
-    w.c.dn <- (y.is.d[,n.g]-y.is.d[,1]) / sqrt(2*SST/(sum(n.p)-n.g)/(n.g-1))
-    m.dn <- (y.is.d[,n.g]-y.is.d[,1]) / sqrt(SSIS.d1/(sum(n.p)-n.g))
+    n.pSum <- sum(n.p)
+    w.dn <- (y.is.d[,n.g]-y.m[,1])/ sqrt(2*SST / (n.pSum-n.g)/(n.g-1))
+    w.c.dn <- (y.is.d[,n.g]-y.is.d[,1]) / sqrt(2*SST/(n.pSum-n.g)/(n.g-1))
+    m.dn <- (y.is.d[,n.g]-y.is.d[,1]) / sqrt(SSIS.d1/(n.pSum-n.g))
     i.dn <- (y.is.d[,n.g]-y.is.d[,1]) /
       sqrt(SSIS.d1/(sum(n.p) - apply(y.is.d, 1, function(x) length(unique(x)))))
-    # dfi=length(unique(y.is.d))   
-  
+    
     res <-  list(E2.up = Esquare.up,
                  Williams.up = as.numeric(w.up),
                  Marcus.up = as.numeric(w.c.up),

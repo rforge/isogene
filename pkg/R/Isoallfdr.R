@@ -17,26 +17,23 @@
 
 Isoallfdr <- function(qqstat, ddelta, stat) {
 
-  if (stat == "E2"){
-    qstat <- qqstat[[1]]
-    dperm <- qqstat[[2]]
-  }
-  if (stat == "Williams") {
-    qstat <- qqstat[[3]]
-    dperm <- qqstat[[4]]
-  }
-  if (stat == "Marcus") {
-      qstat <- qqstat[[5]]
-      dperm <- qqstat[[6]]
-  }
-  if (stat == "M") {
-      qstat <- qqstat[[7]]
-      dperm <- qqstat[[8]]
-  }
-  if (stat == "ModifM") {
-      qstat <- qqstat[[9]]
-      dperm <- qqstat[[10]]
-  }
+  switch(stat,
+      E2 = {
+        qstat <- qqstat[[1]]
+        dperm <- qqstat[[2]]},
+      Williams = {
+        qstat <- qqstat[[3]]
+        dperm <- qqstat[[4]]},
+      Marcus = {
+        qstat <- qqstat[[5]]
+        dperm <- qqstat[[6]]},
+      M = {
+        qstat <- qqstat[[7]]
+        dperm <- qqstat[[8]]},
+      ModifM = {
+        qstat <- qqstat[[9]]
+        dperm <- qqstat[[10]]  
+      })
 
   k1 <- nrow(qstat)
    

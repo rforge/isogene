@@ -1,6 +1,6 @@
 IsoPlot2 <- function(x, y) {
   y1 <- as.numeric(y)[order(x)]
-  m.y <- tapply(y1,as.factor(sort(x)),mean)
+  m.y <- tapply(y1, as.factor(sort(x)), mean)
 
   unx <- sort(unique(x))
   

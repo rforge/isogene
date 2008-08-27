@@ -23,8 +23,8 @@ Isoqqstat <- function(x, y, fudge, niter, seed){
    xiter.index <- t(sapply(1:niter, function(i) sample(x)))  # TODO TV: sample stuff to remove, cf. other code
    to1 <- to2 <- to3 <- to4 <- to5 <- matrix(0, nrow(y), niter)
    
-   if (fudge=="pooled") {fudge.factor=Isofudge(x,y)}
-   if (fudge==0) {fudge.factor=c(rep(0,5))}
+   if (fudge=="pooled") {fudge.factor <- Isofudge(x,y)}
+   if (fudge==0) {fudge.factor <- c(rep(0,5))}
 
    for (i in 1:niter){
      yyy0 <- IsoGenemSAM(xiter.index[i,], as.matrix(y), fudge.factor)

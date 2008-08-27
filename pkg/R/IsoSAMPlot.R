@@ -8,6 +8,7 @@ IsoSAMPlot <- function(qqstat, allfdr, FDR, stat){
   signnum <- allfdr[,4]
 
   par(mfrow = c(2, 2))
+
   # FDR vs. Delta
   plot(delta, FDR50, pch = ".", ylab = "FDR")
   lines(delta, FDR90, lty = 1)
