@@ -71,8 +71,8 @@ Isofudge <- function(x,y){
     SSIS.dir[direction=="u"] <- SSIS.u1[direction=="u"]
     SSIS.dir[direction=="d"] <- SSIS.d1[direction=="d"]
     
-    E2.dif <- SST0-SSIS.dir
-    E2.si2 <- SST0
+    E2.dif <- sqrt(SST0-SSIS.dir)
+    E2.si2 <- sqrt(SST0)
     
     W.dif <- iso.u[,n.g] - y.m[,1]
     W.si2 <- sqrt(2*SST/(sum(n.p)-n.g)/(n.g-1)) 
