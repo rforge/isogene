@@ -2,7 +2,9 @@
 # list of significant genes
 #    col 1: Probe.ID
 #    col 2: row number
-#    col 3: q value
+#    col 3: permutation p value
+#    col 4 BH adjusted p value
+#    col 5: q value
 IsoTestSAM <- function(x, y, fudge, niter, seed, FDR, stat) {
   qqstat <- Isoqqstat(x, y, fudge, niter, seed)
   allfdr <- Isoallfdr(qqstat, , stat)
@@ -17,11 +19,44 @@ IsoTestSAM <- function(x, y, fudge, niter, seed, FDR, stat) {
   }
   qval <- Isoqval(delta,allfdr,qqstat,stat)
   q.value <- qval[[1]]
-  sign.list <- q.value[q.value[,3] <= FDR,,drop=FALSE] # TV: no drop for one row matrices
+
+##adding the permutation p values and adjusted p values
+
+  switch(stat,
+      E2 = {
+        qstat <- qqstat[[1]]
+        dperm <- qqstat[[2]]},
+      Williams = {
+        qstat <- qqstat[[3]]
+        dperm <- qqstat[[4]]},
+      Marcus = {
+        qstat <- qqstat[[5]]
+        dperm <- qqstat[[6]]},
+      M = {
+        qstat <- qqstat[[7]]
+        dperm <- qqstat[[8]]},
+      ModifM = {
+        qstat <- qqstat[[9]]
+        dperm <- qqstat[[10]]
+      })
+
+
+  dperm.out <- sort(as.vector(dperm))
+  d <- qstat[,1]
+
+  p.value <- sapply(d,function(x) sum(x <=dperm.out)/niter/length(d))
+  procs <- c("BH")
+  res <- mt.rawp2adjp(p.value, procs)
+  adj.p.value <- res$adjp[order(res$index), ]
+
+  new.list <- cbind(q.value,adj.p.value)
+
+   sign.list <- new.list[new.list[,3] <= FDR,,drop=FALSE] # TV: no drop for one row matrices
   sign.genes <- cbind(row.names(y[sign.list[,1],]), sign.list)
   sign.genes1 <- data.frame(sign.genes[order(sign.list[,2]),,drop=FALSE]) # TV: no drop for one row matrices
   row.names(sign.genes1) <- 1:nrow(sign.genes1)
-  names(sign.genes1) <- c("Probe.ID", "row.number","stat.val","qvalue")
+  names(sign.genes1) <- c("Probe.ID", "row.number","stat.val","qvalue","pvalue","adj.pvalue")
+
 
   return(sign.genes1)
 }
