@@ -3,7 +3,7 @@
 #    col 1: Probe.ID
 #    col 2: row number
 #    col 3: permutation p value
-#    col 4 BH adjusted p value
+#    col 4: BH adjusted p value
 #    col 5: q value
 IsoTestSAM <- function(x, y, fudge, niter, seed, FDR, stat) {
   qqstat <- Isoqqstat(x, y, fudge, niter, seed)
@@ -17,7 +17,7 @@ IsoTestSAM <- function(x, y, fudge, niter, seed, FDR, stat) {
   } else {
      delta <- min(na.exclude(del.table[del.table[,5] <= FDR, 1]))
   }
-  qval <- Isoqval(delta,allfdr,qqstat,stat)
+  qval <- Isoqval(delta, allfdr, qqstat, stat)
   q.value <- qval[[1]]
 
 ##adding the permutation p values and adjusted p values
@@ -40,7 +40,6 @@ IsoTestSAM <- function(x, y, fudge, niter, seed, FDR, stat) {
         dperm <- qqstat[[10]]
       })
 
-
   dperm.out <- sort(as.vector(dperm))
   d <- qstat[,1]
 
@@ -49,14 +48,13 @@ IsoTestSAM <- function(x, y, fudge, niter, seed, FDR, stat) {
   res <- mt.rawp2adjp(p.value, procs)
   adj.p.value <- res$adjp[order(res$index), ]
 
-  new.list <- cbind(q.value,adj.p.value)
+  qap <- cbind(q.value, adj.p.value)
 
-   sign.list <- new.list[new.list[,3] <= FDR,,drop=FALSE] # TV: no drop for one row matrices
-  sign.genes <- cbind(row.names(y[sign.list[,1],]), sign.list)
-  sign.genes1 <- data.frame(sign.genes[order(sign.list[,2]),,drop=FALSE]) # TV: no drop for one row matrices
+  significant <- qap[qap[,3] <= FDR,,drop=FALSE] # TV: no drop for one row matrices
+  sign.genes <- data.frame(row.names(y[significant[,1],]), significant)
+  sign.genes1 <- sign.genes[order(significant[,2]),,drop=FALSE] # TV: no drop for one row matrices
   row.names(sign.genes1) <- 1:nrow(sign.genes1)
   names(sign.genes1) <- c("Probe.ID", "row.number","stat.val","qvalue","pvalue","adj.pvalue")
-
 
   return(sign.genes1)
 }

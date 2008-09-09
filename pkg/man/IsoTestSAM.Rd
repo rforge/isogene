@@ -7,7 +7,6 @@
   test, Williams, Marcus, M, and the modified M).
 }
 \usage{
-
 IsoTestSAM(x, y, fudge, niter, seed, FDR, stat)
 }
 \arguments{
@@ -28,16 +27,12 @@ IsoTestSAM(x, y, fudge, niter, seed, FDR, stat)
 and the last column is the q-values of the SAM procedure. The last two columns
 are raw p-values based on permutations and BH adjusted p-values.
 }
-
-
 \author{Lin et al.}
 \note{
   This function obtains the list of significant genes using the SAM procedure for the five test statistics. To use the SAM procedure, the number of genes in the dataset is preferably larger than 500.
 }
 \seealso{\code{\link{isoreg}}, \code{\link{Isofudge}}, \code{\link{IsoGenemSAM}}, \code{\link{Isoqqstat}},
-\code{\link{Isoallfdr}},\code{\link{Isoqval}},
-\code{\link{IsoSAMPlot}}}
-
+  \code{\link{Isoallfdr}},\code{\link{Isoqval}}, \code{\link{IsoSAMPlot}}}
 \examples{
   set.seed(1234)
   x <- c(rep(1,3),rep(2,3),rep(3,3))
