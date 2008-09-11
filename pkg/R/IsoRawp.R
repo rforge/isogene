@@ -36,16 +36,16 @@ IsoRawp <- function(x, y, niter, seed) {
   endpos <- c(1: (nchunks-1) * chunklength, nrow(y))   ##changed
   begpos <- c(1, endpos[-length(endpos)] + 1)
 
-  exp.E.up  <- ff("exp.E.up",  dim = c(nrow(y), niter))    ##cf
-  exp.W.up  <- ff("exp.W.up",  dim = c(nrow(y), niter))
-  exp.WC.up <- ff("exp.WC.up", dim = c(nrow(y), niter))
-  exp.M.up  <- ff("exp.M.up",  dim = c(nrow(y), niter))
-  exp.I.up  <- ff("exp.I.up",  dim = c(nrow(y), niter))
-  exp.E.dn  <- ff("exp.E.dn",  dim = c(nrow(y), niter))
-  exp.W.dn  <- ff("exp.W.dn",  dim = c(nrow(y), niter))
-  exp.WC.dn <- ff("exp.WC.dn", dim = c(nrow(y), niter))
-  exp.M.dn  <- ff("exp.M.dn",  dim = c(nrow(y), niter))
-  exp.I.dn  <- ff("exp.I.dn",  dim = c(nrow(y), niter))
+  exp.E.up  <- ff("exp.E.up",  vmode = "double", dim = c(nrow(y), niter))    ##cf
+  exp.W.up  <- ff("exp.W.up",  vmode = "double", dim = c(nrow(y), niter))
+  exp.WC.up <- ff("exp.WC.up", vmode = "double", dim = c(nrow(y), niter))
+  exp.M.up  <- ff("exp.M.up",  vmode = "double", dim = c(nrow(y), niter))
+  exp.I.up  <- ff("exp.I.up",  vmode = "double", dim = c(nrow(y), niter))
+  exp.E.dn  <- ff("exp.E.dn",  vmode = "double", dim = c(nrow(y), niter))
+  exp.W.dn  <- ff("exp.W.dn",  vmode = "double", dim = c(nrow(y), niter))
+  exp.WC.dn <- ff("exp.WC.dn", vmode = "double", dim = c(nrow(y), niter))
+  exp.M.dn  <- ff("exp.M.dn",  vmode = "double", dim = c(nrow(y), niter))
+  exp.I.dn  <- ff("exp.I.dn",  vmode = "double", dim = c(nrow(y), niter))
 
   set.seed(seed)
   x.niter <- t(replicate(niter, sample(x)))
