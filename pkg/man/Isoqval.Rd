@@ -17,8 +17,9 @@ Isoqval(delta, allfdr, qqstat, stat)
 \value{
    A list of components
   \item{res}{returns the list genes with descending q-values of the SAM procedure in three columns: the first column is the row number of the genes, the second column is the observed test statistic values, and the last column is the q-values}
-  \item{sign.list}{returns the list of significant genes found by the defined delta value with descending p-values in three columns: the first column is the row number of the genes, the second column is the observed test statistic values, and the last column is the q-values}}
-}
+  \item{sign.list}{returns the list of significant genes found by the defined delta value with descending p-values in three columns: the first column is the row number of the genes, the second column is the observed test statistic values, and the last column is the q-values}
+  }
+
 \author{Lin et al.}
 \note{
   This function obtains the list of significant genes using the SAM procedure for the five test statistics. To use the SAM procedure, the number of genes in the dataset is preferably larger than 500.

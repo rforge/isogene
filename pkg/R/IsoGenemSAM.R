@@ -15,8 +15,12 @@ IsoGenemSAM <- function(x, y, fudge.factor){
     
     y.m.tot <- matrix(rep(rowMeans(y), length(x)), ncol = length(x))
     
-    y.is.u <- t(apply(y.m, 1, function(x) isoreg(unx, x)$yf))
-    y.is.d <- t(apply(y.m, 1, function(x) rev(isoreg(rev(unx), x)$yf)))
+#    y.is.u <- t(apply(y.m, 1, function(x) isoreg(unx, x)$yf))
+#    y.is.d <- t(apply(y.m, 1, function(x) rev(isoreg(rev(unx), x)$yf)))
+
+   y.is.u <- t(apply(y.m, 1, function(x) pava(x, wt=table(ordx))))
+   y.is.d <- t(apply(y.m, 1, function(x) rev(pava(rev(x), wt=table(rev(x)))))) 
+
   
     n.p <- table(x)
     n.g <- length(n.p)

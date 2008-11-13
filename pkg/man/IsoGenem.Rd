@@ -48,5 +48,18 @@ et al. 2007, Stat. App. in Gen. & Mol. Bio., 6(1), article 26.
   and decreasing ordered alternatives for all the genes (rows in the data set). 
 }
 \seealso{\code{\link{isoreg}}, \code{\link{IsoGene1}}}
+\examples{
+\dontrun{
+  set.seed(1234)
+  x <- c(rep(1,3),rep(2,3),rep(3,3))
+  y1 <- matrix(rnorm(90, 1,1),10,9)  # 10 genes with no trends
+  y2 <- matrix(c(rnorm(30, 1,1), rnorm(30,2,1),
+                 rnorm(30,3,1)), 10, 9)  # 10 genes with increasing trends
+  y <- data.frame(rbind(y1, y2))  # y needs to be a data frame 
+  stat <- IsoGenem(x,y) 
+  stat
+}
+}
+
 \keyword{htest}
 
