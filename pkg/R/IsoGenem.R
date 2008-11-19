@@ -18,14 +18,12 @@ IsoGenem <- function(x, y){
     
 #    y.is.u <- t(apply(y.m, 1, function(x) isoreg(unx, x)$yf))
 #    y.is.d <- t(apply(y.m, 1, function(x) rev(isoreg(rev(unx), x)$yf)))
- 
-   y.is.u <- t(apply(y.m, 1, function(x) pava(x, wt=table(ordx))) )
-   y.is.d <- t(apply(y.m, 1, function(x) rev(pava(rev(x), wt=table(rev(x)))))) 
- 
- 
-  
     n.p <- table(x)
-    n.g <- length(n.p)
+    n.g <- length(n.p) 
+    
+   y.is.u <- t(apply(y.m, 1, function(x) pava(x, wt=n.p)) )
+   y.is.d <- t(apply(y.m, 1, function(x) rev(pava(rev(x), wt=rev(n.p))))) 
+ 
      
     rep.iso.d <- y.is.d[, rep(1:length(n.p),n.p)]
     rep.iso.u <- y.is.u[, rep(1:length(n.p),n.p)]
