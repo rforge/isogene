@@ -34,7 +34,10 @@ IsoGene1 <- function(x, y){
   y <- y[ordx]
 
   unx <- unique(x)
-      
+  
+  n.p <- table(x)
+  n.g <- length(n.p)           
+     
   y.m <- tapply(y, as.factor(x), mean)
   y.m.tot <- rep(mean(y), length(unx))
   
@@ -43,8 +46,7 @@ IsoGene1 <- function(x, y){
 ##  y.is.u <- isoreg(unx,  y.m)$yf          ##equal weights
 ##  y.is.d <- rev(isoreg(rev(unx), y.m)$yf)
   
-  n.p <- table(x)
-  n.g <- length(n.p)
+
 
   iso.u <- rep.iso.u <- rep.iso.d <- y.m.all <- NULL
 
