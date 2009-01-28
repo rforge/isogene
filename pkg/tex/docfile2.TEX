@@ -1,0 +1,412 @@
+\documentclass[10pt]{mybook4}
+\pagestyle{myheadings}
+
+\newcommand{\markchapter}[1]{\markboth{
+   \mbox{}\hfill {\it Chapter \thechapter}. \ {\it #1}  \hfill  \mbox{}\hspace{-\textwidth} \protect\rule[-2mm]{\textwidth}{.15mm}}{}}
+
+\newcommand{\markchapterapp}[1]{\markboth{
+   \mbox{}\hfill \ {\it #1}  \hfill  \mbox{}\hspace{-\textwidth} \protect\rule[-2mm]{\textwidth}{.15mm}}{}}
+
+\newcommand{\nomarkchapter}{\markboth{
+\mbox{} \hfill  \mbox{}\hspace{-\textwidth}
+\protect\rule[-2mm]{\textwidth}{.15mm}} {\protect\rule
+[-2mm]{\textwidth}{.15mm} \hspace{-\textwidth}\mbox{} \hfill
+\mbox{}}}
+\newcommand{\markintro}{\markboth{
+\mbox{}\hfill {\it Chapter \thechapter}. \ {\it Introduction}
+\hfill  \mbox{}\hspace{-\textwidth}
+\protect\rule[-2mm]{\textwidth}{.15mm}}{\protect\rule
+[-2mm]{\textwidth}{.15mm}
+     \hspace{-\textwidth}\mbox{} \hfill  {\it Chapter \thechapter}. \ {\it Introduction} \hfill \mbox{}}}
+\newcommand{\marksam}[1]{\markboth{\mbox{}\hfill {\it Samenvatting} \hfill \mbox{} \hspace{-\textwidth} \protect\rule[-2mm]{\textwidth}{.15mm}}
+{\protect\rule [-2mm]{\textwidth}{.15mm} \hspace{-\textwidth}\mbox{}
+\hfill {\it Samenvatting} \hfill \mbox{}} }
+\newcommand{\markref}{\markboth{
+     \mbox{}\hfill {\it References} \hfill \mbox{}
+     \hspace{-\textwidth} \protect\rule[-2mm]{\textwidth}{.15mm}}{\protect\rule [-2mm]{\textwidth}{.15mm}
+     \hspace{-\textwidth}\mbox{} \hfill  {\it References} \hfill \mbox{}}}
+\newcommand{\marksection}[1]{\markright{\protect\rule
+     [-2mm]{\textwidth}{.15mm}
+     \hspace{-\textwidth}\mbox{} \hfill  {\it \thesection} \ {\it #1} \hfill \mbox{}}}
+\newcommand{\markcon}{\markboth{
+    \mbox{}\hfill {\it Contents} \hfill \mbox{}
+   \hspace{-\textwidth} \protect\rule[-2mm]{\textwidth}{.15mm}}{\protect\rule [-2mm]{\textwidth}{.15mm}
+  \hspace{-\textwidth}\mbox{} \hfill  {\it Contents} \hfill \mbox{}}}
+\newcommand{\markab}[1]{\markboth{
+     \mbox{}\hfill List of Abbreviations \hfill \mbox{}
+     \hspace{-\textwidth} \protect\rule[-2mm]{\textwidth}{.15mm}}{}}
+\newcommand{\marklt}{\markboth{
+     \mbox{}\hfill {\it List of Tables} \hfill \mbox{}
+     \hspace{-\textwidth} \protect\rule[-2mm]{\textwidth}{.15mm}}{\protect\rule [-2mm]{\textwidth}{.15mm}
+     \hspace{-\textwidth}\mbox{} \hfill  {\it List of Tables} \hfill \mbox{}}}
+\newcommand{\marklf}{\markboth{
+     \mbox{}\hfill {\it List of Figures} \hfill \mbox{}
+     \hspace{-\textwidth} \protect\rule[-2mm]{\textwidth}{.15mm}}{\protect\rule [-2mm]{\textwidth}{.15mm}
+     \hspace{-\textwidth}\mbox{} \hfill  {\it List of Figures} \hfill \mbox{}}}
+
+\setlength{\evensidemargin}{1.46cm}
+\setlength{\oddsidemargin}{1.46cm} \setlength{\topmargin}{2.31cm}
+\setlength{\headheight}{4mm} \setlength{\headsep}{1.2cm}
+\setlength{\textwidth}{13cm} \setlength{\textheight}{18.4cm}
+
+
+
+\renewcommand{\baselinestretch}{1.25}
+\renewcommand{\arraystretch}{1}
+\setlength{\arrayrulewidth}{0.75pt}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+
+
+%new settings
+%\setlength{\pagewidth}{17cm}
+%\setlength{\pageheight}{24cm}
+\setlength{\evensidemargin}{1.46cm}
+\setlength{\oddsidemargin}{1.46cm} \setlength{\topmargin}{2.31cm}
+\setlength{\headheight}{4mm} \setlength{\headsep}{1.2cm}
+\setlength{\textwidth}{13cm} \setlength{\textheight}{18.4cm}
+
+\renewcommand{\baselinestretch}{1.25}
+\renewcommand{\arraystretch}{1}
+\setlength{\arrayrulewidth}{0.75pt}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+\usepackage{graphicx,epsfig,fancybox,lscape}
+\usepackage{latexsym,psfig,amssymb, amsmath}
+\usepackage{subfigure}
+
+\usepackage{natbib}
+\usepackage[dvips]{color}
+\usepackage{shadow}
+%\usepackage{pstcol,pst-grad}
+\usepackage{graphics}
+\usepackage{amsmath,amsfonts}
+\usepackage{pstricks}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{amssymb}
+\usepackage{multirow}
+\usepackage{rotating}
+\usepackage{bm}
+
+
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{lem}[thm]{Lemma}
+\newenvironment{dfn}{\refstepcounter{thm} \bigskip \par \noindent
+    {\bf Definition \thethm}\ }{\bigskip \par}
+
+
+% FOI23a.TEX
+% begin preamble
+%
+%\documentclass{statsoc}
+%\usepackage{verbatim}
+%\input table
+%\newcommand{\dir}{c:/marc.ziv/sambvd}
+%\newcommand{\chs}[2]{\mbox{$\left(
+%\begin{array}{c}
+%#1\\#2
+%\end{array}
+%\right)
+%$}}
+
+%\newcommand{\trialr}{\mbox{\tiny trial(r)}}
+%\newcommand{\trialf}{\mbox{\tiny trial}}
+%\newcommand{\ind}{\mbox{\tiny indiv}}
+%\newcommand{\upi}[2]{\mbox{\tiny $(#1#2)$}}
+%\newcommand{\subZ}{\mbox{\tiny $Z$}}
+%\newcommand{\subS}{\mbox{\tiny $S$}}
+%\newcommand{\subT}{\mbox{\tiny $T$}}
+\newcommand{\prb}{\mbox{pr}}
+\newcommand{\VSDH}{\hat{\mbox{VSD}}}
+\newcommand{\etavec}{\mbox{\boldmath $\eta$}}
+\newcommand{\Thetavec}{\mbox{\boldmath $\Theta$}}
+\newcommand{\betavec}{\mbox{\boldmath $\beta$}}
+\newcommand{\bvec}{\mbox{\boldmath $b$}}
+\newcommand{\vvec}{\mbox{\boldmath $v$}}
+\newcommand{\xvec}{\mbox{\boldmath $x$}}
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\Y}{\mbox{\boldmath $Y$}}
+\newcommand{\g}{\mbox{\boldmath $g$}}
+\newcommand{\md}{\mbox{\boldmath $d$}}
+\newcommand{\mc}{\mbox{\boldmath $c$}}
+\newcommand{\N}{\mbox{\boldmath $N$}}
+\newcommand{\K}{\mbox{\boldmath $K$}}
+\newcommand{\G}{\mbox{\boldmath $G$}}
+\newcommand{\f}{\mbox{\boldmath $f$}}
+\newcommand{\y}{\mbox{\boldmath $y$}}
+\newcommand{\bft}{\mbox{\boldmath $t$}}
+\newcommand{\bfb}{\mbox{\boldmath $b$}}
+\newcommand{\X}{\mbox{\boldmath $X$}}
+\newcommand{\R}{\mbox{\boldmath $R$}}
+\newcommand{\V}{\mbox{\boldmath $V$}}
+\newcommand{\W}{\mbox{\boldmath $W$}}
+\newcommand{\T}{\mbox{\boldmath $T$}}
+\newcommand{\M}{\mbox{\boldmath $M$}}
+\newcommand{\F}{\mbox{\boldmath $F$}}
+\newcommand{\tvet}{\mbox{\boldmath $t$}}
+\newcommand{\U}{\mbox{\boldmath $U$}}
+\newcommand{\x}{\mbox{\boldmath $x$}}
+\newcommand{\bb}{\mbox{\boldmath $b$}}
+\newcommand{\vt}{\mbox{\boldmath $t$}}
+\newcommand{\bt}{\mbox{\boldmath $t$}}
+\newcommand{\bu}{\mbox{\boldmath $u$}}
+\newcommand{\z}{\mbox{\boldmath $z$}}
+\newcommand{\bfs}{\mbox{\boldmath $s$}}
+\newcommand{\Z}{\mbox{\boldmath $Z$}}
+\newcommand{\A}{\mbox{\boldmath $A$}}
+\newcommand{\Q}{\mbox{\boldmath $Q$}}
+\newcommand{\D}{\mbox{\boldmath $D$}}
+\newcommand{\boldb}{\mbox{\boldmath $b$}}
+\newcommand{\vSigma}{\mbox{\boldmath $\Sigma$}}
+\def\eqx"#1"{{\label{#1}}}
+\def\eqn"#1"{{\ref{#1}}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vTheta}{\mbox{\boldmath $\Theta$}}
+\newcommand{\vGamma}{\mbox{\boldmath $\Gamma$}}
+\newcommand{\bfbeta}{ {\mbox{\boldmath $\beta$}} }
+\newcommand{\bhat}{\widehat{\mbox{\boldmath$\beta$}}}
+\newcommand{\bfalpha}{ {\mbox{\boldmath $\alpha$}} }
+\newcommand{\ahat}{\widehat{\mbox{$\alpha$}}}
+\newcommand{\bftheta}{ {\mbox{\boldmath $\theta$}} }
+\newcommand{\bfdelta}{ {\mbox{\boldmath $\delta$}} }
+\newcommand{\bfgamma}{ {\mbox{\boldmath $\gamma$}} }
+\newcommand{\bfpsi}{ {\mbox{\boldmath $\psi$}} }
+\newcommand{\bfxi}{ {\mbox{\boldmath $\xi$}} }
+\newcommand{\bfeta}{ {\mbox{\boldmath $\eta$}} }
+\newcommand{\bfOmegaa}{ {\mbox{\boldmath $\Omegaa$}} }
+\newcommand{\bfpi}{ {\mbox{\boldmath $\pi$}} }
+\newcommand{\bfmu}{ {\mbox{\boldmath $\mu$}} }
+\newcommand{\bfnu}{ {\mbox{\boldmath $\nu$}} }
+\newcommand{\bfrho}{ {\mbox{\boldmath $\rho$}} }
+\newcommand{\bfsigma}{ {\mbox{\boldmath $\sigma$}} }
+\newcommand{\bfSigma}{ {\mbox{\boldmath $\Sigma$}} }
+\newcommand{\bfOmega}{ {\mbox{\boldmath $\Omega$}} }
+\newcommand{\bfp}{ {\bf p} }
+\newcommand{\bfP}{ {\bf P} }
+\newcommand{\bfu}{ {\bf u} }
+\newcommand{\bfY}{ {\bf Y} }
+\newcommand{\bfx}{{\bf x}}
+\newcommand{\bfX}{{\bf X}}
+\newcommand{\bfZ}{{\bf Z}}
+\newcommand{\bfy}{{\bf y}}
+\newcommand{\Var}{{\rm Var}}
+\newcommand{\trt}{{\rm trt}}
+\newcommand{\age}{{\rm age}}
+\newcommand{\city}{  {\rm city}  }
+\newcommand{\smoke}{  {\rm smoke}  }
+\newcommand{\Sin}{\sum_{i=1}^N}
+\newcommand{\Sjn}{\sum_{j=1}^N}
+\newcommand{\ui}{{\bf u}_i}
+\newcommand{\uj}{{\bf u}_j}
+\newcommand{\bfr}{ {\bf r} }
+\newcommand{\bfm}{ {\bf m} }
+\newcommand{\bfz}{ {\bf z} }
+
+\newcommand{\bfF}{ {\bf F} }
+\newcommand{\bfH}{ {\bf H} }
+\newcommand{\bfK}{ {\bf K} }
+\newcommand{\bfj}{ {\bf j} }
+\newcommand{\bfS}{ {\bf S} }
+\newcommand{\bfT}{ {\bf T} }
+\newcommand{\bfU}{ {\bf U} }
+\newcommand{\bfD}{ {\bf D} }
+\newcommand{\bfE}{ {\bf E} }
+\newcommand{\bfV}{ {\bf V} }
+\newcommand{\bfA}{ {\bf A} }
+\newcommand{\bfR}{ {\bf R} }
+\newcommand{\bfC}{ {\bf C} }
+\newcommand{\bfW}{ {\bf W} }
+\newcommand{\bfB}{ {\bf B} }
+\newcommand{\bfzero}{ {\bf 0}  }
+\newcommand{\bfone}{  {\bf 1}  }
+\newcommand{\Corr}{  {\rm Corr}  }
+\newcommand{\Cov}{  {\rm Cov}  }
+\newcommand{\Diag}{  {\rm Diag}  }
+\newcommand{\pr}{  {\rm pr}  }
+\newcommand{\bfg}{{\bf g}}
+\newcommand{\estimate}{  {\rm estimate}  }
+\newcommand{\true}{  {\rm true}  }
+\newcommand{\val}{  {\rm value}  }
+
+\newcommand{\bfeps}{ {\mbox{\boldmath $\varepsilon$}} }
+
+
+\newcommand{\ang}{$\rm \AA$}
+\newcommand{\tauross}{$\tau_{\mathrm{ross}}$}
+\newcommand{\Msun}{M$_{\odot}$}
+\newcommand{\Mbol}{M$_{\rm{bol}}$}
+\newcommand{\Rsun}{R$_{\odot}$}
+\newcommand{\Lsun}{L$_{\odot}$}
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+\newcommand{\bee}{\begin{eqnarray}}
+\newcommand{\ad}{$\theta_d$}
+\newcommand{\cc}{$\mathrm{^{12}C/^{13}C}$}
+\newcommand{\kn}{$\kappa_{\nu}$}
+\newcommand{\lnu}{$l_{\nu}$}
+\newcommand{\ha}{H$_{\alpha}$}
+\newcommand{\ea}{et al.}
+\newcommand{\ene}{\end{eqnarray}}
+\newcommand{\teff}{T$_{\mathrm{eff}}$}
+\newcommand{\mic}{$\mu$m}
+\newcommand{\hoogte}[1]{\rule{0pt}{#1}}
+\newcommand{\hminff}{H$^-_{\rm{ff}}$}
+\newcommand{\teffo}{T$_{\mathrm{eff,0}}$}
+\hyphenation{Kol-mo-go-rov}
+\hyphenation{Kol-mo-go-rov--Smir-nov}
+
+
+%full names
+\def\amerstat#1{{\it American Statistician,~}{\bf#1}}
+\def\annstat#1{{\it Annals of Statistics,~}{\bf#1}}
+\def\annmathstat#1{{\it Annals of Mathematical Statistics,~}{\bf#1}}
+\def\applstat#1{{\it Applied Statistics,~}{\bf#1}}
+\def\bmka#1{{\it Biometrika,~}{\bf#1}}
+\def\bmcs#1{{\it Biometrics,~}{\bf#1}}
+\def\bscs#1{{\it Biostatistics,~}{\bf#1}}
+\def\commstat#1{{\it Communications in Statistics - Theory and Methods,~}{\bf #1}}
+\def\compstat#1{{\it Computational Statistics and Data Analysis,~}{\bf #1}}
+\def\ieee#1{{\it IEEE Transactions on Automatic Control,~}{\bf #1}}
+\def\jcompgraph#1{{\it Journal of Computational and Graphical Statistics,~}{\bf#1}}
+\def\jedstat#1{{\it Journal of Educational Statistics,~}{\bf#1}}
+\def\jphbio#1{{\it Journal of Pharmacokinetics and Biopharmaceutics,~}{\bf#1}}
+\def\jasa#1{{\it Journal of the American Statistical Association,~}{\bf#1}}
+\def\jrssa#1{{\it Journal of the Royal Statistical Society~A,~}{\bf#1}}
+\def\jrssb#1{{\it Journal of the Royal Statistical Society~B,~}{\bf#1}}
+\def\jscs#1{{\it Journal of Statistical Computing and Simulation,~}{\bf#1}}
+\def\jspi#1{{\it Journal of Statistical Planning and Inference,~}{\bf#1}}
+\def\lectnotes#1{{\it Lecture Notes in Statistics,~}{\bf#1}}
+\def\lifedat#1{{\it Lifetime Data Analysis,~}{\bf#1}}
+\def\transrs#1{{\it Philosphical Transactions of the Royal Statistical Society of London, Series B,~}{\bf#1}}
+\def\procrs#1{{\it Proceedings of the Royal Society,~}{\bf#1}}
+\def\scandjs#1{{\it Scandinavian Journal of Statistics,~}{\bf#1}}
+\def\statsin#1{{\it Statistica Sinica,~}{\bf#1}}
+\def\statmed#1{{\it Statistics in Medicine,~}{\bf#1}}
+\def\statmeth#1{{\it Statistical Methods in Medical Research,~}{\bf#1}}
+\def\techno#1{{\it Technometrics,~}{\bf#1}}
+\def\anninmed#1{{\it Annals of Internal Medicine,~}{\bf#1}}
+\def\annsurgonc#1{{\it Annals of Surgical Oncology,~}{\bf#1}}
+\def\archopht#1{{\it Archives of Ophthalomology,~}{\bf#1}}
+\def\bjc#1{{\it British Journal of Cancer,~}{\bf#1}}
+\def\bmj#1{{\it British Medical Journal,~}{\bf#1}}
+\def\classpap#1{{\it Classic Papers and Current Comments,~}{\bf#1}}
+\def\clexpall#1{{\it Clinical and Experimental Allergy,~}{\bf#1}}
+\def\dij#1{{\it Drug Information Journal,~}{\bf#1}}
+\def\ejclinpharm#1{{\it European Journal of Clinical Pharmacology,~}{\bf#1}}
+\def\jco#1{{\it Journal of Clinical Oncology,~}{\bf#1}}
+\def\jinfd#1{{\it Journal of Infectious Diseases,~}{\bf#1}}
+\def\jama#1{{\it Journal of the American Medical Association,~}{\bf#1}}
+\def\jnci#1{{\it Journal of the National Cancer Institute,~}{\bf#1}}
+\def\lancet#1{{\it Lancet,~}{\bf#1}}
+\def\multbr#1{{\it Multivariate Behavioral Research,~}{\bf#1}}
+\def\nature#1{{\it Nature,~}{\bf#1}}
+\def\natmed#1{{\it Nature Medicine,~}{\bf#1}}
+\def\nejm#1{{\it New England Journal of Medicine,~}{\bf#1}}
+\def\science#1{{\it Science,~}{\bf#1}}
+\def\who#1{{\it WHO Offset Publication,~}{\bf#1}}
+
+
+\def\mybf{\boldmath\previousfont\bf}
+
+\newsavebox{\savepar}
+\newenvironment{boxit}{\begin{lrbox}{\savepar}
+\begin{minipage}[b]{5.0in}}
+{\end{minipage}\end{lrbox}\fbox{\usebox{\savepar}}}
+
+\raggedbottom
+
+%Settings Gerda en Lieven
+%\setlength{\evensidemargin}{0.5cm}
+%\setlength{\oddsidemargin}{0.5cm}
+%\setlength{\topmargin}{-0.6cm}
+%\setlength{\textwidth}{15cm}
+%\setlength{\textheight}{22.3cm}
+%\setlength{\topskip}{1cm}
+%\setlength{\footskip}{1.3cm}
+
+
+\begin{document}
+
+
+
+\include{docttit}
+\newpage\thispagestyle{empty}
+%\maketitle
+%\include{doctfor}
+
+%\include{doctthk}
+
+%\newpage\thispagestyle{empty}
+%\include{Acknowledgement}
+
+
+%\newpage\thispagestyle{empty} $^{}$
+%\newpage
+%\thispagestyle{empty}
+%\pagenumbering{roman}
+\tableofcontents
+%\newpage\thispagestyle{empty}
+
+
+%\newpage\thispagestyle{empty} $^{}$
+%\newpage
+\pagenumbering{arabic}
+
+
+%\part{Dose-response Modelling of Microarray Data in Drug Development Experiments}
+\include{TestTrend1}
+\include{TestTrend2}
+\include{IsoGeneLib3}
+
+
+
+
+\newpage\thispagestyle{empty} $^{}$
+\newpage
+%\part{Discussion}
+%\include{Discussion}
+
+
+\include{PubWork}
+\include{References}
+
+
+
+%\appendix
+%\include{AppenA}
+
+%\newpage\thispagestyle{empty} $^{}$
+%\newpage
+%\include{AppenB}
+
+
+%\newpage\thispagestyle{empty} $^{}$
+%\newpage
+%\include{doctnl0a}
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%\newpage\thispagestyle{empty}
+%\marksam{Samenvatting} \marksection{Samenvatting}
+
+%\newpage\thispagestyle{empty}
+
+

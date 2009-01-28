@@ -1,0 +1,818 @@
+%!PS-Adobe-3.0 EPSF-3.0
+%%DocumentNeededResources: font Helvetica
+%%+ font Helvetica-Bold
+%%+ font Helvetica-Oblique
+%%+ font Helvetica-BoldOblique
+%%+ font Symbol
+%%Title: R Graphics Output
+%%Creator: R Software
+%%Pages: (atend)
+%%BoundingBox: 48 138 564 654
+%%EndComments
+%%BeginProlog
+/bp  { gs gs } def
+% begin .ps.prolog
+/gs  { gsave } def
+/gr  { grestore } def
+/ep  { showpage gr gr } def
+/m   { moveto } def
+/l  { rlineto } def
+/np  { newpath } def
+/cp  { closepath } def
+/f   { fill } def
+/o   { stroke } def
+/c   { newpath 0 360 arc } def
+/r   { 4 2 roll moveto 1 copy 3 -1 roll exch 0 exch rlineto 0 rlineto -1 mul 0 exch rlineto closepath } def
+/p1  { stroke } def
+/p2  { gsave bg fill grestore newpath } def
+/p3  { gsave bg fill grestore stroke } def
+/t   { 6 -2 roll moveto gsave rotate
+       ps mul neg 0 2 1 roll rmoveto
+       1 index stringwidth pop
+       mul neg 0 rmoveto show grestore } def
+/cl  { grestore gsave newpath 3 index 3 index moveto 1 index
+       4 -1 roll lineto  exch 1 index lineto lineto
+       closepath clip newpath } def
+/rgb { setrgbcolor } def
+/s   { scalefont setfont } def
+% end   .ps.prolog
+%%IncludeResource: font Helvetica
+/Helvetica findfont
+dup length dict begin
+  {1 index /FID ne {def} {pop pop} ifelse} forall
+  /Encoding ISOLatin1Encoding def
+  currentdict
+  end
+/Font1 exch definefont pop
+%%IncludeResource: font Helvetica-Bold
+/Helvetica-Bold findfont
+dup length dict begin
+  {1 index /FID ne {def} {pop pop} ifelse} forall
+  /Encoding ISOLatin1Encoding def
+  currentdict
+  end
+/Font2 exch definefont pop
+%%IncludeResource: font Helvetica-Oblique
+/Helvetica-Oblique findfont
+dup length dict begin
+  {1 index /FID ne {def} {pop pop} ifelse} forall
+  /Encoding ISOLatin1Encoding def
+  currentdict
+  end
+/Font3 exch definefont pop
+%%IncludeResource: font Helvetica-BoldOblique
+/Helvetica-BoldOblique findfont
+dup length dict begin
+  {1 index /FID ne {def} {pop pop} ifelse} forall
+  /Encoding ISOLatin1Encoding def
+  currentdict
+  end
+/Font4 exch definefont pop
+%%IncludeResource: font Symbol
+/Symbol findfont
+dup length dict begin
+  {1 index /FID ne {def} {pop pop} ifelse} forall
+  currentdict
+  end
+/Font5 exch definefont pop
+%%EndProlog
+%%Page: 1 1
+bp
+86.97 444.47 200.04 615.03 cl
+0 setgray
+0.75 setlinewidth
+[] 0 setdash
+1 setlinecap
+1 setlinejoin
+10.00 setmiterlimit
+91.15 494.97 1.78 c p1
+91.15 498.95 1.78 c p1
+91.15 458.41 1.78 c p1
+126.05 553.36 1.78 c p1
+126.05 562.62 1.78 c p1
+126.05 561.55 1.78 c p1
+160.95 580.59 1.78 c p1
+160.95 595.13 1.78 c p1
+160.95 608.72 1.78 c p1
+195.85 450.79 1.78 c p1
+195.85 512.84 1.78 c p1
+195.85 462.64 1.78 c p1
+48.00 138.00 564.00 654.00 cl
+0 setgray
+0.75 setlinewidth
+[] 0 setdash
+1 setlinecap
+1 setlinejoin
+10.00 setmiterlimit
+np
+91.15 444.47 m
+104.70 0 l
+o
+np
+91.15 444.47 m
+0 -4.75 l
+o
+np
+108.60 444.47 m
+0 -4.75 l
+o
+np
+126.05 444.47 m
+0 -4.75 l
+o
+np
+143.50 444.47 m
+0 -4.75 l
+o
+np
+160.95 444.47 m
+0 -4.75 l
+o
+np
+178.40 444.47 m
+0 -4.75 l
+o
+np
+195.85 444.47 m
+0 -4.75 l
+o
+/ps 8 def /Font1 findfont 8 s
+91.15 427.36 (1.0) .5 0 0 t
+126.05 427.36 (2.0) .5 0 0 t
+160.95 427.36 (3.0) .5 0 0 t
+195.85 427.36 (4.0) .5 0 0 t
+np
+86.97 462.44 m
+0 147.77 l
+o
+np
+86.97 462.44 m
+-4.76 0 l
+o
+np
+86.97 492.00 m
+-4.76 0 l
+o
+np
+86.97 521.55 m
+-4.76 0 l
+o
+np
+86.97 551.10 m
+-4.76 0 l
+o
+np
+86.97 580.65 m
+-4.76 0 l
+o
+np
+86.97 610.21 m
+-4.76 0 l
+o
+75.56 462.44 (6.9) .5 0 90 t
+75.56 492.00 (7.0) .5 0 90 t
+75.56 521.55 (7.1) .5 0 90 t
+75.56 551.10 (7.2) .5 0 90 t
+75.56 580.65 (7.3) .5 0 90 t
+75.56 610.21 (7.4) .5 0 90 t
+np
+86.97 444.47 m
+113.07 0 l
+0 170.56 l
+-113.07 0 l
+0 -170.56 l
+o
+48.00 396.00 220.00 654.00 cl
+/ps 12 def /Font1 findfont 12 s
+0 setgray
+143.50 408.36 (dose) .5 0 0 t
+56.55 529.75 (gene exspression) .5 0 90 t
+86.97 444.47 200.04 615.03 cl
+/ps 7 def /Font1 findfont 7 s
+0 setgray
+91.15 482.34 (+) .5 0 0 t
+126.05 557.41 (+) .5 0 0 t
+160.95 593.04 (+) .5 0 0 t
+195.85 473.66 (+) .5 0 0 t
+91.15 480.09 (*) .5 0 0 t
+126.05 539.11 (*) .5 0 0 t
+160.95 539.11 (*) .5 0 0 t
+195.85 539.11 (*) .5 0 0 t
+91.15 542.01 (*) .5 0 0 t
+126.05 542.01 (*) .5 0 0 t
+160.95 542.01 (*) .5 0 0 t
+195.85 471.40 (*) .5 0 0 t
+0.75 setlinewidth
+[] 0 setdash
+1 setlinecap
+1 setlinejoin
+10.00 setmiterlimit
+np
+91.15 484.11 m
+34.90 59.03 l
+34.90 0 l
+34.90 0 l
+o
+0.75 setlinewidth
+[ 3.00 5.00] 0 setdash
+np
+91.15 546.03 m
+34.90 0 l
+34.90 0 l
+34.90 -70.61 l
+o
+48.00 396.00 220.00 654.00 cl
+/ps 10 def /Font2 findfont 10 s
+0 setgray
+143.50 630.93 (Gene: 200767_s_at) .5 0 0 t
+258.97 444.47 372.04 615.03 cl
+258.97 444.47 372.04 615.03 cl
+0 setgray
+0.75 setlinewidth
+[] 0 setdash
+1 setlinecap
+1 setlinejoin
+10.00 setmiterlimit
+263.15 450.79 1.78 c p1
+263.15 456.26 1.78 c p1
+263.15 471.60 1.78 c p1
+298.05 537.90 1.78 c p1
+298.05 555.66 1.78 c p1
+298.05 513.57 1.78 c p1
+332.95 608.72 1.78 c p1
+332.95 598.57 1.78 c p1
+332.95 608.72 1.78 c p1
+367.85 471.60 1.78 c p1
+367.85 462.26 1.78 c p1
+367.85 454.53 1.78 c p1
+48.00 138.00 564.00 654.00 cl
+0 setgray
+0.75 setlinewidth
+[] 0 setdash
+1 setlinecap
+1 setlinejoin
+10.00 setmiterlimit
+np
+263.15 444.47 m
+104.70 0 l
+o
+np
+263.15 444.47 m
+0 -4.75 l
+o
+np
+280.60 444.47 m
+0 -4.75 l
+o
+np
+298.05 444.47 m
+0 -4.75 l
+o
+np
+315.50 444.47 m
+0 -4.75 l
+o
+np
+332.95 444.47 m
+0 -4.75 l
+o
+np
+350.40 444.47 m
+0 -4.75 l
+o
+np
+367.85 444.47 m
+0 -4.75 l
+o
+/ps 8 def /Font1 findfont 8 s
+263.15 427.36 (1.0) .5 0 0 t
+298.05 427.36 (2.0) .5 0 0 t
+332.95 427.36 (3.0) .5 0 0 t
+367.85 427.36 (4.0) .5 0 0 t
+np
+258.97 475.25 m
+0 126.54 l
+o
+np
+258.97 475.25 m
+-4.76 0 l
+o
+np
+258.97 517.43 m
+-4.76 0 l
+o
+np
+258.97 559.61 m
+-4.76 0 l
+o
+np
+258.97 601.79 m
+-4.76 0 l
+o
+247.56 475.25 (11.3) .5 0 90 t
+247.56 517.43 (11.4) .5 0 90 t
+247.56 559.61 (11.5) .5 0 90 t
+247.56 601.79 (11.6) .5 0 90 t
+np
+258.97 444.47 m
+113.07 0 l
+0 170.56 l
+-113.07 0 l
+0 -170.56 l
+o
+220.00 396.00 392.00 654.00 cl
+/ps 12 def /Font1 findfont 12 s
+0 setgray
+315.50 408.36 (dose) .5 0 0 t
+228.55 529.75 (gene exspression) .5 0 90 t
+258.97 444.47 372.04 615.03 cl
+/ps 7 def /Font1 findfont 7 s
+0 setgray
+263.15 457.78 (+) .5 0 0 t
+298.05 533.94 (+) .5 0 0 t
+332.95 603.57 (+) .5 0 0 t
+367.85 461.03 (+) .5 0 0 t
+263.15 455.53 (*) .5 0 0 t
+298.05 530.59 (*) .5 0 0 t
+332.95 530.59 (*) .5 0 0 t
+367.85 530.59 (*) .5 0 0 t
+263.15 529.51 (*) .5 0 0 t
+298.05 529.51 (*) .5 0 0 t
+332.95 529.51 (*) .5 0 0 t
+367.85 458.77 (*) .5 0 0 t
+0.75 setlinewidth
+[] 0 setdash
+1 setlinecap
+1 setlinejoin
+10.00 setmiterlimit
+np
+263.15 459.55 m
+34.90 75.06 l
+34.90 0 l
+34.90 0 l
+o
+0.75 setlinewidth
+[ 3.00 5.00] 0 setdash
+np
+263.15 533.53 m
+34.90 0 l
+34.90 0 l
+34.90 -70.74 l
+o
+220.00 396.00 392.00 654.00 cl
+/ps 10 def /Font2 findfont 10 s
+0 setgray
+315.50 630.93 (Gene: 202483_s_at) .5 0 0 t
+430.97 444.47 544.04 615.03 cl
+430.97 444.47 544.04 615.03 cl
+0 setgray
+0.75 setlinewidth
+[] 0 setdash
+1 setlinecap
+1 setlinejoin
+10.00 setmiterlimit
+435.15 580.44 1.78 c p1
+435.15 547.85 1.78 c p1
+435.15 571.17 1.78 c p1
+470.05 537.55 1.78 c p1
+470.05 531.29 1.78 c p1
+470.05 521.84 1.78 c p1
+504.95 455.52 1.78 c p1
+504.95 464.50 1.78 c p1
+504.95 450.79 1.78 c p1
+539.85 585.76 1.78 c p1
+539.85 580.44 1.78 c p1
+539.85 608.72 1.78 c p1
+48.00 138.00 564.00 654.00 cl
+0 setgray
+0.75 setlinewidth
+[] 0 setdash
+1 setlinecap
+1 setlinejoin
+10.00 setmiterlimit
+np
+435.15 444.47 m
+104.70 0 l
+o
+np
+435.15 444.47 m
+0 -4.75 l
+o
+np
+452.60 444.47 m
+0 -4.75 l
+o
+np
+470.05 444.47 m
+0 -4.75 l
+o
+np
+487.50 444.47 m
+0 -4.75 l
+o
+np
+504.95 444.47 m
+0 -4.75 l
+o
+np
+522.40 444.47 m
+0 -4.75 l
+o
+np
+539.85 444.47 m
+0 -4.75 l
+o
+/ps 8 def /Font1 findfont 8 s
+435.15 427.36 (1.0) .5 0 0 t
+470.05 427.36 (2.0) .5 0 0 t
+504.95 427.36 (3.0) .5 0 0 t
+539.85 427.36 (4.0) .5 0 0 t
+np
+430.97 445.16 m
+0 147.96 l
+o
+np
+430.97 445.16 m
+-4.76 0 l
+o
+np
+430.97 469.82 m
+-4.76 0 l
+o
+np
+430.97 494.48 m
+-4.76 0 l
+o
+np
+430.97 519.14 m
+-4.76 0 l
+o
+np
+430.97 543.80 m
+-4.76 0 l
+o
+np
+430.97 568.46 m
+-4.76 0 l
+o
+np
+430.97 593.12 m
+-4.76 0 l
+o
+419.56 445.16 (11.2) .5 0 90 t
+419.56 469.82 (11.3) .5 0 90 t
+419.56 494.48 (11.4) .5 0 90 t
+419.56 519.14 (11.5) .5 0 90 t
+419.56 543.80 (11.6) .5 0 90 t
+419.56 568.46 (11.7) .5 0 90 t
+419.56 593.12 (11.8) .5 0 90 t
+np
+430.97 444.47 m
+113.07 0 l
+0 170.56 l
+-113.07 0 l
+0 -170.56 l
+o
+392.00 396.00 564.00 654.00 cl
+/ps 12 def /Font1 findfont 12 s
+0 setgray
+487.50 408.36 (dose) .5 0 0 t
+400.55 529.75 (gene exspression) .5 0 90 t
+430.97 444.47 544.04 615.03 cl
+/ps 7 def /Font1 findfont 7 s
+0 setgray
+435.15 564.72 (+) .5 0 0 t
+470.05 528.46 (+) .5 0 0 t
+504.95 455.17 (+) .5 0 0 t
+539.85 589.87 (+) .5 0 0 t
+435.15 513.86 (*) .5 0 0 t
+470.05 513.86 (*) .5 0 0 t
+504.95 513.86 (*) .5 0 0 t
+539.85 587.62 (*) .5 0 0 t
+435.15 562.46 (*) .5 0 0 t
+470.05 526.20 (*) .5 0 0 t
+504.95 520.26 (*) .5 0 0 t
+539.85 520.26 (*) .5 0 0 t
+0.75 setlinewidth
+[] 0 setdash
+1 setlinecap
+1 setlinejoin
+10.00 setmiterlimit
+np
+435.15 517.88 m
+34.90 0 l
+34.90 0 l
+34.90 73.76 l
+o
+0.75 setlinewidth
+[ 3.00 5.00] 0 setdash
+np
+435.15 566.48 m
+34.90 -36.25 l
+34.90 -5.94 l
+34.90 0 l
+o
+392.00 396.00 564.00 654.00 cl
+/ps 10 def /Font2 findfont 10 s
+0 setgray
+487.50 630.93 (Gene: 211970_x_at) .5 0 0 t
+86.97 186.47 200.04 357.03 cl
+86.97 186.47 200.04 357.03 cl
+0 setgray
+0.75 setlinewidth
+[] 0 setdash
+1 setlinecap
+1 setlinejoin
+10.00 setmiterlimit
+91.15 310.22 1.78 c p1
+91.15 312.40 1.78 c p1
+91.15 302.77 1.78 c p1
+126.05 285.31 1.78 c p1
+126.05 285.31 1.78 c p1
+126.05 290.42 1.78 c p1
+160.95 215.18 1.78 c p1
+160.95 201.05 1.78 c p1
+160.95 192.79 1.78 c p1
+195.85 320.94 1.78 c p1
+195.85 324.70 1.78 c p1
+195.85 350.72 1.78 c p1
+48.00 138.00 564.00 654.00 cl
+0 setgray
+0.75 setlinewidth
+[] 0 setdash
+1 setlinecap
+1 setlinejoin
+10.00 setmiterlimit
+np
+91.15 186.47 m
+104.70 0 l
+o
+np
+91.15 186.47 m
+0 -4.75 l
+o
+np
+108.60 186.47 m
+0 -4.75 l
+o
+np
+126.05 186.47 m
+0 -4.75 l
+o
+np
+143.50 186.47 m
+0 -4.75 l
+o
+np
+160.95 186.47 m
+0 -4.75 l
+o
+np
+178.40 186.47 m
+0 -4.75 l
+o
+np
+195.85 186.47 m
+0 -4.75 l
+o
+/ps 8 def /Font1 findfont 8 s
+91.15 169.36 (1.0) .5 0 0 t
+126.05 169.36 (2.0) .5 0 0 t
+160.95 169.36 (3.0) .5 0 0 t
+195.85 169.36 (4.0) .5 0 0 t
+np
+86.97 208.65 m
+0 145.44 l
+o
+np
+86.97 208.65 m
+-4.76 0 l
+o
+np
+86.97 232.89 m
+-4.76 0 l
+o
+np
+86.97 257.13 m
+-4.76 0 l
+o
+np
+86.97 281.37 m
+-4.76 0 l
+o
+np
+86.97 305.61 m
+-4.76 0 l
+o
+np
+86.97 329.85 m
+-4.76 0 l
+o
+np
+86.97 354.09 m
+-4.76 0 l
+o
+75.56 208.65 (11.4) .5 0 90 t
+75.56 232.89 (11.5) .5 0 90 t
+75.56 257.13 (11.6) .5 0 90 t
+75.56 281.37 (11.7) .5 0 90 t
+75.56 305.61 (11.8) .5 0 90 t
+75.56 329.85 (11.9) .5 0 90 t
+75.56 354.09 (12.0) .5 0 90 t
+np
+86.97 186.47 m
+113.07 0 l
+0 170.56 l
+-113.07 0 l
+0 -170.56 l
+o
+48.00 138.00 220.00 396.00 cl
+/ps 12 def /Font1 findfont 12 s
+0 setgray
+143.50 150.36 (dose) .5 0 0 t
+56.55 271.75 (gene exspression) .5 0 90 t
+86.97 186.47 200.04 357.03 cl
+/ps 7 def /Font1 findfont 7 s
+0 setgray
+91.15 306.70 (+) .5 0 0 t
+126.05 285.25 (+) .5 0 0 t
+160.95 201.24 (+) .5 0 0 t
+195.85 330.35 (+) .5 0 0 t
+91.15 262.14 (*) .5 0 0 t
+126.05 262.14 (*) .5 0 0 t
+160.95 262.14 (*) .5 0 0 t
+195.85 328.10 (*) .5 0 0 t
+91.15 304.44 (*) .5 0 0 t
+126.05 282.99 (*) .5 0 0 t
+160.95 263.54 (*) .5 0 0 t
+195.85 263.54 (*) .5 0 0 t
+0.75 setlinewidth
+[] 0 setdash
+1 setlinecap
+1 setlinejoin
+10.00 setmiterlimit
+np
+91.15 266.16 m
+34.90 0 l
+34.90 0 l
+34.90 65.96 l
+o
+0.75 setlinewidth
+[ 3.00 5.00] 0 setdash
+np
+91.15 308.46 m
+34.90 -21.44 l
+34.90 -19.46 l
+34.90 0 l
+o
+48.00 138.00 220.00 396.00 cl
+/ps 10 def /Font2 findfont 10 s
+0 setgray
+143.50 372.93 (Gene: 211983_x_at) .5 0 0 t
+258.97 186.47 372.04 357.03 cl
+258.97 186.47 372.04 357.03 cl
+0 setgray
+0.75 setlinewidth
+[] 0 setdash
+1 setlinecap
+1 setlinejoin
+10.00 setmiterlimit
+263.15 350.72 1.78 c p1
+263.15 337.88 1.78 c p1
+263.15 318.66 1.78 c p1
+298.05 296.94 1.78 c p1
+298.05 312.82 1.78 c p1
+298.05 282.83 1.78 c p1
+332.95 211.32 1.78 c p1
+332.95 232.65 1.78 c p1
+332.95 192.79 1.78 c p1
+367.85 343.63 1.78 c p1
+367.85 333.09 1.78 c p1
+367.85 305.92 1.78 c p1
+48.00 138.00 564.00 654.00 cl
+0 setgray
+0.75 setlinewidth
+[] 0 setdash
+1 setlinecap
+1 setlinejoin
+10.00 setmiterlimit
+np
+263.15 186.47 m
+104.70 0 l
+o
+np
+263.15 186.47 m
+0 -4.75 l
+o
+np
+280.60 186.47 m
+0 -4.75 l
+o
+np
+298.05 186.47 m
+0 -4.75 l
+o
+np
+315.50 186.47 m
+0 -4.75 l
+o
+np
+332.95 186.47 m
+0 -4.75 l
+o
+np
+350.40 186.47 m
+0 -4.75 l
+o
+np
+367.85 186.47 m
+0 -4.75 l
+o
+/ps 8 def /Font1 findfont 8 s
+263.15 169.36 (1.0) .5 0 0 t
+298.05 169.36 (2.0) .5 0 0 t
+332.95 169.36 (3.0) .5 0 0 t
+367.85 169.36 (4.0) .5 0 0 t
+np
+258.97 205.10 m
+0 131.93 l
+o
+np
+258.97 205.10 m
+-4.76 0 l
+o
+np
+258.97 238.09 m
+-4.76 0 l
+o
+np
+258.97 271.07 m
+-4.76 0 l
+o
+np
+258.97 304.05 m
+-4.76 0 l
+o
+np
+258.97 337.03 m
+-4.76 0 l
+o
+247.56 205.10 (11.3) .5 0 90 t
+247.56 238.09 (11.4) .5 0 90 t
+247.56 271.07 (11.5) .5 0 90 t
+247.56 304.05 (11.6) .5 0 90 t
+247.56 337.03 (11.7) .5 0 90 t
+np
+258.97 186.47 m
+113.07 0 l
+0 170.56 l
+-113.07 0 l
+0 -170.56 l
+o
+220.00 138.00 392.00 396.00 cl
+/ps 12 def /Font1 findfont 12 s
+0 setgray
+315.50 150.36 (dose) .5 0 0 t
+228.55 271.75 (gene exspression) .5 0 90 t
+258.97 186.47 372.04 357.03 cl
+/ps 7 def /Font1 findfont 7 s
+0 setgray
+263.15 333.98 (+) .5 0 0 t
+298.05 295.76 (+) .5 0 0 t
+332.95 210.49 (+) .5 0 0 t
+367.85 325.78 (+) .5 0 0 t
+263.15 277.82 (*) .5 0 0 t
+298.05 277.82 (*) .5 0 0 t
+332.95 277.82 (*) .5 0 0 t
+367.85 323.53 (*) .5 0 0 t
+263.15 331.73 (*) .5 0 0 t
+298.05 293.51 (*) .5 0 0 t
+332.95 265.88 (*) .5 0 0 t
+367.85 265.88 (*) .5 0 0 t
+0.75 setlinewidth
+[] 0 setdash
+1 setlinecap
+1 setlinejoin
+10.00 setmiterlimit
+np
+263.15 281.84 m
+34.90 0 l
+34.90 0 l
+34.90 45.71 l
+o
+0.75 setlinewidth
+[ 3.00 5.00] 0 setdash
+np
+263.15 335.75 m
+34.90 -38.22 l
+34.90 -27.63 l
+34.90 0 l
+o
+220.00 138.00 392.00 396.00 cl
+/ps 10 def /Font2 findfont 10 s
+0 setgray
+315.50 372.93 (Gene: 212988_x_at) .5 0 0 t
+ep
+%%Trailer
+%%Pages: 1
+%%EOF
