@@ -44,6 +44,8 @@ Isoqqstat <- function(x, y, fudge, niter, seed){
    # Calculate the expected SAM score
    perm.mean <- apply(to1, 1, mean)
    aa1 = cbind(d.sort, perm.mean, d.sort - perm.mean, d.sort.list)
+   row.names(aa1) <- row.names(y)[d.sort.list]
+
 
    ## Williams
    d <- L[[2]]
@@ -52,6 +54,7 @@ Isoqqstat <- function(x, y, fudge, niter, seed){
    # Calculate the expected SAM score
    perm.mean <- apply(to2, 1, mean)
    aa2 = cbind(d.sort, perm.mean, d.sort - perm.mean, d.sort.list)
+   row.names(aa2) <- row.names(y)[d.sort.list]
 
    ## Marcus
    d <- L[[3]]
@@ -60,6 +63,7 @@ Isoqqstat <- function(x, y, fudge, niter, seed){
    # Calculate the expected SAM score
    perm.mean <- apply(to3,1,mean)
    aa3 = cbind(d.sort, perm.mean, d.sort - perm.mean, d.sort.list)
+   row.names(aa3) <- row.names(y)[d.sort.list]
 
    ## M
    d <- L[[4]]
@@ -68,6 +72,7 @@ Isoqqstat <- function(x, y, fudge, niter, seed){
    # Calculate the expected SAM score
    perm.mean <- apply(to4, 1, mean)
    aa4 = cbind(d.sort, perm.mean, d.sort - perm.mean, d.sort.list)
+   row.names(aa4) <- row.names(y)[d.sort.list]
 
    ## MM
    d <- L[[5]]
@@ -77,8 +82,11 @@ Isoqqstat <- function(x, y, fudge, niter, seed){
    # Calculate the expected SAM score
    perm.mean <- apply(to5, 1, mean)
    aa5 <- cbind(d.sort, perm.mean, d.sort - perm.mean, d.sort.list)
+   row.names(aa5) <- row.names(y)[d.sort.list]
 
+     
    res <- list(aa1 = aa1, to1 = to1, aa2 = aa2, to2 = to2, aa3 = aa3,
                to3 = to3, aa4 = aa4, to4 = to4, aa5 = aa5, to5 = to5)
+   
    return(res)
 }
