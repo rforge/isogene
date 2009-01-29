@@ -24,7 +24,7 @@ IsoTestSAM(x, y, fudge, niter, seed, FDR, stat)
  the SAM procedure in a matrix of 5 columns. The first colomn
  is the probe id, the second column is the corresponding row number
  of the probe in the dataset, and the third column is the ordered test statistic values,
-and the last column is the q-values of the SAM procedure. The last two columns
+and the fourth column is the q-values of the SAM procedure. The last two columns
 are raw p-values based on permutations and BH adjusted p-values.
 }
 \author{Lin et al.}
