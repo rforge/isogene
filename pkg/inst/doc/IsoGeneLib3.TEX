@@ -47,9 +47,9 @@ permutations and adjust them using the BH- and BY-FDR procedures.
 The supporting functions \texttt{IsoGene1()} and \texttt{IsoGenem()}
 are used to calculate the five test statistics from isotonic
 regression for one gene and all the genes, respectively. On the other hand,
-the SAM procedure is also implemented to reduce some computational time as 
+the SAM procedure is also implemented to reduce some computational time as
 compared to the permutation method. The main function of the SAM is \texttt{IsoTestSAM()},
-with supporting functions \texttt{Isofudge(), IsoGenemSAM(), Isoqqstat(), Isoallfdr(), Isoqval()}. 
+with supporting functions \texttt{Isofudge(), IsoGenemSAM(), Isoqqstat(), Isoallfdr(), Isoqval()}.
 The remaining functions \texttt{IsopvaluePlot(), IsoBHPlot(), IsoSAMPlot()
 IsoPlot1()} and \texttt{IsoPlot2()} are used to display the data and
 to show the results of testing procedures.
@@ -125,7 +125,7 @@ is discussed later, $k$ and $l$ are the index of the two groups of
 array, and $j$ is the index of the array.
 
 For $F$-type test statistic, such as $\bar{E}_{01}^2$, the modified test
-statistic is given by, 
+statistic is given by,
 \begin{equation}
 \bar{E}_{01}^{2SAM}= \frac{\sqrt{\hat{\sigma}^2_{H_0}-\hat{\sigma}^2_{H_1}}} {\sqrt{\hat{\sigma}^2_{H_0}}+s_{0}},
 \label{ttestSAM}
@@ -311,8 +311,8 @@ the coefficient of variation of the SAM test statistics.
 
 \subsection{Data Example}
 
-The data used for the analysis presented below are outcome of a dose-response microarray experiment 
-consisting of four dose levels. Three microarray samples are available at each dose level (hence, in total 
+The data used for the analysis presented below are outcome of a dose-response microarray experiment
+consisting of four dose levels. Three microarray samples are available at each dose level (hence, in total
 gene expression was measured for 12 arrays). Each array consists of 16,998 genes.
 
 A dataframe with the log2 transformed gene intensities is loaded
@@ -751,16 +751,16 @@ $p$-values for $\bar{E}_{01}^2$.}} \label{IsoBHPlot}
 
 
 \section{Significance Analysis of Dose-response Microarray Data (SAM)}
-In this library, we also implement the significance analysis of microarray (SAM) for testing 
+In this library, we also implement the significance analysis of microarray (SAM) for testing
 for the dose-response relationship under order restricted alternatives. The SAM procedure was proposed
 by Tusher \textit{et al.}\ (2001) for finding differentially expressed genes by using permutations while controlling for
-the FDR. 
+the FDR.
 
 The main function for the SAM procedure is \texttt{IsoTestSAM()}. Within the main function, \texttt{Isofudge()}
 calculates the fudge factor in the SAM test statistic, \texttt{IsoGenemSAM()} is used
-to obtain the values of SAM test statistics, \texttt{Isoqqstat()} calculates the SAM test statistic 
+to obtain the values of SAM test statistics, \texttt{Isoqqstat()} calculates the SAM test statistic
 for the required number of permutations specified by users, \texttt{Isoallfdr()} obtains the delta table in the SAM procedure,
-\texttt{Isoqval()} computes q-values of the SAM.  %And we can use \texttt{IsoSAMPlot}() to display outputs of the SAM. 
+\texttt{Isoqval()} computes q-values of the SAM.  %And we can use \texttt{IsoSAMPlot}() to display outputs of the SAM.
 
 The syntax of these function is as follows,
 \begin{center}
@@ -776,7 +776,7 @@ The syntax of these function is as follows,
 \end{center}
 
 
-We use the same data as above to obtain the fudge factor of the SAM procedure for 
+We use the same data as above to obtain the fudge factor of the SAM procedure for
 the five test statistics by using function \texttt{Isofudge()}.
 \begin{center}
 \begin{boxit}
@@ -787,7 +787,7 @@ the five test statistics by using function \texttt{Isofudge()}.
 \end{boxit}
 \end{center}
 
-The output of this function gives a vector of five fudge factors for each of the test statistics. 
+The output of this function gives a vector of five fudge factors for each of the test statistics.
 \begin{center}
 \begin{boxit}
 \texttt{
@@ -797,8 +797,8 @@ The output of this function gives a vector of five fudge factors for each of the
 \end{center}
 Note that the fudge factor of the $\bar{E}_{01}^2$ is obtained based on the algorithm for F test
 statistics given by Tusher \textit{et al.}\ (2001) and should be used with cautions. The performance of using
-the fudge factor as compared to the $t$-type test statistics has not yet investigated in term of 
-power and control of the FDR. Therefore, it's advisable to use the fudge factor in the $t$-type test statistics. 
+the fudge factor as compared to the $t$-type test statistics has not yet investigated in term of
+power and control of the FDR. Therefore, it's advisable to use the fudge factor in the $t$-type test statistics.
 
 \begin{center}
 \begin{boxit}
@@ -817,26 +817,26 @@ The output of the function gives
 \end{boxit}
 \end{center}
 
-The following codes produce the values of the five test statistics for the first ten genes, 
+The following codes produce the values of the five test statistics for the first ten genes,
 
 \begin{center}
 \begin{boxit}
 { \small
 \begin{verbatim}
 > SAMtest.stat[[1]][1:10]
-[1] 0.26447986 0.18999517 0.48012060 0.23728408 0.10796339 
+[1] 0.26447986 0.18999517 0.48012060 0.23728408 0.10796339
  0.14052809 0.42501333 0.09426217 0.11186881 0.41814965
 > SAMtest.stat[[2]][1:10]
-[1] -0.89438193  0.33788341  1.17016612  0.44809154 -0.37792503 
+[1] -0.89438193  0.33788341  1.17016612  0.44809154 -0.37792503
 0.16928575  1.40636038 -0.42466794  0.04789247 -1.26568858
 > SAMtest.stat[[3]][1:10]
-[1] -1.0376186  0.8067224  1.3904565  0.8226705 -0.4703604  
+[1] -1.0376186  0.8067224  1.3904565  0.8226705 -0.4703604
 0.5463295  1.5671898 -0.4904282 -0.4930563 -1.5825487
 > SAMtest.stat[[4]][1:10]
-[1] -0.8990584  0.6872440  1.2812581  0.6610949 -0.4531919  
-0.4158778  1.3448651 -0.4422525 -0.3838333 -1.2290796 
+[1] -0.8990584  0.6872440  1.2812581  0.6610949 -0.4531919
+0.4158778  1.3448651 -0.4422525 -0.3838333 -1.2290796
 > SAMtest.stat[[5]][1:10]
-[1] -0.9924257  0.7608038  1.4288688  0.7586334 -0.4985868  
+[1] -0.9924257  0.7608038  1.4288688  0.7586334 -0.4985868
 0.4826826  1.4670386 -0.5074367 -0.4436651 -1.3792490
 > SAMtest.stat[[6]][1:10]
 2   3   4   5   6   7   8   9  10  11
@@ -847,7 +847,7 @@ The following codes produce the values of the five test statistics for the first
 \end{center}
 
 
-To obtain the SAM test statistics for one of five test statistic values, for example, the modified M test, 
+To obtain the SAM test statistics for one of five test statistic values, for example, the modified M test,
 with the required number of permutations specified by users and compute the
 delta table in the SAM procedure, we can use function \texttt{Isoqqstat()} and \texttt{Isoallfdr()} as follows,
 \begin{center}
@@ -878,8 +878,8 @@ delta table in the SAM procedure, we can use function \texttt{Isoqqstat()} and \
 \end{boxit}
 \end{center}
 Note that in \texttt{Isoallfdr()}, ddelta is left blank, with default value taken
-from the data, i.e., all the percentiles of the standard errors. 
-By fixing the 50\% FDR at 0.05, the corresponding delta value is 0.83 
+from the data, i.e., all the percentiles of the standard errors.
+By fixing the 50\% FDR at 0.05, the corresponding delta value is 0.83
 (marked in-between the dashed lines) as we obtain from the delta table above,
 the number of differentially expressed genes are 872 with potential 42 genes as false positives.
 
@@ -888,12 +888,12 @@ the number of differentially expressed genes are 872 with potential 42 genes as 
 \begin{center}
 \begin{boxit}
 \begin{verbatim}
-> qval <- Isoqval(delta=0.83, allfdr=dtable, qqstat=qqstat, 
+> qval <- Isoqval(delta=0.83, allfdr=dtable, qqstat=qqstat,
 stat="ModifM")
 > dim(qval[[1]])
 [1] 16998     3
 > qval[[1]]
-       [,1]      [,2]   [,3]    
+       [,1]      [,2]   [,3]
  1774   1773   -6.263922 0.0139
  7761   7760   -5.998759 0.0000
  1775   1774   -5.577230 0.0000
@@ -922,11 +922,44 @@ stat="ModifM")
 By specifying the desired delta value, delta table, and the user-defined test statistic in function \texttt{Isoqval()}, we can obtain
 the q value of each gene from the SAM procedure. The first object of the output is the list of q values for
 all the genes, ranking from the smallest test statistic value to the largest; while the second object is the list of q values
-for the 872 differentially expressed genes, ranking from the smallest test statistic value to the largest. The first column of the output matrices is the row number of genes in 
-the data set, the second column is the observed modified M test statistic value, and the last column is the q value of the 
-SAM procedure for both objects.   
+for the 872 differentially expressed genes, ranking from the smallest test statistic value to the largest. The first column of the output matrices is the row number of genes in
+the data set, the second column is the observed modified M test statistic value, and the last column is the q value of the
+SAM procedure for both objects.
 
-Finally, the graphic output of the SAM procedure can be produced using function \texttt{IsoSAMPlot()}. 
+
+Alternatively, we can use function \texttt{IsoTestSAM()} to summarize all the steps above and give results of a list of significant findings, which is the same second output of function \texttt{Isoqval()}.
+\begin{center}
+\begin{boxit}
+\begin{verbatim}
+> IsoTestSAM(x, y=data, fudge=c(0,"pooled"), niter=100, 
+seed=123, FDR=0.05, stat=c("E2","Williams","Marcus","M","ModifM"))
+\end{verbatim}
+\end{boxit}
+\end{center}
+
+Specifying the same options as above in this function, we can obtain the list of significant genes as follows: the first column is the Probe.ID, the second column is the corresponding row numbers of the genes in the data set, the third column is the observed modified M SAM test statistics, the fourth column is the $q$ values of genes by using the SAM procedure. The last two columns gives additional information by calculating the $p$ values based on the SAM permutation matrix and adjusting these $p$ values using the BH-FDR procedure.
+\begin{center}
+\begin{boxit}
+\begin{verbatim}
+> IsoSAM.obj <- IsoTestSAM (x, y=data, fudge="pooled", 
+niter=100, seed=123, FDR=0.05, stat="ModifM")
+> IsoSAM.obj 
+    Probe.ID row.number  stat.val qvalue       pvalue  adj.pvalue
+1       1774       1773 -6.263922 0.0139 1.176609e-05 0.00937500
+2       7762       7760 -5.998759 0.0000 1.176609e-05 0.00937500
+3       1775       1774 -5.577230 0.0000 1.176609e-05 0.00937500
+4       4625       4624 -5.384857 0.0000 1.176609e-05 0.00937500
+.
+.
+869     5521       5520  6.702022 0.0000 1.176609e-05 0.00937500
+870     8711       8709  7.216424 0.0000 5.883045e-06 0.00937500
+871    16624      16622  8.000395 0.0000 0.000000e+00 0.00000000
+872     5132       5131  8.785246 0.0000 0.000000e+00 0.00000000
+\end{verbatim}
+\end{boxit}
+\end{center}
+
+Finally, the graphic output of the SAM procedure can be produced using function \texttt{IsoSAMPlot()}.
 \begin{center}
 \begin{boxit}
 \begin{verbatim}
@@ -937,8 +970,8 @@ Finally, the graphic output of the SAM procedure can be produced using function 
 \end{center}
 
 This function requires the use of output from \texttt{Isoqqstat()} and \texttt{Isoallfdr()}, given a user-defined test statistic
-and the FDR level to control. We still take the modified M test statistic for example, at the FDR of 0.05. There are four plots 
-yielded from the SAM procedure. Panel $a$ shows the FDR (either 50\% or 90\% (more stringent)) vs. $\Delta$, from which, user can choose the delta value with 
+and the FDR level to control. We still take the modified M test statistic for example, at the FDR of 0.05. There are four plots
+yielded from the SAM procedure. Panel $a$ shows the FDR (either 50\% or 90\% (more stringent)) vs. $\Delta$, from which, user can choose the delta value with
 the corresponding desired FDR. Panel $b$ shows the number of significant genes vs. $\Delta$, and panel $c$ shows the number of false positives (either 50\% or 90\%) vs. $\Delta$. Finally panel $d$ shows the observed vs. the expected (obtained from permutations) test statistics, in which the red dots are those genes called differentially expressed.
 \begin{center}
 \begin{boxit}
@@ -951,10 +984,14 @@ the corresponding desired FDR. Panel $b$ shows the number of significant genes v
 \begin{figure}[!h]
 \centering
 {\includegraphics[width=.7\textwidth]{SAMPlot.eps}}
-\caption{\em {The SAM plots: a.Plot of the FDR vs. delta; b. Plot of number of significant genes vs. delta; c. Plot of 
+\caption{\em {The SAM plots: a.Plot of the FDR vs. delta; b. Plot of number of significant genes vs. delta; c. Plot of
 number of false positives vs. delta; d. Plot of observed vs. expected test statistics.}} \label{IsoBHPlot}
 \end{figure}
 
+
+
+\clearpage
+\newpage
 
 
 \section*{References}
@@ -1018,7 +1055,7 @@ Genetics and Molecular Biology}, \textbf{6(1)}, article 26.%
 T., G\"{o}hlmann, H.W.H., De Bondt, A., Perera, T., Geerts, T.,
 Bijnens, L. (2008) An investigation on performance of Significance
 Analysis of Microarray (SAM) for the comparisons of several
-treatments with one control in the presence of small variance genes. 
+treatments with one control in the presence of small variance genes.
 \textit{Biometrical Journal}, Multiple Comparison Problem, Special Issue,
 \textbf{50(5)}, 801--823.%
 
