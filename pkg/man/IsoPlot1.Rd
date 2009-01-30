@@ -5,11 +5,12 @@
 Plot of the data points and the sample means at each dose
 }
 \usage{
-IsoPlot1(x, y)
+IsoPlot1(x, y, mode=c("Continuous","Ordinal"))
 }
 \arguments{
   \item{x}{ indicates the dose levels }
   \item{y}{ is the gene expression for one gene }
+  \item{mode}{ specifies the dose levels to continuous or ordinal. The default is continous.}
 }
 \value{
 Plot of the data points and the sample means for each dose is produced.

@@ -6,11 +6,12 @@ Plot of the data points and the isotonic means in a (likely) increasing
 or decreasing trend
 }
 \usage{
-IsoPlot2(x, y)
+IsoPlot2(x, y, mode=c("Continuous","Ordinal"))
 }
 \arguments{
   \item{x}{indicates the dose levels }
   \item{y}{is the gene expression for one gene}
+  \item{mode}{ specifies the dose levels to continuous or ordinal. The default is continous.}
 }
 \value{
 Plot of the data points and the isotonic means is produced.
