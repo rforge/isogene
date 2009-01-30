@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.141592-1.40.4 (MiKTeX 2.7) (preloaded format=latex 2008.10.15)  28 JAN 2009 16:48
+This is pdfTeX, Version 3.141592-1.40.4 (MiKTeX 2.7) (preloaded format=latex 2008.10.15)  30 JAN 2009 11:08
 entering extended mode
-**C:/Data/DoseResp/Rlibrary/SVN/pkg/tex/docfile2.TEX
-(C:/Data/DoseResp/Rlibrary/SVN/pkg/tex/docfile2.TEX
+**C:/Data/DoseResp/Rlibrary/SVN/pkg/inst/doc/docfile2.TEX
+(C:/Data/DoseResp/Rlibrary/SVN/pkg/inst/doc/docfile2.TEX
 LaTeX2e <2005/12/01>
 Babel <v3.8h> and hyphenation patterns for english, dumylang, nohyphenation, ge
 rman, ngerman, french, loaded.
@@ -461,11 +461,11 @@ LaTeX Warning: There were multiply-defined labels.
  ) 
 Here is how much of TeX's memory you used:
  4251 strings out of 95341
- 47368 string characters out of 1184219
+ 47383 string characters out of 1184219
  126209 words of memory out of 1500000
  7308 multiletter control sequences out of 110000
  27374 words of font info for 111 fonts, out of 1200000 for 2000
  16 hyphenation exceptions out of 8191
- 30i,8n,37p,1063b,296s stack positions out of 5000i,500n,10000p,200000b,5000s
+ 30i,8n,37p,1068b,296s stack positions out of 5000i,500n,10000p,200000b,5000s
 
-Output written on docfile2.dvi (39 pages, 107596 bytes).
+Output written on docfile2.dvi (39 pages, 107608 bytes).
