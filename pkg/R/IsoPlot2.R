@@ -1,9 +1,7 @@
 IsoPlot2 <- function (x, y, type = c("Continuous","Ordinal")) {
-     options(warn=-1)
-     if (is.na(match(type, c("Ordinal", "Continuous"))))
-        {print("Error: The dose can be only Continuous or Ordinal")}
-     else {
-      miny <- min(y)
+      if (is.na(match(type, c("Ordinal", "Continuous"))))
+        {print("Error: The dose can be only Continuous or Ordinal")
+        } else { miny <- min(y)
 	    maxy <- max(y)
 	    ordx <- order(x)
       unx <- sort(unique(x))
@@ -17,7 +15,6 @@ IsoPlot2 <- function (x, y, type = c("Continuous","Ordinal")) {
       dire <- IsoGene1(x, as.numeric(y))[[11]]
 
       if ( missing(type) | type== "Continuous" ){
-         options(warn=0)
          plot(sort(x), y1, lwd=2, xlab = "Doses", ylab = "Gene Expression")
          points(sort(unique(x)), y.m, pch = "+", cex = 0.85,lwd=2)
          if (dire == "u") {
@@ -32,8 +29,7 @@ IsoPlot2 <- function (x, y, type = c("Continuous","Ordinal")) {
 
       	if (type == "Ordinal") {
        	catx <- factor(x , levels = sort(unique.default(x)), labels=unx ,ordered =F)
-       	
-      	a <-c(1:length(unx))
+       	a <-c(1:length(unx))
       	plot(a ,  ylim=c(miny,maxy), pch="", ylab = "Gene Expression", xlab ="Doses",axes = FALSE)
       	axis(1, sort(unique(a)),  as.character(unx))
       	axis(2)
