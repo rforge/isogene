@@ -7,14 +7,14 @@
   test, Williams, Marcus, M, and the modified M).
 }
 \usage{
-IsoTestSAM(x, y, fudge, niter, seed, FDR, stat)
+IsoTestSAM(x, y, fudge, niter, FDR, stat)
 }
 \arguments{
-  \item{x}{is the dose levels }
-  \item{y}{is the data frame of the gene expression with Probe ID as row names }
-  \item{fudge}{is the option used for calculating the fudge factor in the SAM test statistic, either ="pooled" the fudge factor will be obtained in the program, or =0 then no fudge factor is used}
-  \item{niter}{is the number of permutations to use }
-  \item{seed}{random seed to generate the permutations }
+  \item{x}{numeric vector containing the dose levels }
+  \item{y}{data frame of the gene expression with Probe ID as row names }
+  \item{fudge}{option used for calculating the fudge factor in the SAM test 
+    statistic, either \code{"pooled"} (fudge factor will be automatically computed in the function), or \code{"none"} if no fudge factor is used}
+  \item{niter}{number of permutations to use}
   \item{FDR}{choose the desired FDR to control}
   \item{stat}{choose one of the five test statistics to use}
 }
@@ -39,6 +39,6 @@ are raw p-values based on permutations and BH adjusted p-values.
   y1 <- matrix(rnorm(9000, 1,1),1000,9) ## 1000 genes with no trends
   y2 <- matrix(c(rnorm(3000, 1,1),rnorm(3000,2,1),rnorm(3000,3,1)),1000,9) ## 1000 genes with increasing trends
   y <- data.frame(rbind(y1, y2)) ##y needs to be a data frame
-  SAM.obj <- IsoTestSAM(x, y, fudge="pooled", niter=100, seed=123, FDR=0.05, stat="E2") 
+  SAM.obj <- IsoTestSAM(x, y, fudge="pooled", niter=100, FDR=0.05, stat="E2") 
 }
 \keyword{htest}

@@ -1,5 +1,5 @@
 
-IsoRawp <- function(x, y, niter, seed) {
+IsoRawp <- function(x, y, niter) {
 
   if (niter > 2500) {
     jmatsize <- 2500 # TODO turn into function argument
@@ -48,7 +48,6 @@ IsoRawp <- function(x, y, niter, seed) {
   exp.M.dn  <- ff("exp.M.dn",  vmode = "double", dim = c(nrow(y), niter))
   exp.I.dn  <- ff("exp.I.dn",  vmode = "double", dim = c(nrow(y), niter))
 
-  set.seed(seed)
   x.niter <- t(replicate(niter, sample(x)))
 
   ffmatrices <- c("exp.E.up", "exp.W.up", "exp.WC.up", "exp.M.up", "exp.I.up",

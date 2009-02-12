@@ -5,8 +5,8 @@
 #    col 3: permutation p value
 #    col 4: BH adjusted p value
 #    col 5: q value
-IsoTestSAM <- function(x, y, fudge, niter, seed, FDR, stat) {
-  qqstat <- Isoqqstat(x, y, fudge, niter, seed)
+IsoTestSAM <- function(x, y, fudge, niter, FDR, stat) {
+  qqstat <- Isoqqstat(x, y, fudge, niter)
   allfdr <- Isoallfdr(qqstat, , stat)
   del.table <- data.frame(allfdr)
   min_fdr <- min(na.exclude(del.table[, 5]))
@@ -50,7 +50,7 @@ IsoTestSAM <- function(x, y, fudge, niter, seed, FDR, stat) {
 
   qap <- cbind(q.value, adj.p.value)
 
-  significant <- qap[qap[,3] <= FDR,,drop=FALSE] # TV: no drop for one row matrices
+  significant <- qap[qap[,3] <= FDR,, drop = FALSE] # TV: no drop for one row matrices
   sign.genes <- data.frame(row.names(y[significant[,1],]), significant)
   sign.genes1 <- sign.genes[order(significant[,2]),,drop=FALSE] # TV: no drop for one row matrices
   row.names(sign.genes1) <- 1:nrow(sign.genes1)

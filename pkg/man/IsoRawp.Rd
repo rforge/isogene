@@ -6,13 +6,12 @@ The function calculates the raw one-sided and two-sided p-values for each
 test statistic using permutations.
 }
 \usage{
-IsoRawp(x, y, niter, seed)
+IsoRawp(x, y, niter)
 }
 \arguments{
-  \item{x}{ is the dose levels }
-  \item{y}{ is the data frame of the gene expression with Probe ID as row names }
-  \item{niter}{ is the number of permutations to use }
-  \item{seed}{ random seed to generate the permutations }
+  \item{x}{numeric vector containing the dose levels}
+  \item{y}{a data frame of the gene expression with Probe IDs as row names}
+  \item{niter}{number of permutations to use}
 }
 \details{
 The number of permutations to use can be chosen based on the number of
@@ -39,11 +38,11 @@ A list of components
    raw p-values for each test statistic}
 }
 \references{ 
-Testing for Trend in Dose-Response Microarray Experiments: a Comparison
-of Testing Procedures, Multiplicity, and Resampling-Based Inference, Lin
-et al. 2007, Stat. App. in Gen. & Mol. Bio., 6(1), article 26.
-  }
-\author{ Lin et al. }
+  Lin et al. (2007). Microarray Experiments: a Comparis. on
+  of Testing Procedures, Multiplicity, and Resampling-Based Inference, 
+  Stat. App. in Gen. & Mol. Bio., 6(1), article 26.
+}
+\author{Lin et al.}
 \note{ 
 For each gene, the one-sided p-values are calculated from 
 \eqn{\min(p^{Up}, p^{Down}}{min(p^Up, p^Down)} and the 
@@ -61,7 +60,7 @@ p-values calculated for each ordered alternative.
   y2 <- matrix(c(rnorm(30, 1,1), rnorm(30,2,1),
                  rnorm(30,3,1)), 10, 9)  # 10 genes with increasing trends
   y <- data.frame(rbind(y1, y2))  # y needs to be a data frame 
-  rp <- IsoRawp(x, y, niter = 1000, seed = 1234)
+  rp <- IsoRawp(x, y, niter = 1000)
   rp
 }
 }

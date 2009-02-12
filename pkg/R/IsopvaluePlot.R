@@ -1,4 +1,4 @@
-IsopvaluePlot <- function(x, y, niter, seed, stat=c("E2","Williams","Marcus","M","ModifM") ){
+IsopvaluePlot <- function(x, y, niter, stat=c("E2","Williams","Marcus","M","ModifM") ){
 
   # TODO: add check on niter
   Probe.ID <- row.names(y)
@@ -20,8 +20,6 @@ IsopvaluePlot <- function(x, y, niter, seed, stat=c("E2","Williams","Marcus","M"
       ModifM = obs[[10]])
   
   exp.up <- exp.dn <- 1:niter
-
-  set.seed(seed)
 
   ### replicate ?
   

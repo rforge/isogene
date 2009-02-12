@@ -7,14 +7,13 @@
 	and the modified M).
 }
 \usage{
-  Isoqqstat(x, y, fudge, niter, seed)
+  Isoqqstat(x, y, fudge, niter)
 }
 \arguments{
   \item{x}{indicates the dose levels}
   \item{y}{gene expression for all genes}
   \item{fudge}{the fudge factor value to be used in the SAM test statistics: either fudge="pooled" then it is calculated by the function, or fudge=0 then no fudge factor is used}
   \item{niter}{number of permutations used in the SAM procedure}
-  \item{seed}{random seed to generate the permutations}
 }
 \value{
   A list with components 
@@ -84,7 +83,7 @@
   y2 <- matrix(c(rnorm(3000, 1,1), rnorm(3000,2,1), rnorm(3000,3,1)),
                1000, 9)  # 1000 genes with increasing trends
   y <- data.frame(rbind(y1, y2))  # y needs to be a data frame
-  qqstat <- Isoqqstat(x, y, fudge="pooled", niter = 100, seed = 123)
+  qqstat <- Isoqqstat(x, y, fudge="pooled", niter = 100)
 }
 \keyword{htest}
 

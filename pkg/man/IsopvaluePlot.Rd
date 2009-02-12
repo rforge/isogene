@@ -7,13 +7,12 @@ and decreasing ordered alternatives for one gene. The p-values (\eqn{p^{up}}{p^u
 \eqn{p^{down}}{p^down}) are obtained from the plot of null distribution and observed statistics.
 }
 \usage{
-IsopvaluePlot(x, y, niter, seed, stat = c("E2", "Williams", "Marcus", "M", "ModifM"))
+IsopvaluePlot(x, y, niter, stat = c("E2", "Williams", "Marcus", "M", "ModifM"))
 }
 \arguments{
   \item{x}{the dose levels }
   \item{y}{the gene expressions}
   \item{niter}{the number of permutations to use}
-  \item{seed}{the random number to generate the permutations }
   \item{stat}{choose one of the five test statistics to use}
 }
 \value{
@@ -29,6 +28,6 @@ IsopvaluePlot(x, y, niter, seed, stat = c("E2", "Williams", "Marcus", "M", "Modi
 x <- c(rep(1,3), rep(2,3), rep(3,3), rep(4,3))
 y <- c(rnorm(3,1,1), rnorm(3,2,1), rnorm(3,3,1), rnorm(3,4,1)) 
 
-IsopvaluePlot(x, y, niter = 1000, seed = 1234, stat = "Williams")
+IsopvaluePlot(x, y, niter = 1000, stat = "Williams")
 }
 \keyword{hplot}

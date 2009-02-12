@@ -38,7 +38,7 @@ returns four plots produced using the SAM procedure.
   y1 <- matrix(rnorm(9000, 1,1),1000,9) ## 1000 genes with no trends
   y2 <- matrix(c(rnorm(3000, 1,1),rnorm(3000,2,1),rnorm(3000,3,1)),1000,9) ## 1000 genes with increasing trends
   y <- data.frame(rbind(y1, y2)) ##y needs to be a data frame
-  qqstat <- Isoqqstat(x, y, fudge="pooled", niter=100, seed=123)
+  qqstat <- Isoqqstat(x, y, fudge="pooled", niter=100)
   allfdr <- Isoallfdr(qqstat, , stat = "E2")
   IsoSAMPlot(qqstat, allfdr, FDR = 0.1, stat = "E2")
 }

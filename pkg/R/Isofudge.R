@@ -8,7 +8,7 @@ xfudge <- function(x.dif, si2) {
   xs.perc.gr <- as.numeric(cut(si2, breaks=xs.perc, include.lowest=TRUE))
   xs.mad <- matrix(0, length(xs.alpha), length(xs.perc)-1)
   for (ii in 1:100){
-    k0 <- xs.perc.gr==ii
+    k0 <- xs.perc.gr == ii
     xs.mad[,ii] <- apply(x.dif[k0]/outer(si2[k0],xs.alpha,"+"),2,mad, constant = 1)
   }
   xcv <- function(x) sqrt(var(x)) / mean(x)   # CV
