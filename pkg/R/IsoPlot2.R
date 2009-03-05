@@ -1,6 +1,8 @@
-IsoPlot2 <- function (x, y, type = c("Continuous","Ordinal")) {
+IsoPlot2 <- function (x, y, type= c("Continuous", "Ordinal")) {
+      options(warn=-1)
       if (is.na(match(type, c("Ordinal", "Continuous"))))
-        {print("Error: The dose can be only Continuous or Ordinal")
+        { options(warn=0)
+        print("Error: The dose can be only Continuous or Ordinal")
         } else { miny <- min(y)
 	    maxy <- max(y)
 	    ordx <- order(x)
