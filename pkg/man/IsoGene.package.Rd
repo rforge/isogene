@@ -43,9 +43,7 @@ The package includes the following functions:
   \item{\code{\link{IsoTestSAM}}}{the SAM procedure to obtain a list of significant genes }
   \item{\code{\link{IsoSAMPlot}}}{SAM plot}
   \item{\code{\link{IsoBHPlot}}}{plot of adjusted BH and BY p-values}
- \item{\code{\link{IsoPlot1}}}{plot of data and sample means}
- \item{\code{\link{IsoPlot2}}}{plot of data and isotonic means in an
-   increasing or decreasing trend}
+ \item{\code{\link{IsoPlot}}}{plot of data, sample means, and a fitted isotonic regression curve with a likely direction}
 \item{\code{\link{IsopvaluePlot}}}{plot of p-values obtained using
   permutation under increasing or decreasing alternatives}
 }

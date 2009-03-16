@@ -17,7 +17,7 @@ IsoBHPlot <- function(rp, FDR, stat = c("E2", "Williams", "Marcus", "M", "ModifM
 
   plot(1:nrow(rp), sort(adjp[,1]),
        col = 4, pch = ".", lty = 1, xlab = "index",
-       ylab = "Adjusted Aymptotic P values")
+       ylab = "Adjusted P values")
 
   lines(1:nrow(rp), sort(adjp[,1]), lty = 1, col = 1)
   lines(1:nrow(rp), sort(adjp[,4]), lty = 4, col = 2)

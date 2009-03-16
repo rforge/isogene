@@ -63,5 +63,5 @@ IsopvaluePlot <- function(x, y, niter, stat=c("E2","Williams","Marcus","M","Modi
    abline(v = obs.dn, col = 7, lwd = 3)
 
    lines(dx$x, dx$y, lwd = 3, col = 5)
-   title(paste("Gene", Probe.ID, ":p-value^{down}=", rawp.dn, sep = '')) 
+   title(paste("Gene: ", Probe.ID, ":p-value^{down}=", rawp.dn, sep = '')) 
 }
