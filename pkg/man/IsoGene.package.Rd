@@ -59,8 +59,8 @@ et al. 2007, Stat. App. in Gen. & Mol. Bio., 6(1), article 26.
 }
 \keyword{package}
 \seealso{
-  \code{\link[<multtest>:<multtest>-package]{<multtest>}},
-  \code{\link{IsoGene1}},   \code{\link{IsoGenem}},\code{\link{IsoRawp}}, \code{\link{IsoTestBH}}, \code{\link{IsoGenemSAM}},
+  \code{\link[multtest]{mt.rawp2adjp}},
+  \code{\link{IsoGene1}},  \code{\link{IsoGenem}},\code{\link{IsoRawp}}, \code{\link{IsoTestBH}}, \code{\link{IsoGenemSAM}},
   \code{\link{Isofudge}}, \code{\link{Isoqqstat}},\code{\link{Isoallfdr}},\code{\link{Isoqval}},\code{\link{IsoTestSAM}},
-  \code{\link{IsoSAMPlot}},\code{\link{IsoBHPlot}}, \code{\link{IsoPlot1}}, \code{\link{IsoPlot2}}.
+  \code{\link{IsoSAMPlot}}, \code{\link{IsoBHPlot}}, \code{\link{IsoPlot}}.
 }
