@@ -1,2 +1,2 @@
 export(Isoallfdr, IsoBHPlot, Isofudge, IsoGene1, IsoGenem, IsoGenemSAM,
-       IsoPlot, IsopvaluePlot, Isoqqstat, Isoqval, IsoRawp, IsoSAMPlot, IsoTestBH, IsoTestSAM)
+ IsoPlot, IsopvaluePlot, Isoqqstat, Isoqval, IsoRawp, IsoSAMPlot, IsoTestBH, IsoTestSAM)
