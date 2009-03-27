@@ -21,7 +21,7 @@ Isoqqstat <- function(x, y, fudge, niter){
    xiter.index <- t(sapply(1:niter, function(i) sample(x)))  # TODO TV: sample stuff to remove, cf. other code
    to1 <- to2 <- to3 <- to4 <- to5 <- matrix(0, nrow(y), niter)
    
-   fudge.factor <- switch(
+   fudge.factor <- switch(fudge,
        pooled = Isofudge(x, y),
        none = c(rep(0, 5)))
    
