@@ -12,7 +12,7 @@
 \arguments{
   \item{x}{indicates the dose levels}
   \item{y}{gene expression for all genes}
-  \item{fudge}{the fudge factor value to be used in the SAM test statistics: either fudge="pooled" then it is calculated by the function, or fudge=0 then no fudge factor is used}
+  \item{fudge}{the fudge factor value to be used in the SAM test statistics: either fudge="pooled" then it is calculated by the function, or fudge="none" then no fudge factor is used}
   \item{niter}{number of permutations used in the SAM procedure}
 }
 \value{
