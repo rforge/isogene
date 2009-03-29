@@ -661,7 +661,7 @@ The syntax of these function is as follows,
 <<IsoSyntax,eval=FALSE>>=
   Isofudge(x, y)
   IsoGenemSAM(x, y, fudge.factor)
-  Isoqqstat(x, y, fudge=c(0,"pooled"), niter=100, seed=123)
+  Isoqqstat(x, y, fudge=c(0,"pooled"), niter=100)
   Isoallfdr(qqstat, ddelta, stat = c("E2","Williams","Marcus","M","ModifM"))
   Isoqval(delta, allfdr, qqstat, stat)	
 @
@@ -711,7 +711,7 @@ with the required number of permutations specified by users and compute the
 delta table in the SAM procedure, we can use function \texttt{Isoqqstat()} and \texttt{Isoallfdr()} as follows,
 
 <<qqstat>>=
-	qqstat <- Isoqqstat(x, data, fudge="pooled", niter=100, seed=123)
+	qqstat <- Isoqqstat(x, data, fudge="pooled", niter=100)
   dtable <-  Isoallfdr(qqstat, , stat="ModifM")
   head(dtable, n = 4)
   # TODO: identify row with largest FDR < 0.05
