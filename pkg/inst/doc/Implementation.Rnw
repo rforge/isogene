@@ -51,7 +51,7 @@ the SAM procedure is also implemented to reduce some computational time as
 compared to the permutation method. The main function of the SAM is \texttt{IsoTestSAM()},
 with supporting functions \texttt{Isofudge(), IsoGenemSAM(), Isoqqstat(), Isoallfdr(), Isoqval()}.
 The remaining functions \texttt{IsopvaluePlot(), IsoBHPlot(), IsoSAMPlot()
-IsoPlot1()} and \texttt{IsoPlot2()} are used to display the data and
+IsoPlot()} is used to display the data and
 to show the results of testing procedures.
 
 \section{Testing for Trends: Testing Procedures, Multiplicity and Resampling-based Inference}
@@ -389,7 +389,7 @@ help system:
 
 %The help file of \texttt{IsoGene} package is shown in
 %Figure~\ref{IsoGeneHelp}.
-First, \texttt{IsoPlot1()} and \texttt{IsoPlot2()} can be used to
+First, \texttt{IsoPlot()} can be used to
 explore the data. Second, \texttt{IsoGene1()} and
 \texttt{IsoGenem()} can be used to calculate the test statistics.
 Third, \texttt{IsoRawp()} provides the output for two-sided or
@@ -408,7 +408,7 @@ The first stage of the analysis (which is also the time consuming stage) consist
 \begin{center}
 \begin{boxit}
 \begin{verbatim}
-IsoRawp(x, data, niter=1000, seed=1234)
+IsoRawp(x, data, niter=1000)
 \end{verbatim}
 \end{boxit}
 \end{center}
@@ -425,22 +425,27 @@ Note that \texttt{rp} is an R object, which contains all the output produced by 
 
 \subsection{Exploring the Data}
 
-\texttt{IsoPlot1()} and \texttt{IsoPlot2()} are two plotting
-functions that can be used to explore the data. Scatterplots for the
+\texttt{IsoPlot()} can be used to explore the data. Scatterplots for the
 second gene in the dataset (\texttt{data[2,]}) can be produced by
 
-<<IsoPlot>>=
-  x <- c(rep(1,3), rep(2,3), rep(3,3), rep(4,3))
-  gene1 <- data[2,]
-  par(mfrow = c(1,2))
-  IsoPlot1(x, y = gene1)
-  IsoPlot2(x, y = gene1)	
+<<loadData>>=
+	data(exampleData)
+@
+
+
+
+<<IsoPlot, fig = TRUE, include = FALSE, width=9, height=5>>=
+  x <- c(rep(1, 3), rep(2, 3), rep(3, 3), rep(4, 3))
+  gene1 <- as.vector(data.matrix(exampleData[2,]))
+  par(mfrow = c(1, 2))
+  IsoPlot(x, y = gene1) 
+  IsoPlot(x, y = gene1, type = "ordinal", add.curve = TRUE)	
 @
  
 
 \begin{figure}[!h]
 \centering
-{\includegraphics[width=.6\textwidth]{exgene.eps}}
+{\includegraphics[width=.6\textwidth]{IsoGene-IsoPlot}}
 \caption{\em{The data points are plotted as circles, while sample
 means as pluses. The right panel additionally plots the fitted
 increasing isotonic regression model (blue solid line).}}
@@ -484,7 +489,7 @@ We use the first 10 genes as an example to illustrate the use of
 function \texttt{IsoGenem()}:
 
 <<IsoGenem>>=
-	statm <- IsoGenem(x, data[1:10,])
+	statm <- IsoGenem(x, exampleData[1:10,])
   statm
 @
 
@@ -502,17 +507,16 @@ for the five test statistics. The function \texttt{IsoRawp()} can be
 used in the following way:
 
 <<IsoRawp>>=
-  rawp <- IsoRawp(x=x, y=data, niter=1000, seed=1234)
+  rawp <- IsoRawp(x = x, y = exampleData, niter = 2) # TODO change to 1000 in final version
 @
 
 
 The four arguments in this function need to be specified, with no
 default pre-specified values. \texttt{x} is the explanatory variable
 indicating the dose levels for all the samples in the data.
-\texttt{data} is the data frame of the gene expression.
+\texttt{data} is the data frame of gene expression values. % TODO remove "data frame"
 \texttt{niter} defines the number of permutations used to
-approximate the null distribution and \texttt{seed} determines the
-random seed used to generate the permutations. The output item
+approximate the null distribution. The output item
 \texttt{rawp} contains four objects with $p$-values for the five
 test statistics: the first one contains the two-sided $p$-values,
 the second contains the one-sided $p$-values, the third contains
@@ -545,8 +549,8 @@ to show the $p^{Up}$ and $p^{Down}$-values for a given test
 statistic:
 
 <<eval=FALSE>>=
-  IsopvaluePlot(x, y, niter, seed, stat = c("E2", "Williams",
-"Marcus", "M", "ModifM"))
+  IsopvaluePlot(x, y, niter, stat = c("E2", "Williams",
+    "Marcus", "M", "ModifM"))
 @
 
 
@@ -560,8 +564,7 @@ compared to the $p^{Down}$ since $T^{Up} \gg T^{Down}$, which
 implies a possible increasing trend in the data.
 
 <<IsopvaluePlot, fig=TRUE, include=FALSE>>=
-	gene1 <- data[2,]
-  IsopvaluePlot(x, gene1, niter=1000, seed=123, stat="E2")
+  IsopvaluePlot(x, gene1, niter=1000, stat="E2")
 @
 
   
@@ -587,7 +590,7 @@ five test statistics, the FDR level, and the type of multiplicity
 adjustment (BH-FDR or BY-FDR) to obtain the list of significant
 genes:
 
-<<IsoTestBH>>=
+<<IsoTestBH, eval=FALSE>>=
   IsoTestBH(rp, FDR = c(0.05,0.1), type = c("BH","BY"),
     stat=c("E2","Williams","Marcus","M","ModifM"))
 @
@@ -604,7 +607,7 @@ procedure controlling the FDR: \\ \\
 The first 10 rows in the object \texttt{E2.BH} list the sorted row and adjusted p values for the $\bar{E}^{2}_{01}$ statistic.
 
 <<E2BHrows>>=
-  E2.BH[1:10,]	
+  E2.BH[1:10, ]	
 @
 %s
 
@@ -619,7 +622,7 @@ on the row number. Moreover, the function \texttt{IsoBHPlot()} can
 be used to visualize the number of significant findings for the
 BH-FDR and BY-FDR procedures for the specified test statistic:
 
-<<IsoBHPlotExample,eval=FALSE>>=
+<<IsoBHPlotExample, eval=FALSE>>=
   IsoBHPlot(rp, FDR = c(0.05,0.1),
     stat=c("E2","Williams","Marcus","M","ModifM"))
 @
@@ -670,7 +673,7 @@ We use the same data as above to obtain the fudge factor of the SAM procedure fo
 the five test statistics by using function \texttt{Isofudge()}.
 
 <<fudgeFactor>>=
-  fudge.factor <- Isofudge(x, data)
+  fudge.factor <- Isofudge(x, exampleData)
 @
 
 The output of this function gives a vector of five fudge factors for each of the test statistics.
@@ -685,7 +688,7 @@ the fudge factor as compared to the $t$-type test statistics has not yet investi
 power and control of the FDR. Therefore, it's advisable to use the fudge factor in the $t$-type test statistics.
 
 <<SAMtest>>=
-  SAMtest.stat <- IsoGenemSAM(x, data, fudge.factor)
+  SAMtest.stat <- IsoGenemSAM(x, exampleData, fudge.factor)
 @
 
 The output of the function gives
@@ -711,7 +714,7 @@ with the required number of permutations specified by users and compute the
 delta table in the SAM procedure, we can use function \texttt{Isoqqstat()} and \texttt{Isoallfdr()} as follows,
 
 <<qqstat>>=
-	qqstat <- Isoqqstat(x, data, fudge="pooled", niter=100)
+	qqstat <- Isoqqstat(x, exampleData, fudge="pooled", niter=2) # TODO: change back to 100
   dtable <-  Isoallfdr(qqstat, , stat="ModifM")
   head(dtable, n = 4)
   # TODO: identify row with largest FDR < 0.05
@@ -747,14 +750,14 @@ Alternatively, we can use function \texttt{IsoTestSAM()} to summarize all the st
 
 <<IsoTestSAM, eval=FALSE>>=
   IsoTestSAM(x, y=data, fudge=c(0,"pooled"), niter=100, 
-    seed=123, FDR=0.05, stat=c("E2","Williams","Marcus","M","ModifM"))
+    FDR=0.05, stat=c("E2","Williams","Marcus","M","ModifM"))
 @
 
 Specifying the same options as above in this function, we can obtain the list of significant genes as follows: the first column is the Probe.ID, the second column is the corresponding row numbers of the genes in the data set, the third column is the observed modified M SAM test statistics, the fourth column is the $q$ values of genes by using the SAM procedure. The last two columns gives additional information by calculating the $p$ values based on the SAM permutation matrix and adjusting these $p$ values using the BH-FDR procedure.
 
 <<IsoSAMobj>>=
-  IsoSAM.obj <- IsoTestSAM (x, y = data, fudge = "pooled", 
-    niter = 100, FDR = 0.05, stat = "ModifM")
+  IsoSAM.obj <- IsoTestSAM (x, y = exampleData, fudge = "pooled", 
+    niter = 2, FDR = 0.05, stat = "ModifM") # change number of iterations to 100
   head(IsoSAM.obj)
   tail(IsoSAM.obj)
 @
