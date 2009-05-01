@@ -87,6 +87,7 @@
 \usepackage{amssymb}
 \usepackage{multirow}
 \usepackage{rotating}
+\usepackage{sweave}
 \usepackage{bm}
 
 
@@ -328,6 +329,8 @@
 %\setlength{\footskip}{1.3cm}
 
 \begin{document}
+
+% \VignetteIndexEntry{IsoGene}
 
 \title{
 {\LARGE \bf
@@ -1227,6 +1230,7 @@ The functions included in the package can be listed using the $R$
 help system:
 
 <<eval=FALSE>>=
+
 	help(package = IsoGene)
 @
 
