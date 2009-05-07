@@ -12,5 +12,5 @@ Description: Several testing procedures including the global likelihood ratio te
   expression with respect to doses. BH (Benjamini and Hochberg 1995) and BY 
   (Benjamini and Yekutilie 2004) FDR controlling procedures are applied to adjust the 
   raw p-values obtained from the permutations.   
-Depends: multtest, ff(>= 2.0.0)
+Depends: ff(>= 2.0.0)
 License: GPL v2

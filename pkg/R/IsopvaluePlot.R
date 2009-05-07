@@ -55,7 +55,7 @@ IsopvaluePlot <- function(x, y, niter, stat=c("E2","Williams","Marcus","M","Modi
    dx <- density(exp.up, from = min(exp.up), to = max(exp.up))
    abline(v = obs.up, col = 7, lwd = 3)
    lines(dx$x,dx$y, lwd = 3, col = 5)
-   title(paste("Gene", Probe.ID, ":p-value^{up}=", rawp.up, sep="")) 
+   title(paste("Gene: ", Probe.ID, ":p-value^{up}=", rawp.up, sep="")) 
   
    hist(exp.dn, main = "", nclass = 1000, col = 0, probability = TRUE,
         xlim = c(min(exp.dn,obs.dn), max(exp.dn,obs.dn)), xlab = paste(stat))

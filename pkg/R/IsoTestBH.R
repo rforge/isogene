@@ -14,9 +14,12 @@ IsoTestBH <- function (rp, FDR, type =  c("BH", "BY"),
       M = rp[,5],
       ModifM = rp[,6])
   
-  procs <- c("BH", "BY") # only "BH" and "BY" are needed
-  res <- mt.rawp2adjp(rpraw, procs) # from multtest
-  adjp <- res$adjp[order(res$index), ]
+ ## procs <- c("BH", "BY") # only "BH" and "BY" are needed
+ ## res <- mt.rawp2adjp(rpraw, procs) # from multtest
+ ## adjp <- res$adjp[order(res$index), ]
+  
+    adjp <- cbind(rpraw, p.adjust(rpraw, "BH"),p.adjust(rpraw,"BY"))
+  
 
   # TODO: TV use names Bonferroni   Holm Hochberg     SidakSS     SidakSD          BH
   place.keep33 <- if (type == "BH"){

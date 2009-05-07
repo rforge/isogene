@@ -129,5 +129,8 @@ Isoqval <- function (delta, allfdr, qqstat, stat) {
     sign.list <- rbind(n2[, cols])
     sign.list1 <- cbind(sign.list[,1],obs.stat[sign.list[,1]],sign.list[,2])
   }
+  
+  colnames(res1) <- colnames(sign.list1) <- c("Row.names","t.stat","q.val")
+  
   return(list(res1, sign.list1))
 }
