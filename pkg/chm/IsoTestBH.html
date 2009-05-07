@@ -1,0 +1,108 @@
+<html><head><title>Test of monotonic trends using the five test statistics with BH or BY adjustment</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" type="text/css" href="Rchm.css">
+</head>
+<body>
+
+<table width="100%"><tr><td>IsoTestBH(IsoGene)</td><td align="right">R Documentation</td></tr></table><object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+<param name="keyword" value="R:   IsoTestBH">
+<param name="keyword" value=" Test of monotonic trends using the five test statistics with BH or BY adjustment">
+</object>
+
+
+<h2>Test of monotonic trends using the five test statistics with BH or BY adjustment</h2>
+
+
+<h3>Description</h3>
+
+<p>
+The function adjusts for the raw p-values of the five test statistics
+using BH or BY procedure.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+IsoTestBH(rp, FDR, type = c("BH", "BY"), stat = c("E2",
+"Williams", "Marcus", "M", "ModifM"))
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>rp</code></td>
+<td>
+raw p-value matrix with each row for one gene and 6 columns,
+the first column contains the Probe.ID, the second to the sixth
+columns are raw p-values for the five test statistics</td></tr>
+<tr valign="top"><td><code>FDR</code></td>
+<td>
+the desired FDR to control</td></tr>
+<tr valign="top"><td><code>type</code></td>
+<td>
+choose BH or BY procedure to control FDR</td></tr>
+<tr valign="top"><td><code>stat</code></td>
+<td>
+choose one of the five test statistics to use</td></tr>
+</table>
+
+<h3>Details</h3>
+
+<p>
+The input raw p-values to this function can be the one sided or the two
+sided ones which are obtained using function raw.p. The results using
+one sided p-values and FDR controlling at alpha/2 is equivalent to that
+using two sided p-values and FDR controlling at alpha.
+</p>
+
+
+<h3>Value</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>sign.genes</code></td>
+<td>
+A list of significant genes while controlling FDR is
+obtained, with 4 columns: the first column is the probe ID, the
+second column is the row id, the third column is the raw p-values of
+the significant genes and the last column is the adjusted p-values
+of significant genes using BH or BY procedure</td></tr>
+</table>
+
+<h3>Note</h3>
+
+<p>
+This function only allows one type of FDR adjustment, either BH or
+BY. For other type of adjustment, see function <code>mt.rawp2adjp</code>
+in package <code>multtest</code>.
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p>
+Lin et al.
+</p>
+
+
+<h3>See Also</h3>
+
+<p>
+'mt.rawp2adjp', <code><a href="IsoRawp.html">IsoRawp</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+  set.seed(1234)
+  rp &lt;- data.frame(paste("g",1:100), matrix(runif(500,0,0.1), 100, 5))
+  sign &lt;- IsoTestBH(rp, FDR = 0.05, type = "BH", stat = "E2")
+</pre>
+
+
+
+<hr><div align="center">[Package <em>IsoGene</em> version 1.0-12 <a href="00Index.html">Index]</a></div>
+
+</body></html>

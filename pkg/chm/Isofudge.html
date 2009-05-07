@@ -1,0 +1,95 @@
+<html><head><title>Calculation of the fudge factor for the five SAM test statistics in the SAM procedure</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" type="text/css" href="Rchm.css">
+</head>
+<body>
+
+<table width="100%"><tr><td>Isofudge(IsoGene)</td><td align="right">R Documentation</td></tr></table><object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+<param name="keyword" value="R:   Isofudge">
+<param name="keyword" value=" Calculation of the fudge factor for the five SAM test statistics in the SAM procedure">
+</object>
+
+
+<h2>Calculation of the fudge factor for the five SAM test statistics in the SAM procedure</h2>
+
+
+<h3>Description</h3>
+
+<p>
+The function calculates the fudge factor for SAM test statistics for the
+five test statistics (the global likelihood test, Williams, Marcus, M,
+and the modified M).
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+  Isofudge(x, y)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+indicates the dose levels</td></tr>
+<tr valign="top"><td><code>y</code></td>
+<td>
+gene expression for all genes</td></tr>
+</table>
+
+<h3>Value</h3>
+
+<p>
+A vector of five fudge factor values for the five SAM test statistics.</p>
+
+<h3>Note</h3>
+
+<p>
+This function calculates the fudge factor for SAM test statistics for the five test statistics.
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p>
+Lin et al.
+</p>
+
+
+<h3>See Also</h3>
+
+<p>
+<code><a onclick="findlink('stats', 'isoreg.html')" style="text-decoration: underline; color: blue; cursor: hand">isoreg</a></code>, <code><a href="Isoallfdr.html">Isoallfdr</a></code>, <code><a href="IsoGenemSAM.html">IsoGenemSAM</a></code>, <code><a href="Isoqqstat.html">Isoqqstat</a></code>,
+<code><a href="Isoqval.html">Isoqval</a></code>,<code><a href="IsoTestSAM.html">IsoTestSAM</a></code>,<code><a href="IsoSAMPlot.html">IsoSAMPlot</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+  set.seed(1234)
+  x &lt;- c(rep(1,3), rep(2,3), rep(3,3))
+  y1 &lt;- matrix(rnorm(9000, 1,1), 1000, 9)   # 1000 genes with no trends
+  y2 &lt;- matrix(c(rnorm(3000, 1,1), rnorm(3000,2,1), rnorm(3000,3,1)),
+               1000, 9)  # 1000 genes with increasing trends
+  y &lt;- data.frame(rbind(y1, y2))  # y needs to be a data frame
+  fudge.factor &lt;- Isofudge(x,y)
+</pre>
+
+<script Language="JScript">
+function findlink(pkg, fn) {
+var Y, link;
+Y = location.href.lastIndexOf("\\") + 1;
+link = location.href.substring(0, Y);
+link = link + "../../" + pkg + "/chtml/" + pkg + ".chm::/" + fn;
+location.href = link;
+}
+</script>
+
+
+<hr><div align="center">[Package <em>IsoGene</em> version 1.0-12 <a href="00Index.html">Index]</a></div>
+
+</body></html>

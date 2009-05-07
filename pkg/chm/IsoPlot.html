@@ -1,0 +1,79 @@
+<html><head><title>IsoPlot</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" type="text/css" href="Rchm.css">
+</head>
+<body>
+
+<table width="100%"><tr><td>IsoPlot(IsoGene)</td><td align="right">R Documentation</td></tr></table><object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+<param name="keyword" value="R:   IsoPlot">
+<param name="keyword" value=" IsoPlot">
+</object>
+
+
+<h2>IsoPlot</h2>
+
+
+<h3>Description</h3>
+
+<p>
+Plot of the data points and the sample means at each dose
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+IsoPlot(x, y, type=c("continuous", "ordinal"), add.curve = FALSE)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+indicates the dose levels </td></tr>
+<tr valign="top"><td><code>y</code></td>
+<td>
+is the gene expression for one gene </td></tr>
+<tr valign="top"><td><code>type</code></td>
+<td>
+specifies the dose levels to <code>"continuous"</code> or <code>"ordinal"</code>. The default is <code>"continous"</code>.</td></tr>
+<tr valign="top"><td><code>add.curve</code></td>
+<td>
+specifies whether a fitted isotonic regression curve with a likely direction is added or not. The default is <code>FALSE</code>.</td></tr>
+</table>
+
+<h3>Value</h3>
+
+<p>
+Plot of the data points, the sample means for each dose (either as continuous or ordinal), and a fitted isotonic regression curve (optional) is produced.</p>
+
+<h3>Note</h3>
+
+<p>
+This function produces a plot for a single gene.
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p>
+Lin et al.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+  x &lt;- c(rep(1,3), rep(2,3), rep(3,3), rep(4,3))
+  y &lt;- c(rnorm(3,1,1), rnorm(3,2,1), rnorm(3,3,1), rnorm(3,4,1))
+  IsoPlot(x, y)
+  IsoPlot(x, y, type="ordinal", add.curve=TRUE)
+</pre>
+
+
+
+<hr><div align="center">[Package <em>IsoGene</em> version 1.0-12 <a href="00Index.html">Index]</a></div>
+
+</body></html>

@@ -1,0 +1,148 @@
+<html><head><title>The five test statistics calculated for both the increasing and
+decreasing trends</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" type="text/css" href="Rchm.css">
+</head>
+<body>
+
+<table width="100%"><tr><td>IsoGene1(IsoGene)</td><td align="right">R Documentation</td></tr></table><object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+<param name="keyword" value="R:   IsoGene1">
+<param name="keyword" value=" The five test statistics calculated for both the increasing and
+decreasing trends">
+</object>
+
+
+<h2>The five test statistics calculated for both the increasing and
+decreasing trends</h2>
+
+
+<h3>Description</h3>
+
+<p>
+The function calculates the values for the five test statistics (the
+global likelihood test, Williams, Marcus, M, and the modified M) for
+testing increasing and decreasing alternatives.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+IsoGene1(x, y)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+indicates the dose levels</td></tr>
+<tr valign="top"><td><code>y</code></td>
+<td>
+is the gene expression for one gene</td></tr>
+</table>
+
+<h3>Value</h3>
+
+<p>
+A list with components 
+</p>
+<table summary="R argblock">
+<tr valign="top"><td><code>E2.up</code></td>
+<td>
+the test statistic of the global likelihood test for testing
+increasing alternative.</td></tr>
+<tr valign="top"><td><code>Williams.up</code></td>
+<td>
+the test statistic of Williams for testing
+increasing alternative.</td></tr>
+<tr valign="top"><td><code>Marcus.up </code></td>
+<td>
+the test statistic of Marcus for testing increasing
+alternative.</td></tr>
+<tr valign="top"><td><code>M.up </code></td>
+<td>
+the M test statistic for testing increasing alternative.</td></tr>
+<tr valign="top"><td><code>ModM.up </code></td>
+<td>
+the test statistic of the modified M for testing
+increasing alternative.</td></tr>
+<tr valign="top"><td><code>E2.dn </code></td>
+<td>
+the test statistic of Williams for testing decreasing alternative.</td></tr>
+<tr valign="top"><td><code>Williams.dn </code></td>
+<td>
+the test statistic of global likelihood test for
+testing decreasing alternative.</td></tr>
+<tr valign="top"><td><code>Marcus.dn </code></td>
+<td>
+the test statistic of Williams for testing
+decreasing alternative.</td></tr>
+<tr valign="top"><td><code>M.dn</code></td>
+<td>
+the test statistic of global likelihood test for testing
+decreasing alternative.</td></tr>
+<tr valign="top"><td><code>ModM.dn</code></td>
+<td>
+the test statistic of Williams for testing increasing alternative.</td></tr>
+<tr valign="top"><td><code>direction</code></td>
+<td>
+the direction with the higher likelihood of increasing
+(indicated by "u") or decreasing (indicated by "d") trend.</td></tr>
+</table>
+
+<h3>Note</h3>
+
+<p>
+This function calculates the five test statistics for both increasing
+and decreasing ordered alternatives for a single gene.
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p>
+Lin et al.
+</p>
+
+
+<h3>References</h3>
+
+<p>
+Testing for Trend in Dose-Response Microarray Experiments: a Comparison
+of Testing Procedures, Multiplicity, and Resampling-Based Inference, Lin
+et al. 2007, Stat. App. in Gen. &amp; Mol. Bio., 6(1), article 26.
+</p>
+
+
+<h3>See Also</h3>
+
+<p>
+<code><a onclick="findlink('stats', 'isoreg.html')" style="text-decoration: underline; color: blue; cursor: hand">isoreg</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+  x &lt;- c(rep(1,3),rep(2,3),rep(3,3),rep(4,3))
+  y &lt;- c(rnorm(3,1,1),rnorm(3,2,1),rnorm(3,3,1),rnorm(3,4,1))
+  stat &lt;- IsoGene1(x,y)
+  stat
+</pre>
+
+<script Language="JScript">
+function findlink(pkg, fn) {
+var Y, link;
+Y = location.href.lastIndexOf("\\") + 1;
+link = location.href.substring(0, Y);
+link = link + "../../" + pkg + "/chtml/" + pkg + ".chm::/" + fn;
+location.href = link;
+}
+</script>
+
+
+<hr><div align="center">[Package <em>IsoGene</em> version 1.0-12 <a href="00Index.html">Index]</a></div>
+
+</body></html>
