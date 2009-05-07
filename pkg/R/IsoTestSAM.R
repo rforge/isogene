@@ -44,9 +44,13 @@ IsoTestSAM <- function(x, y, fudge, niter, FDR, stat) {
   d <- qstat[,1]
 
   p.value <- sapply(d,function(x) sum(abs(x) <=abs(dperm.out))/niter/length(d))
-  procs <- c("BH")
-  res <- mt.rawp2adjp(p.value, procs)
-  adj.p.value <- res$adjp[order(res$index), ]
+  
+  #procs <- c("BH")
+  #res <- mt.rawp2adjp(p.value, procs)
+  #adj.p.value <- res$adjp[order(res$index), ]
+  
+  adj.p.value <- cbind(p.value, p.adjust(p.value, "BH"))
+  
 
   qap <- cbind(q.value, adj.p.value)
 

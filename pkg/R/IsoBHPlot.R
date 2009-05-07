@@ -11,17 +11,20 @@ IsoBHPlot <- function(rp, FDR, stat = c("E2", "Williams", "Marcus", "M", "ModifM
       M = rp[, 5],
       ModifM = rp[, 6])
 
-  procs <- c("Bonferroni", "Holm", "BH", "BY")
-  res <- mt.rawp2adjp(rpraw, procs)  # from multtest
-  adjp <- res$adjp[order(res$index), ]
+  #procs <- c("Bonferroni", "Holm", "BH", "BY")
+  #res <- mt.rawp2adjp(rpraw, procs)  # from multtest
+  #adjp <- res$adjp[order(res$index), ]
+
+  adjp <- cbind(rpraw, p.adjust(rpraw, "BH"),p.adjust(rpraw,"BY"))
+  
 
   plot(1:nrow(rp), sort(adjp[,1]),
        col = 4, pch = ".", lty = 1, xlab = "index",
        ylab = "Adjusted P values")
 
   lines(1:nrow(rp), sort(adjp[,1]), lty = 1, col = 1)
-  lines(1:nrow(rp), sort(adjp[,4]), lty = 4, col = 2)
-  lines(1:nrow(rp), sort(adjp[,5]), lty = 5, col = 3)
+  lines(1:nrow(rp), sort(adjp[,2]), lty = 4, col = 2)
+  lines(1:nrow(rp), sort(adjp[,3]), lty = 5, col = 3)
   abline(FDR, 0, lty = 6)
 
   legend(nrow(rp) / 2,
