@@ -17,6 +17,7 @@ and Hochberg 1995) and BY (Benjamini and Yekutilie 2004) procedures are
 used for controlling the FDR. 
 }
 \details{
+
 \tabular{ll}{
 Package: \tab IsoGene\cr
 Type: \tab Package\cr
@@ -25,6 +26,9 @@ Date: \tab 2007-05-02\cr
 License: \tab Free\cr
 }
 
+}
+
+\value{
 The package includes the following functions:
 
  \item{\code{\link{IsoGene1}}}{calculates the five test statistics in
@@ -47,6 +51,8 @@ The package includes the following functions:
 \item{\code{\link{IsopvaluePlot}}}{plot of p-values obtained using
   permutation under increasing or decreasing alternatives}
 }
+
+
 \author{
 Lin et al.
 
