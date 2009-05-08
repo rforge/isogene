@@ -86,7 +86,7 @@
 \usepackage{amssymb}
 \usepackage{multirow}
 \usepackage{rotating}
-\usepackage{sweave}
+\usepackage{Sweave}
 \usepackage{bm}
 
 %%%%%%%%%%%%
