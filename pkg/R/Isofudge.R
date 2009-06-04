@@ -35,12 +35,18 @@ Isofudge <- function(x,y){
     y.m <- do.call("cbind", unclass(by(ydf, x, mean)))
     
     y.m.tot <- matrix(rep(rowMeans(y), length(x)), ncol = length(x))
-    
-    y.is.u <- t(apply(y.m, 1, function(x) isoreg(unx, x)$yf))
-    y.is.d <- t(apply(y.m, 1, function(x) rev(isoreg(rev(unx), x)$yf)))
-    
+
     n.p <- table(x)
-    n.g <- length(n.p)
+    n.g <- length(n.p) 
+    
+    y.is.u <- pava(y.m, wt=n.p )
+    y.is.d <- rev(pava(rev(y.m), wt=rev(n.p)))
+ 
+    
+   # y.is.u <- t(apply(y.m, 1, function(x) isoreg(unx, x)$yf))
+  #  y.is.d <- t(apply(y.m, 1, function(x) rev(isoreg(rev(unx), x)$yf)))
+    
+
     
     ###################################################
     
