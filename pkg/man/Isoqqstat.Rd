@@ -78,11 +78,10 @@
 	       \code{\link{Isoqval}},\code{\link{IsoTestSAM}},\code{\link{IsoSAMPlot}}}
 \examples{
   set.seed(1234)
-  x <- c(rep(1,3), rep(2,3), rep(3,3))
-  y1 <- matrix(rnorm(9000, 1,1), 1000, 9)   # 1000 genes with no trends
-  y2 <- matrix(c(rnorm(3000, 1,1), rnorm(3000,2,1), rnorm(3000,3,1)),
-               1000, 9)  # 1000 genes with increasing trends
-  y <- data.frame(rbind(y1, y2))  # y needs to be a data frame
+  x <- c(rep(1,3),rep(2,3),rep(3,3))
+  y1 <- matrix(rnorm(4500, 1,1),500,9) ## 500 genes with no trends
+  y2 <- matrix(c(rnorm(1500, 1,1),rnorm(1500,2,1),rnorm(1500,3,1)),500,9) ## 500 genes with increasing trends
+  y <- data.frame(rbind(y1, y2)) ##y needs to be a data frame
   qqstat <- Isoqqstat(x, y, fudge="pooled", niter = 100)
 }
 \keyword{htest}
