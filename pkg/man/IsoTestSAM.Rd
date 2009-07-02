@@ -20,12 +20,15 @@ IsoTestSAM(x, y, fudge, niter, FDR, stat)
 }
 
 \value{
- sign.genes1: a list of genes declared significant using
+  A list with components 
+\item{sign.genes1} {a list of genes declared significant using
  the SAM procedure in a matrix of 5 columns. The first colomn
  is the probe id, the second column is the corresponding row number
  of the probe in the dataset, and the third column is the ordered test statistic values,
 and the fourth column is the q-values of the SAM procedure. The last two columns
-are raw p-values based on permutations and BH adjusted p-values.
+are raw p-values based on permutations and BH adjusted p-values. }
+\item{qqstat} {output of Isoqqstat}
+\item{allfdr} {output of Isoallfdr}
 }
 \author{Lin et al.}
 \note{
