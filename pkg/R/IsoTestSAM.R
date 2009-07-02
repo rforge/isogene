@@ -60,5 +60,5 @@ IsoTestSAM <- function(x, y, fudge, niter, FDR, stat) {
   row.names(sign.genes1) <- 1:nrow(sign.genes1)
   names(sign.genes1) <- c("Probe.ID", "row.number","stat.val","qvalue","pvalue","adj.pvalue")
 
-  return(sign.genes1)
+  return(list(sign.genes1, qqstat, allfdr))
 }
