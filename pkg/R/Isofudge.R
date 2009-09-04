@@ -39,8 +39,8 @@ Isofudge <- function(x,y){
     n.p <- table(x)
     n.g <- length(n.p) 
     
-  y.is.u <- t(apply(y.m, 1, function(x) pava(x, wt=n.p)) )
-  y.is.d <- t(apply(y.m, 1, function(x) rev(pava(rev(x), wt=rev(n.p))))) 
+  y.is.u <- t(apply(y.m, 1, function(x) pava(x, w = n.p)) )
+  y.is.d <- t(apply(y.m, 1, function(x) rev(pava(rev(x), w = rev(n.p))))) 
  
     
    # y.is.u <- t(apply(y.m, 1, function(x) isoreg(unx, x)$yf))
