@@ -41,7 +41,8 @@ IsoGene1 <- function(x, y){
   y.m.tot <- rep(mean(y), length(unx))
   
    y.is.u <- pava(y = y.m, w = n.p )
-   y.is.d <- rev(pava(y = rev(y.m), w = rev(n.p)))
+#   y.is.d <- rev(pava(y = rev(y.m), w = rev(n.p)))
+   y.is.d <- pava(y = y.m, w = n.p, decreasing=TRUE)
 ##  y.is.u <- isoreg(unx,  y.m)$yf          ##equal weights
 ##  y.is.d <- rev(isoreg(rev(unx), y.m)$yf)
   
