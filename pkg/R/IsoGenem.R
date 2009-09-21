@@ -23,7 +23,7 @@ IsoGenem <- function(x, y){
     
    y.is.u <- t(apply(y.m, 1, function(x) pava(x, w = n.p)) )
 #   y.is.d <- t(apply(y.m, 1, function(x) rev(pava(rev(x), w = rev(n.p))))) 
-   y.is.d <- t(apply(y.m, 1, function(x) pava(x, w = n.p, decreasing=TURE))) 
+   y.is.d <- t(apply(y.m, 1, function(x) pava(x, w = n.p, decreasing=TRUE))) 
      
     rep.iso.d <- y.is.d[, rep(1:length(n.p),n.p)]
     rep.iso.u <- y.is.u[, rep(1:length(n.p),n.p)]
