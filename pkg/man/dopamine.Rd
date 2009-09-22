@@ -5,7 +5,7 @@
 \description{ This dose-response microarray data contains 1000 genes and 6 doses 
 (0 (control), 0.01, 0.04, 0.16, 0.63, 2.5mg/kg) with 4-5 arrays at each dose level.
 }
-\usage{data(dopamine)}
+\usage{data(dopamine.rda)}
 \format{
   An ExpressionSet object, the assayData has 1000 features and 26 samples, and in phenoData contains information of sample
 names and dose levels.
