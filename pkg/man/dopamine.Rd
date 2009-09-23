@@ -7,16 +7,14 @@
 }
 \usage{data(dopamine)}
 \format{
-  An ExpressionSet object, the assayData has 1000 features and 26 samples, and in phenoData contains information of sample
+An ExpressionSet object, the assayData has 1000 features and 26 samples, and in phenoData contains information of sample
 names and dose levels.
-  \describe{
-   For the gene expression matrix obtained using the expres function, the column names are ( X1, X2, ..., X26). 
- These correspond to the dose levels (obtained using pData function):  0, 0, 0.01, 0.01, 0.04, 0.04, 0.16, 0.16, 0.63,
- 0.63, 2.50, 2.50, 0, 0, 0, 0.01, 0.01, 0.01, 0.04, 0.04, 0.16, 0.16, 0.63, 0.63, 2.50, 2.50.
-  }
+\describe{
+For the gene expression matrix obtained using the expres function, the column names are (X1, X2, ..., X26). 
+These correspond to the dose levels (obtained using pData function): 0, 0, 0.01, 0.01, 0.04, 0.04, 0.16, 0.16, 0.63,
+0.63, 2.50, 2.50, 0, 0, 0, 0.01, 0.01, 0.01, 0.04, 0.04, 0.16, 0.16, 0.63, 0.63, 2.50, 2.50.
 }
-
-
+}
 
 \references{
 Testing for Trend in Dose-Response Microarray Experiments: a Comparison
