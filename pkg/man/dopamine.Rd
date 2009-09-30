@@ -21,7 +21,7 @@ Testing for Trend in Dose-Response Microarray Experiments: a Comparison
 of Testing Procedures, Multiplicity, and Resampling-Based Inference, Lin
 et al. 2007, Stat. App. in Gen. & Mol. Bio., 6(1), article 26.
 
-Gene Expression Studies Using Affymetrix Microarrays, Göhlmann, H. and Talloen, W., Chapman &
+Gene Expression Studies Using Affymetrix Microarrays, Goehlmann, H. and Talloen, W., Chapman &
 Hall/CRC, 2009
 }
 
