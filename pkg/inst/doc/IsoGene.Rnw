@@ -928,7 +928,7 @@ matrix of the values of the test statistics for each gene and
 permutation is referred as the permutation matrix under the null
 distribution (see Section 3.2.2).}
 
-% TODO: replace hard-coded sections
+
 
 This matrix is used to calculate the one-sided $p$-values for the
 inference. In the first step the one-sided raw (unadjusted for
@@ -1385,14 +1385,14 @@ for the five test statistics. The function \texttt{IsoRawp()} can be
 used in the following way:
 
 <<IsoRawp>>=
-  rawp <- IsoRawp(x = x, y = exampleData, niter = 2) # TODO change to 1000 in final version
+  rawp <- IsoRawp(x = x, y = exampleData, niter = 2)
 @
 
 
 The four arguments in this function need to be specified, with no
 default pre-specified values. \texttt{x} is the explanatory variable
 indicating the dose levels for all the samples in the data.
-\texttt{data} is the data frame of gene expression values. % TODO remove "data frame"
+\texttt{data} is the data frame of gene expression values. 
 \texttt{niter} defines the number of permutations used to
 approximate the null distribution. The output item
 \texttt{rawp} contains four objects with $p$-values for the five
@@ -1731,8 +1731,8 @@ the corresponding desired FDR. Panel $b$ shows the number of significant genes v
 @
 
 << Plot4, fig = F, include = FALSE,echo=false,cache=true>>=
-#pdf (file = "IsoGene-IsoSAMPlotOutput.pdf", width = 7, height = 7)
-png (filename = "IsoGene-IsoSAMPlotOutput.pdf", width = 480, height = 480)
+pdf (file = "IsoGene-IsoSAMPlotOutput.pdf", width = 7, height = 7)
+#png (filename = "IsoGene-IsoSAMPlotOutput.pdf", width = 480, height = 480)
 
 IsoSAMPlot(qqstat = qqstat, allfdr = dtable, FDR = 0.05, stat = "ModifM")
 graphics.off() 
@@ -1745,7 +1745,7 @@ graphics.off()
 
 \begin{figure}[!h]
 \centering
-{\includegraphics[width=0.5\textwidth]{IsoGene-IsoSAMPlotOutput.png}}
+{\includegraphics[width=0.1\textwidth]{IsoGene-IsoSAMPlotOutput.pdf}}
 \caption{\em {The SAM plots: a.Plot of the FDR vs. delta; b. Plot of number of significant genes vs. delta; c. Plot of
 number of false positives vs. delta; d. Plot of observed vs. expected test statistics.}} \label{IsoBHPlot}
 \end{figure}
