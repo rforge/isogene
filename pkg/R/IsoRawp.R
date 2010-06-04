@@ -1,7 +1,7 @@
 
+library(tcltk)
 IsoRawp <- function (x, y, niter) 
 {
-
     if (niter > 2500) {
         jmatsize <- 2500
         nmats <- floor(niter/jmatsize)
@@ -59,15 +59,10 @@ IsoRawp <- function (x, y, niter)
         "obs.I.up", "obs.E.dn", "obs.W.dn", "obs.WC.dn", "obs.M.dn", 
         "obs.I.dn")
     raw.count.up <- raw.count.dn <- matrix(0, nrow(y), 5)
-
     total <- length(seq(along = begpos))
-   # create progress bar
-    pb <- winProgressBar(title = "progress bar", min = 0,
-                     max = total, width = 300)
-
-
-      for (ichunk in seq(along = begpos)) {
-
+    pb <- tkProgressBar(title = "progress bar", min = 0, max = total, 
+        width = 300)
+    for (ichunk in seq(along = begpos)) {
         begchunk <- begpos[ichunk]
         endchunk <- endpos[ichunk]
         suby <- y[begchunk:endchunk, ]
@@ -77,13 +72,13 @@ IsoRawp <- function (x, y, niter)
             ncolmat <- jendmat - jbegmat + 1
             subx.niter <- x.niter[jbegmat:jendmat, ]
             res <- apply(subx.niter, 1, function(x) IsoGenem(x = factor(x), 
-              y = suby))
+                y = suby))
             exp.E.up[begchunk:endchunk, jbegmat:jendmat] <- matrix(sapply(res, 
                 function(x) x[[1]]), length(begchunk:endchunk), 
-                length(jbegmat:jendmat)) 
+                length(jbegmat:jendmat))
             exp.W.up[begchunk:endchunk, jbegmat:jendmat] <- matrix(sapply(res, 
                 function(x) x[[2]]), length(begchunk:endchunk), 
-                length(jbegmat:jendmat)) 
+                length(jbegmat:jendmat))
             exp.WC.up[begchunk:endchunk, jbegmat:jendmat] <- matrix(sapply(res, 
                 function(x) x[[3]]), length(begchunk:endchunk), 
                 length(jbegmat:jendmat))
@@ -109,10 +104,9 @@ IsoRawp <- function (x, y, niter)
                 function(x) x[[10]]), length(begchunk:endchunk), 
                 length(jbegmat:jendmat))
             Sys.sleep(0.1)
-            setWinProgressBar(pb, ichunk , title=paste( round(ichunk /total*100, 0),
-                                         "% done"))
+            setTkProgressBar(pb, ichunk, title = paste(round(ichunk/total * 
+                100, 0), "% done"))
         }
-     
         for (i in 1:6) {
             x1 <- obsvecs[i]
             x2 <- ffmatrices[i]
@@ -164,5 +158,4 @@ IsoRawp <- function (x, y, niter)
         exp.W.dn, exp.WC.dn, exp.M.dn, exp.I.dn)
     gc()
     return(res)
-
 }
