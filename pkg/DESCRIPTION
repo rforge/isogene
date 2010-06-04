@@ -2,7 +2,7 @@ Package: IsoGene
 Type: Package
 Title: Testing for monotonic relationship between gene expression and 
  doses in a microarray experiment.
-Version: 1.0-16
+Version: 1.0-17
 Date: 2009-08-21
 Author: Lin et al.
 Maintainer: Dan Lin <dan.lin@uhasselt.be>
@@ -12,5 +12,5 @@ Description: Several testing procedures including the global likelihood ratio te
   expression with respect to doses. BH (Benjamini and Hochberg 1995) and BY 
   (Benjamini and Yekutilie 2004) FDR controlling procedures are applied to adjust the 
   raw p-values obtained from the permutations.   
-Depends: Iso, affy, ff(>= 2.0.0)
+Depends: tcltk, Iso, affy, ff(>= 2.0.0)
 License: GPL-2
