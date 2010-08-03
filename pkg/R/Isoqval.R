@@ -111,12 +111,14 @@ Isoqval <- function (delta, allfdr, qqstat, stat) {
   if (is.numeric(fdr) & is.numeric(n2)) {
     n2[n2[,4] > fdr,4] <- fdr
   }
+  
+ if (m2>m1) {      ##condition added
   if (is.numeric(fdr) & is.numeric(n1) & is.numeric(n2)) {  ##both up and down-regulated genes
     res <- rbind(n1[, cols], nnnew[m1:m2, cols], n2[,cols])
     res1 <- cbind(res[,1],obs.stat[res[,1]],res[,2])
     sign.list <- rbind(n1[, cols], n2[, cols])
     sign.list1 <- cbind(sign.list[,1],obs.stat[sign.list[,1]],sign.list[,2])
-  }
+  }} else {  
   if (is.numeric(fdr) & is.numeric(n1) & !is.numeric(n2)) { ## only download reguatled genes
     res <- rbind(n1[,cols], nnnew[m1:m2, cols])
     res1 <- cbind(res[,1],obs.stat[res[,1]],res[,2])
@@ -128,6 +130,7 @@ Isoqval <- function (delta, allfdr, qqstat, stat) {
     res1 <- cbind(res[,1],obs.stat[res[,1]],res[,2])
     sign.list <- rbind(n2[, cols])
     sign.list1 <- cbind(sign.list[,1],obs.stat[sign.list[,1]],sign.list[,2])
+  }
   }
   
   colnames(res1) <- colnames(sign.list1) <- c("Row.names","t.stat","q.val")
