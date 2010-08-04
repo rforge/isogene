@@ -1,0 +1,70 @@
+<html><head><title>Dose-response microarray example data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" type="text/css" href="Rchm.css">
+</head>
+<body>
+
+<table width="100%"><tr><td>exampleData(IsoGene)</td><td align="right">R Documentation</td></tr></table><object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+<param name="keyword" value="R:   exampleData">
+<param name="keyword" value=" Dose-response microarray example data">
+</object>
+
+
+<h2>Dose-response microarray example data</h2>
+
+
+<h3>Description</h3>
+
+<p>
+This dose-response microarray data contains 1000 genes and 4 doses 
+(one control dose (zero dose) and three increasing dose) with 3 arrays at each dose level.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>data(exampleData)</pre>
+
+
+<h3>Format</h3>
+
+<p>
+A data frame with 1000 observations on the following 12 variables.
+<dl>
+<dt><code>X1</code></dt><dd>Sample one with zero dose</dd>
+<dt><code>X1.1</code></dt><dd>Sample two with zero dose</dd>
+<dt><code>X1.2</code></dt><dd>Sample three with zero dose</dd>
+<dt><code>X2</code></dt><dd>Sample one with second dose</dd>
+<dt><code>X2.1</code></dt><dd>Sample two with second dose</dd>
+<dt><code>X2.2</code></dt><dd>Sample three with second dose</dd>
+<dt><code>X3</code></dt><dd>Sample one with third dose</dd>
+<dt><code>X3.1</code></dt><dd>Sample two with third dose</dd>
+<dt><code>X3.2</code></dt><dd>Sample three with third dose</dd>
+<dt><code>X4</code></dt><dd>Sample one with fourth dose</dd>
+<dt><code>X4.1</code></dt><dd>Sample two with fourth dose</dd>
+<dt><code>X4.2</code></dt><dd>Sample three with fourth dose</dd>
+</dl>
+
+<h3>References</h3>
+
+<p>
+Testing for Trend in Dose-Response Microarray Experiments: a Comparison
+of Testing Procedures, Multiplicity, and Resampling-Based Inference, Lin
+et al. 2007, Stat. App. in Gen. &amp; Mol. Bio., 6(1), article 26.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(exampleData)
+x &lt;- c(rep(1,3),rep(2,3),rep(3,3),rep(4,3))
+gene1 &lt;- as.numeric(exampleData[1,])
+IsoPlot(x, gene1)
+</pre>
+
+
+
+<hr><div align="center">[Package <em>IsoGene</em> version 1.0-15 <a href="00Index.html">Index]</a></div>
+
+</body></html>
