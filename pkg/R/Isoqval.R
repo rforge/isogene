@@ -118,7 +118,7 @@ Isoqval <- function (delta, allfdr, qqstat, stat) {
     res1 <- cbind(res[,1],obs.stat[res[,1]],res[,2])
     sign.list <- rbind(n1[, cols], n2[, cols])
     sign.list1 <- cbind(sign.list[,1],obs.stat[sign.list[,1]],sign.list[,2])
-  }} else {  
+  }
   if (is.numeric(fdr) & is.numeric(n1) & !is.numeric(n2)) { ## only download reguatled genes
     res <- rbind(n1[,cols], nnnew[m1:m2, cols])
     res1 <- cbind(res[,1],obs.stat[res[,1]],res[,2])
