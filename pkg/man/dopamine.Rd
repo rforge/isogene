@@ -1,6 +1,6 @@
 \name{dopamine}
 \alias{dopamine}
-\docType{ExpressionSet data}
+\docType{data}
 \title{Dose-response microarray example data}
 \description{This dose-response microarray data contains 1000 genes and 6 doses 
 (0 (control), 0.01, 0.04, 0.16, 0.63, 2.5mg/kg) with 4-5 arrays at each dose level.
