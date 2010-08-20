@@ -16,9 +16,6 @@ IsoGene1 <- function(x, y){
 
    y.is.d <- pava(y = y.m, w = n.p, decreasing=TRUE)
 
-  
-
-
   iso.u <- rep.iso.u <- rep.iso.d <- y.m.all <- NULL
 
   rep.iso.d <- rep(y.is.d, n.p)

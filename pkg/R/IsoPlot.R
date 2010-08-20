@@ -13,7 +13,10 @@ IsoPlot <- function (x, y, type = c("continuous", "ordinal"), add.curve = FALSE)
     n.p <- table(x)
     n.g <- length(n.p)
     y.is.u <- pava(y.m, w = n.p)
-    y.is.d <- rev(pava(rev(y.m), w = rev(n.p)))
+  #  y.is.d <- rev(pava(rev(y.m), w = rev(n.p)))
+    y.is.d <- pava(y = y.m, w = n.p, decreasing=TRUE)  
+    
+    
     dire <- IsoGene1(x, as.numeric(y))[[11]]
     if (type == "continuous") {
         plot(sort(x), y1, lwd = 2, xlab = "Doses", ylab = "Gene Expression")
