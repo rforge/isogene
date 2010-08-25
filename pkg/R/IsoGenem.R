@@ -45,8 +45,13 @@ IsoGenem <- function(x, y){
     Esquare.up <- 1 - lambda1.up
     iso.u <- y.is.u
            
-    w.up <- (y.is.u[,n.g] - y.m[,1]) / sqrt(2*SST/(sum(n.p)-n.g)/(n.g-1))
-    w.c.up <- (y.is.u[,n.g] - y.is.u[,1]) / sqrt(2*SST/(sum(n.p)-n.g)/(n.g-1))
+    #w.up <- (y.is.u[,n.g] - y.m[,1]) / sqrt(2*SST/(sum(n.p)-n.g)/(n.g-1))
+    #w.c.up <- (y.is.u[,n.g] - y.is.u[,1]) / sqrt(2*SST/(sum(n.p)-n.g)/(n.g-1))
+
+    w.up <- (y.is.u[,n.g]-y.m[,1])/sqrt(rowSums((y-y.m.all)^2)/(sum(n.p)-n.g)*(1/n.p[1]+1/n.p[n.g]))   
+    w.c.up <- (y.is.u[,n.g]-y.is.u[,1])/sqrt(rowSums((y-y.m.all)^2)/(sum(n.p)-n.g)*(1/n.p[1]+1/n.p[n.g]))   
+  
+
     m.up <- (y.is.u[,n.g] - y.is.u[,1]) / sqrt(SSIS.u1/(sum(n.p)-n.g))
     i.up <- (y.is.u[,n.g] - y.is.u[,1]) /
       sqrt(SSIS.u1/(sum(n.p) - apply(y.is.u, 1, function(x) length(unique(x)))))
@@ -56,8 +61,13 @@ IsoGenem <- function(x, y){
     iso.u <- y.is.d
   
     n.pSum <- sum(n.p)
-    w.dn <- (y.is.d[,n.g]-y.m[,1])/ sqrt(2*SST / (n.pSum-n.g)/(n.g-1))
-    w.c.dn <- (y.is.d[,n.g]-y.is.d[,1]) / sqrt(2*SST/(n.pSum-n.g)/(n.g-1))
+    #w.dn <- (y.is.d[,n.g]-y.m[,1])/ sqrt(2*SST / (n.pSum-n.g)/(n.g-1))
+    #w.c.dn <- (y.is.d[,n.g]-y.is.d[,1]) / sqrt(2*SST/(n.pSum-n.g)/(n.g-1))
+   
+     w.dn <- (y.is.d[,n.g]-y.m[,1])/sqrt(rowSums((y-y.m.all)^2)/(sum(n.p)-n.g)*(1/n.p[1]+1/n.p[n.g]))  
+     w.c.dn <- (y.is.d[,n.g]-y.is.d[,1])/sqrt(rowSums((y-y.m.all)^2)/(sum(n.p)-n.g)*(1/n.p[1]+1/n.p[n.g]))   
+  
+   
     m.dn <- (y.is.d[,n.g]-y.is.d[,1]) / sqrt(SSIS.d1/(n.pSum-n.g))
     i.dn <- (y.is.d[,n.g]-y.is.d[,1]) /
       sqrt(SSIS.d1/(sum(n.p) - apply(y.is.d, 1, function(x) length(unique(x)))))
