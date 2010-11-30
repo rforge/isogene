@@ -57,8 +57,8 @@ w.c.up <- (y.is.u[n.g]-y.is.u[1])/sqrt(sum((y-y.m.all)^2)/(sum(n.p)-n.g)*(1/n.p[
  w.c.dn <- (y.is.d[n.g]-y.is.d[1])/sqrt(sum((y-y.m.all)^2)/(sum(n.p)-n.g)*(1/n.p[1]+1/n.p[n.g]))   
   
   
-  m.dn <- (y.is.d[n.g]-y.is.d[1]) / sqrt(SSIS.d1/(n.pSum-n.g))
-  i.dn <- (y.is.d[n.g]-y.is.d[1]) / sqrt(SSIS.d1/(n.pSum-length(unique(y.is.d))))
+  m.dn <- (y.is.d[n.g]-y.is.d[1]) / sqrt(SSIS.d1/(Sum(n.p)-n.g))
+  i.dn <- (y.is.d[n.g]-y.is.d[1]) / sqrt(SSIS.d1/(Sum(n.p)-length(unique(y.is.d))))
   
   res <-  list(E2.up = Esquare.up,
                Williams.up = as.numeric(w.up),
