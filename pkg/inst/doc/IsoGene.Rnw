@@ -1618,14 +1618,15 @@ delta table in the SAM procedure, we can use function \texttt{Isoqqstat()} and \
 
 <<qqstat>>=
   dim(dtable)
+  head(dtable)
 @
 <<table0,  echo = FALSE, results=tex>>=
 library(xtable)
 a <- head(dtable, n = 4)
 b <- tail(dtable, n = 4)
-tab0 <- xtable(rbind(a,".",".",".",b))
-print(tab0, type="latex", hline.after=NULL,include.rownames=FALSE, table.placement="!h",
-		latex.environments=c("left"))
+#tab0 <- xtable(rbind(a,".",".",".",b))
+#print(tab0, type="latex", hline.after=NULL,include.rownames=FALSE, table.placement="!h",
+#		latex.environments=c("left"))
 @
 
 
@@ -1640,20 +1641,22 @@ the number of differentially expressed genes are 872 with potential 42 genes as 
   qval <- Isoqval(delta=0.83, allfdr=dtable, qqstat=qqstat,
     stat="ModifM")
   dim(qval[[1]])
+  head(qval[[1]])
 @
 
 <<table1,  echo = FALSE, results=tex>>=
 library(xtable)
 a <- head(qval[[1]])
 b <- tail(qval[[1]])
-tab1 <- xtable(rbind(a,"..",b))
+#tab1 <- xtable(rbind(a,"..",b))
 
-print(tab1, type="latex", hline.after=NULL, table.placement="!h",
-		latex.environments=c("left"),include.rownames=T)
+#print(tab1, type="latex", hline.after=NULL, table.placement="!h",
+#		latex.environments=c("left"),include.rownames=T)
 @
 
 <<qvalOutput2, echo = TRUE>>=
-  dim(qval[[2]])	
+  dim(qval[[2]])
+  head(qval[[2]])
 @
 
 
@@ -1661,10 +1664,12 @@ print(tab1, type="latex", hline.after=NULL, table.placement="!h",
 library(xtable)
 c <- head(qval[[2]])
 d <- tail(qval[[2]])
-tab2 <- xtable(rbind(c,"...",d))
-print(tab2, type="latex", hline.after=NULL, table.placement="!h",
-		latex.environments=c("left"),include.rownames=T)
+#tab2 <- xtable(rbind(c,"...",d))
+#print(tab2, type="latex", hline.after=NULL, table.placement="!h",
+#		latex.environments=c("left"),include.rownames=T)
 @
+
+
 
 By specifying the desired delta value, delta table, and the user-defined test statistic in function \texttt{Isoqval()}, we can obtain
 the q value of each gene from the SAM procedure. The first object of the output is the list of q values for
@@ -1701,16 +1706,18 @@ To extract the list of significant gene, one can do:
 <<>>=
  IsoSAM.sig  <- IsoSAM.obj [[1]]
  dim(IsoSAM.sig)
+ head(IsoSAM.sig)
 @
 
 <<table2,  echo = FALSE, results=tex>>=
 library(xtable)
 a <- head(IsoSAM.sig)
 b <- tail(IsoSAM.sig)
-suppressWarnings(tab3 <- xtable(rbind(a,".",".",".",b)))
-print(tab3, type="latex", hline.after=NULL,include.rownames=FALSE, table.placement="!h",
-		latex.environments=c("left"))
+#suppressWarnings(tab3 <- xtable(rbind(a,".",".",".",b)))
+#print(tab3, type="latex", hline.after=NULL,include.rownames=FALSE, table.placement="!h",
+#		latex.environments=c("left"))
 @
+
 
 
 
@@ -1731,7 +1738,7 @@ the corresponding desired FDR. Panel $b$ shows the number of significant genes v
 @
 
 << Plot4, fig = F, include = FALSE,echo=false,cache=true>>=
-pdf (file = "IsoGene-IsoSAMPlotOutput.pdf", width = 7, height = )
+pdf (file = "IsoGene-IsoSAMPlotOutput.pdf", width = 5, height =5 )
 IsoSAMPlot(qqstat = qqstat, allfdr = dtable, FDR = 0.05, stat = "ModifM")
 graphics.off() 
 @
