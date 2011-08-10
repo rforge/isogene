@@ -81,10 +81,10 @@ Isofudge <- function(x,y){
     E2.si2 <- sqrt(SST0)
     
     W.dif <- iso.u[,n.g] - y.m[,1]
-    W.si2 <- sqrt(2*SST/(sum(n.p)-n.g)/(n.g-1)) 
+    W.si2 <- sqrt(SST/(sum(n.p)-n.g)*(1/n.p[1] + 1/n.p[n.g])) 
     
     W.C.dif <- iso.u[,n.g] - iso.u[,1]
-    W.C.si2 <- sqrt(2*SST/(sum(n.p)-n.g)/(n.g-1)) 
+    W.C.si2 <- sqrt(SST/(sum(n.p)-n.g)*(1/n.p[1] + 1/n.p[n.g])) 
     
     M.dif <- iso.u[,n.g] - iso.u[,1]
     M.si2 <- sqrt(SSIS.dir/(sum(n.p)-n.g)) 
