@@ -1,3 +1,3 @@
 importFrom(Iso, pava)
 export(Isoallfdr, IsoBHPlot, Isofudge, IsoGene1, IsoGenem, IsoGenemSAM,
- IsoPlot, IsopvaluePlot, Isoqqstat, Isoqval, IsoRawp, IsoSAMPlot, IsoTestBH, IsoTestSAM)
+ IsomaxT, IsoPlot, IsopvaluePlot, Isoqqstat, Isoqval, IsoRawp, IsoSAMPlot, IsoTestBH, IsoTestSAM)
