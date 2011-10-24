@@ -34,6 +34,7 @@ that is controlling the Family Wise Error Rate.
   dat.mat <- data.frame(rbind(y1, y2))  # y needs to be a data frame  
   niter=1000 
   
+  set.seed(1234)
   pval.maxT <- IsomaxT(x.res, dat.mat,niter)
 }
 \keyword{htest}
