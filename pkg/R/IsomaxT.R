@@ -1,4 +1,3 @@
-
 IsomaxT <- function(x, y, niter){
 
 x.res <- x
@@ -24,26 +23,26 @@ westfall.M<-westfall.1.M<-rep(0,n.tests)
 westfall.I<-westfall.1.I<-rep(0,n.tests)
 
 
-obs.di.E[dir.obs=="u"]<-(abs(obs.di[[1]][dir.obs=="u"]))
-obs.di.E[dir.obs=="d"]<-(abs(obs.di[[6]][dir.obs=="d"]))
-obs.di.E1 <- sort(obs.di.E)
+obs.di.E[dir.obs=="u"]<-(obs.di[[1]][dir.obs=="u"])
+obs.di.E[dir.obs=="d"]<-(obs.di[[6]][dir.obs=="d"])
+obs.di.E1 <- sort(abs(obs.di.E))
 
-obs.di.W[dir.obs=="u"]<-(abs(obs.di[[2]][dir.obs=="u"]))
-obs.di.W[dir.obs=="d"]<-(abs(obs.di[[7]][dir.obs=="d"]))
-obs.di.W1 <- sort(obs.di.W)
+obs.di.W[dir.obs=="u"]<-(obs.di[[2]][dir.obs=="u"])
+obs.di.W[dir.obs=="d"]<-(obs.di[[7]][dir.obs=="d"])
+obs.di.W1 <- sort(abs(obs.di.W))
 
-obs.di.WC[dir.obs=="u"]<-(abs(obs.di[[3]][dir.obs=="u"]))
-obs.di.WC[dir.obs=="d"]<-(abs(obs.di[[8]][dir.obs=="d"]))
-obs.di.WC1 <- sort(obs.di.WC)
+obs.di.WC[dir.obs=="u"]<-(obs.di[[3]][dir.obs=="u"])
+obs.di.WC[dir.obs=="d"]<-(obs.di[[8]][dir.obs=="d"])
+obs.di.WC1 <- sort(abs(obs.di.WC))
 
 
-obs.di.M[dir.obs=="u"]<-(abs(obs.di[[4]][dir.obs=="u"]))
-obs.di.M[dir.obs=="d"]<-(abs(obs.di[[9]][dir.obs=="d"]))
-obs.di.M1 <- sort(obs.di.M)
+obs.di.M[dir.obs=="u"]<-(obs.di[[4]][dir.obs=="u"])
+obs.di.M[dir.obs=="d"]<-(obs.di[[9]][dir.obs=="d"])
+obs.di.M1 <- sort(abs(obs.di.M))
 
-obs.di.I[dir.obs=="u"]<-(abs(obs.di[[5]][dir.obs=="u"]))
-obs.di.I[dir.obs=="d"]<-(abs(obs.di[[10]][dir.obs=="d"]))
-obs.di.I1 <- sort(obs.di.I)
+obs.di.I[dir.obs=="u"]<-(obs.di[[5]][dir.obs=="u"])
+obs.di.I[dir.obs=="d"]<-(obs.di[[10]][dir.obs=="d"])
+obs.di.I1 <- sort(abs(obs.di.I))
 
 
 pb <- tkProgressBar(title = "progress bar", min = 0, max = niter, 
@@ -189,7 +188,19 @@ for(i in k:1 )
 
   }
 
-max5 <- data.frame(row.names(y),westfall.1.E,westfall.1.W,westfall.1.WC,westfall.1.M,westfall.1.I)
+westfall.E2<-westfall.W2<-westfall.WC2<-westfall.M2<-westfall.I2<-NULL
+
+
+for (i in 1:n.tests){
+westfall.E2[order(obs.di.E)[i]]=westfall.1.E[i]
+westfall.W2[order(obs.di.E)[i]]=westfall.1.W[i]
+westfall.WC2[order(obs.di.E)[i]]=westfall.1.WC[i]
+westfall.M2[order(obs.di.E)[i]]=westfall.1.M[i]
+westfall.I2[order(obs.di.E)[i]]=westfall.1.I[i]
+}
+
+
+max5 <- data.frame(row.names(y),westfall.E2,westfall.W2,westfall.WC2,westfall.M2,westfall.I2)
 colnames(max5) <-c("Probe.ID","E2", "Williams", "Marcus", "M", "ModM")
 
 close(pb)
