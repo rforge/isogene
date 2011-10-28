@@ -31,26 +31,26 @@ IsoRawp <- function (x, y, niter)
     chunklength <- floor(nrow(y)/nchunks)
     endpos <- c(1:(nchunks - 1) * chunklength, nrow(y))
     begpos <- c(1, endpos[-length(endpos)] + 1)
-    exp.E.up <- ff("exp.E.up", vmode = "double", dim = c(nrow(y), 
-        niter))
-    exp.W.up <- ff("exp.W.up", vmode = "double", dim = c(nrow(y), 
-        niter))
-    exp.WC.up <- ff("exp.WC.up", vmode = "double", dim = c(nrow(y), 
-        niter))
-    exp.M.up <- ff("exp.M.up", vmode = "double", dim = c(nrow(y), 
-        niter))
-    exp.I.up <- ff("exp.I.up", vmode = "double", dim = c(nrow(y), 
-        niter))
-    exp.E.dn <- ff("exp.E.dn", vmode = "double", dim = c(nrow(y), 
-        niter))
-    exp.W.dn <- ff("exp.W.dn", vmode = "double", dim = c(nrow(y), 
-        niter))
-    exp.WC.dn <- ff("exp.WC.dn", vmode = "double", dim = c(nrow(y), 
-        niter))
-    exp.M.dn <- ff("exp.M.dn", vmode = "double", dim = c(nrow(y), 
-        niter))
-    exp.I.dn <- ff("exp.I.dn", vmode = "double", dim = c(nrow(y), 
-        niter))
+    suppressWarnings(exp.E.up <- ff("exp.E.up", vmode = "double", dim = c(nrow(y), 
+        niter)))
+    suppressWarnings(exp.W.up <- ff("exp.W.up", vmode = "double", dim = c(nrow(y), 
+        niter)))
+    suppressWarnings(exp.WC.up <- ff("exp.WC.up", vmode = "double", dim = c(nrow(y), 
+        niter)))
+    suppressWarnings(exp.M.up <- ff("exp.M.up", vmode = "double", dim = c(nrow(y), 
+        niter)))
+    suppressWarnings(exp.I.up <- ff("exp.I.up", vmode = "double", dim = c(nrow(y), 
+        niter)))
+    suppressWarnings(exp.E.dn <- ff("exp.E.dn", vmode = "double", dim = c(nrow(y), 
+        niter)))
+    suppressWarnings(exp.W.dn <- ff("exp.W.dn", vmode = "double", dim = c(nrow(y), 
+        niter)))
+    suppressWarnings(exp.WC.dn <- ff("exp.WC.dn", vmode = "double", dim = c(nrow(y), 
+        niter)))
+    suppressWarnings(exp.M.dn <- ff("exp.M.dn", vmode = "double", dim = c(nrow(y), 
+        niter)))
+    suppressWarnings(exp.I.dn <- ff("exp.I.dn", vmode = "double", dim = c(nrow(y), 
+        niter)))
     x.niter <- t(replicate(niter, sample(x)))
     ffmatrices <- c("exp.E.up", "exp.W.up", "exp.WC.up", "exp.M.up", 
         "exp.I.up", "exp.E.dn", "exp.W.dn", "exp.WC.dn", "exp.M.dn", 
