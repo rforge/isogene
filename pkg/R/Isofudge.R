@@ -11,8 +11,10 @@ xfudge <- function(x.dif, si2) {
     k0 <- xs.perc.gr == ii
     xs.mad[,ii] <- apply(x.dif[k0]/outer(si2[k0],xs.alpha,"+"),2,mad, constant = 1)
   }
-  xcv <- function(x) sqrt(var(x)) / mean(x)   # CV
-  xs.cv <- apply(xs.mad, 1, xcv)
+  xcv <- function(x) sqrt(var(x)) 
+  xs.cv.sd <- apply(xs.mad, 1, xcv)
+  xs.cv.m <- rowMeans(xs.mad)
+  xs.cv <- xs.cv.sd/xs.cv.m
   xfudge <- xs.alpha[sort.list(xs.cv)[1]]
   return(xfudge)
 }
