@@ -11,7 +11,7 @@ IsoGenemSAM <- function(x, y, fudge.factor){
     unx <- unique(x)
     
     ydf <- as.data.frame(t(y))
-    y.m <- do.call("cbind", unclass(by(ydf, x, mean)))
+    y.m <- do.call("cbind", unclass(by(ydf, x, colMeans)))
     
     y.m.tot <- matrix(rep(rowMeans(y), length(x)), ncol = length(x))
     
