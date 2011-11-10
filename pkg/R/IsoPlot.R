@@ -1,5 +1,6 @@
 IsoPlot <- function (x, y, type = c("continuous", "ordinal"), add.curve = FALSE) 
 {
+    y<-as.numeric(y)
     type <- match.arg(type)
     if (!(type %in% c("continuous", "ordinal"))) 
         stop("The dose can be only continuous or ordinal")
