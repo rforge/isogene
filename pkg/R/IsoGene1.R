@@ -1,5 +1,6 @@
 
 IsoGene1 <- function(x, y){
+  y<-as.numeric(y)
   ordx <- order(x)
   x <- x[ordx]
   y <- y[ordx]
