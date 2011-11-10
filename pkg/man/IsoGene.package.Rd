@@ -56,7 +56,7 @@ The package includes the following functions:
 \author{
 Lin et al.
 
-Maintainer: Dan Lin <dan.lin@uhasselt.be>
+Maintainer: Martin Otava <martin.otava@uhasselt.be>
 }
 \references{
 Testing for Trend in Dose-Response Microarray Experiments: a Comparison
