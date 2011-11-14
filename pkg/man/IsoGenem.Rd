@@ -38,6 +38,11 @@ IsoGenem(x, y)
 
 }
 \references{
+Modeling Dose-response Microarray
+Data in Early Drug Development Experiments Using 
+R, Lin D., Shkedy Z., Yekutieli D., Amaratunga D., and Bijnens, 
+L. (editors), (2012), Springer.
+
 Testing for Trend in Dose-Response Microarray Experiments: a Comparison
 of Testing Procedures, Multiplicity, and Resampling-Based Inference, Lin
 et al. 2007, Stat. App. in Gen. & Mol. Bio., 6(1), article 26.

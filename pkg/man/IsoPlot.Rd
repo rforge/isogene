@@ -16,6 +16,15 @@ IsoPlot(x, y, type=c("continuous", "ordinal"), add.curve = FALSE)
 \value{
 Plot of the data points, the sample means for each dose (either as continuous or ordinal), and a fitted isotonic regression curve (optional) is produced.
 }
+
+\references{
+Lin D., Shkedy Z., Yekutieli D., Amaratunga D., and Bijnens, 
+L. (editors). (2012) Modeling Dose-response Microarray
+Data in Early   Drug Development Experiments Using 
+R. Springer.
+}
+
+
 \author{ Lin et al.}
 \note{This function produces a plot for a single gene.
 }

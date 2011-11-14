@@ -32,7 +32,14 @@ using two sided p-values and FDR controlling at alpha.
     of significant genes using BH or BY procedure}
 
 }
-% \references{ package{multtest} }
+\references{ package{multtest} 
+
+Lin D., Shkedy Z., Yekutieli D., Amaratunga D., and Bijnens, 
+L. (editors). (2012) Modeling Dose-response Microarray
+Data in Early   Drug Development Experiments Using 
+R. Springer.
+}
+
 \author{ Lin et al. }
 \note{
 This function only allows one type of FDR adjustment, either BH or

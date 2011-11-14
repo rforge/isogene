@@ -26,6 +26,13 @@ Isoallfdr(qqstat, ddelta, stat)
    FDR, and the last column is the 90\% FDR.
 }
 
+\references{
+Modeling Dose-response Microarray
+Data in Early Drug Development Experiments Using 
+R, Lin D., Shkedy Z., Yekutieli D., Amaratunga D., and Bijnens, 
+L. (editors), (2012), Springer.
+}
+
 \author{Lin et al.}
 \note{
   This function calculates the delta table in the SAM procedure for the five test statistics. To use the SAM procedure, the number of genes in the dataset is preferably larger than 500.

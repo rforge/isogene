@@ -68,6 +68,14 @@
 	the sorted test statistic from each permutation in an ascending order.}
 }
 
+\references{
+Lin D., Shkedy Z., Yekutieli D., Amaratunga D., and Bijnens, 
+L. (editors). (2012) Modeling Dose-response Microarray
+Data in Early   Drug Development Experiments Using 
+R. Springer.
+}
+
+
 \author{Lin et al.}
 \note{
   This function calculates the SAM test statistics to be used in the SAM

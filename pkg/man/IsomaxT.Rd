@@ -17,7 +17,16 @@ IsomaxT(x, y, niter)
    A matrix with adjusted p-values for the five test statistics.
 }
 
-\references{Resampling based multiple testing, Westfall, P.H. and Young, S.S. 1993, Willy.}
+\references{
+Resampling based multiple testing, Westfall, P.H. and Young, S.S. 1993, Willy.
+
+Modeling Dose-response Microarray
+Data in Early Drug Development Experiments Using 
+R, Lin D., Shkedy Z., Yekutieli D., Amaratunga D., and Bijnens, 
+L. (editors), (2012), Springer.
+}
+
+
 \author{Lin et al. }
 
 \note{

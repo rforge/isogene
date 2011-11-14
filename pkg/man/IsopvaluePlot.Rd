@@ -19,6 +19,15 @@ IsopvaluePlot(x, y, niter, stat = c("E2", "Williams", "Marcus", "M", "ModifM"))
  Plots of the null distribution and the observed test statistic under
  increasing and decreasing ordered alternatives.
 }
+
+\references{
+Lin D., Shkedy Z., Yekutieli D., Amaratunga D., and Bijnens, 
+L. (editors). (2012) Modeling Dose-response Microarray
+Data in Early   Drug Development Experiments Using 
+R. Springer.
+}
+
+
 \author{ Lin et al. }
 \note{The function obtains the p-values under increasing and decreasing
   ordered alternatives for a single gene.

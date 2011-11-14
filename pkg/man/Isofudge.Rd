@@ -17,6 +17,13 @@
   A vector of five fudge factor values for the five SAM test statistics.
 }
 
+\references{
+Modeling Dose-response Microarray
+Data in Early Drug Development Experiments Using 
+R, Lin D., Shkedy Z., Yekutieli D., Amaratunga D., and Bijnens, 
+L. (editors), (2012), Springer.
+}
+
 \author{Lin et al.}
 \note{
   This function calculates the fudge factor for SAM test statistics for the five test statistics. 

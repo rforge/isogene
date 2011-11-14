@@ -31,6 +31,14 @@ IsoTestSAM(x, y, fudge, niter, FDR, stat)
   \item{allfdr}{output of Isoallfdr}
 }
 
+\references{
+Lin D., Shkedy Z., Yekutieli D., Amaratunga D., and Bijnens, 
+L. (editors). (2012) Modeling Dose-response Microarray
+Data in Early   Drug Development Experiments Using 
+R. Springer.
+}
+
+
 \author{Lin et al.}
 \note{
   This function obtains the list of significant genes using the SAM procedure for the five test statistics. To use the SAM procedure, the number of genes in the dataset is preferably larger than 500.
