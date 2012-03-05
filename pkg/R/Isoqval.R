@@ -99,7 +99,7 @@ function (delta, allfdr, qqstat, stat)
        
 
  if (is.numeric(fdr) & is.numeric(n1) & is.numeric(n2)) {
-         if (m2 > m1) { 
+         if (m2 >= m1) { 
        res <- rbind(n1[, cols], nnnew[m1:m2, cols], n2[, 
                 cols]) } else
         res <- rbind(n1[, cols], n2[, cols])
@@ -112,7 +112,7 @@ function (delta, allfdr, qqstat, stat)
 
 
         if (is.numeric(fdr) & is.numeric(n1) & !is.numeric(n2)) {
-           if (m2 > m1) { res <- rbind(n1[, cols], nnnew[m1:m2, cols])} else
+           if (m2 >= m1) { res <- rbind(n1[, cols], nnnew[m1:m2, cols])} else
            res <- n1[, cols]
             res1 <- cbind(res[, 1], obs.stat[res[, 1]], res[, 
                 2])
@@ -124,7 +124,7 @@ function (delta, allfdr, qqstat, stat)
 
 
         if (is.numeric(fdr) & !is.numeric(n1) & is.numeric(n2)) {
-           if (m2 > m1) {  res <- rbind(nnnew[m1:m2, cols], n2[, cols])} else
+           if (m2 >= m1) {  res <- rbind(nnnew[m1:m2, cols], n2[, cols])} else
                res <- n2[, cols]
             res1 <- cbind(res[, 1], obs.stat[res[, 1]], res[, 
                 2])
