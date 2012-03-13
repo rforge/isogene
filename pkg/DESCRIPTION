@@ -10,7 +10,7 @@ Description: Several testing procedures including the global likelihood ratio te
   (Bartholomew, 1961), Williams (1971, 1972), Marcus (1976), M (Hu et al. 2005) and 
   the modified M (Lin et al. 2007) are used to test for the monotonic trend in gene 
   expression with respect to doses. BH (Benjamini and Hochberg 1995) and BY 
-  (Benjamini and Yekutilie 2004) FDR controlling procedures are applied to adjust the 
+  (Benjamini and Yekutieli 2004) FDR controlling procedures are applied to adjust the 
   raw p-values obtained from the permutations.   
 Depends: tcltk, xtable, Iso, affy, ff(>= 2.0.0)
 License: GPL-3
