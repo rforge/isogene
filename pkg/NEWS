@@ -5,5 +5,6 @@
 1.0-11
 	o bug fix IsoTestSAM
 1.0-10
-	o dependency on ff (>=2.0.0)
+	o dependency on ff (>=2.0.0)1.0-21	
+o option to disable progress bar added to avoid problems with tcltk for Linux
 	
