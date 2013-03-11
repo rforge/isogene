@@ -1,6 +1,4 @@
-
-library(tcltk)
-IsoRawp <- function (x, y, niter) 
+IsoRawp <- function (x, y, niter, progressBar=TRUE) 
 {
     if (niter > 2500) {
         jmatsize <- 2500
@@ -60,8 +58,13 @@ IsoRawp <- function (x, y, niter)
         "obs.I.dn")
     raw.count.up <- raw.count.dn <- matrix(0, nrow(y), 5)
     total <- length(seq(along = begpos))
+
+    if(progressBar==TRUE){
+    library(tcltk)
     pb <- tkProgressBar(title = "progress bar", min = 0, max = total, 
         width = 300)
+    }
+
     for (ichunk in seq(along = begpos)) {
         begchunk <- begpos[ichunk]
         endchunk <- endpos[ichunk]
@@ -104,8 +107,10 @@ IsoRawp <- function (x, y, niter)
                 function(x) x[[10]]), length(begchunk:endchunk), 
                 length(jbegmat:jendmat))
             Sys.sleep(0.1)
+	if(progressBar==TRUE){
             setTkProgressBar(pb, ichunk, title = paste(round(ichunk/total * 
                 100, 0), "% done"))
+	   }
         }
         for (i in 1:6) {
             x1 <- obsvecs[i]
@@ -133,7 +138,7 @@ IsoRawp <- function (x, y, niter)
             raw.count.dn[begchunk:endchunk, i - 5] <- tr
         }
     }
-    close(pb)
+    if(progressBar==TRUE) {close(pb)}
     rm(suby)
     rm(res)
     rm(subx.niter)
