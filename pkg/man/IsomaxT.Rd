@@ -36,6 +36,7 @@ that is controlling the Family Wise Error Rate.
 \seealso{\code{\link{IsoTestBH}}}
 
 \examples{
+ \donttest{
   x.res <- c(rep(1,3),rep(2,3),rep(3,3))
   y1 <- matrix(rnorm(90, 1,1),10,9)  # 10 genes with no trends
   y2 <- matrix(c(rnorm(30, 1,1), rnorm(30,2,1),
@@ -45,6 +46,7 @@ that is controlling the Family Wise Error Rate.
   
   set.seed(1234)
   pval.maxT <- IsomaxT(x.res, dat.mat,niter)
+}
 }
 \keyword{htest}
 

@@ -12,7 +12,7 @@ IsoRawp(x, y, niter, progressBar=TRUE)
   \item{x}{numeric vector containing the dose levels}
   \item{y}{a data frame of the gene expression with Probe IDs as row names}
   \item{niter}{number of permutations to use}
-  \item{progressBar=TRUE}{to enable or disable progress bar; default is TRUE and setting it as FALSE, when problems with tcltk package 	dependecy occur, solves the problem}
+  \item{progressBar}{to enable or disable progress bar; default is TRUE and setting it as FALSE, when problems with tcltk package 	dependecy occur, solves the problem}
 }
 \details{
 The number of permutations to use can be chosen based on the number of
