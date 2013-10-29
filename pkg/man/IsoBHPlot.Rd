@@ -3,7 +3,7 @@
 \title{Plot of adjusted p-values using BH or BY adjustment}
 \description{
 The function produces a plot with adjusted p-values using BH (Benjamini
-and Hochberg 1995) and BY (Benjamini and Yekutilie 2004) procedures
+and Hochberg 1995) and BY (Benjamini and Yekutieli 2004) procedures
 controlling for FDR. The raw p-values and adjusted BH and BY p-values
 are  plotted. 
 }
@@ -31,6 +31,9 @@ L. (editors), (2012), Springer.
 Testing for Trend in Dose-Response Microarray Experiments: a Comparison
 of Testing Procedures, Multiplicity, and Resampling-Based Inference, Lin
 et al. 2007, Stat. App. in Gen. & Mol. Bio., 6(1), article 26.
+
+IsoGene: An R Package for Analyzing Dose-response Studies in Microarray Experiments, Pramana S., Lin D., Haldermans P., Shkedy Z., Verbeke T., De Bondt A., Talloen W., Goehlmann H., Bijnens L. 2010, R Journal 2/1. 
+
     }
 \author{Lin et al.}
 \seealso{ \code{\link{IsoTestBH}},  \code{\link{IsoRawp}} }

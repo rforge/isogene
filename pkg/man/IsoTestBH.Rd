@@ -32,12 +32,16 @@ using two sided p-values and FDR controlling at alpha.
     of significant genes using BH or BY procedure}
 
 }
-\references{ package{multtest} 
+\references{ 
+package \code{multtest}
 
 Lin D., Shkedy Z., Yekutieli D., Amaratunga D., and Bijnens, 
 L. (editors). (2012) Modeling Dose-response Microarray
 Data in Early   Drug Development Experiments Using 
 R. Springer.
+
+IsoGene: An R Package for Analyzing Dose-response Studies in Microarray Experiments, Pramana S., Lin D., Haldermans P., Shkedy Z., Verbeke T., De Bondt A., Talloen W., Goehlmann H., Bijnens L. 2010, R Journal 2/1. 
+
 }
 
 \author{ Lin et al. }

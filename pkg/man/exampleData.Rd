@@ -4,7 +4,7 @@
 \title{Dose-response microarray example data}
 \description{
 This dose-response microarray data contains 1000 genes and 4 doses 
-(one control dose (zero dose) and three increasing dose) with 3 arrays at each dose level.
+(one control dose, i.e., zero dose, and three increasing doses) with 3 arrays at each dose level.
 }
 \usage{data(exampleData)}
 \format{

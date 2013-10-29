@@ -13,7 +13,7 @@ test statistics. They include the global likelihood ratio test
 Williams (1971, 1972), Marcus (1976), the M (Hu et al. 2005) and the
 modified M (Lin et al. 2007). The p-values of the five test statistics
 are obtained using permutation and they are adjusted using BH (Benjamini
-and Hochberg 1995) and BY (Benjamini and Yekutilie 2004) procedures are
+and Hochberg 1995) and BY (Benjamini and Yekutieli 2004) procedures are
 used for controlling the FDR. 
 }
 \details{
@@ -60,13 +60,17 @@ Maintainer: Martin Otava <martin.otava@uhasselt.be>
 }
 \references{
 Modeling Dose-response Microarray
-Data in Early Drug Development Experiments Using 
+ Data in Early Drug Development Experiments Using 
 R, Lin D., Shkedy Z., Yekutieli D., Amaratunga D., and Bijnens, 
 L. (editors), (2012), Springer.
 
 Testing for Trend in Dose-Response Microarray Experiments: a Comparison
 of Testing Procedures, Multiplicity, and Resampling-Based Inference, Lin
 et al. 2007, Stat. App. in Gen. & Mol. Bio., 6(1), article 26.
+
+IsoGene: An R Package for Analyzing Dose-response Studies in Microarray Experiments, Pramana S., Lin D., Haldermans P., Shkedy Z., Verbeke T., De Bondt A., Talloen W., Goehlmann H., Bijnens L. 2010, R Journal 2/1. 
+
+
 }
 \keyword{package}
 \seealso{

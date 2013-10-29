@@ -48,6 +48,9 @@ L. (editors), (2012), Springer.
 Testing for Trend in Dose-Response Microarray Experiments: a Comparison
 of Testing Procedures, Multiplicity, and Resampling-Based Inference, Lin
 et al. 2007, Stat. App. in Gen. & Mol. Bio., 6(1), article 26.
+
+IsoGene: An R Package for Analyzing Dose-response Studies in Microarray Experiments, Pramana S., Lin D., Haldermans P., Shkedy Z., Verbeke T., De Bondt A., Talloen W., Goehlmann H., Bijnens L. 2010, R Journal 2/1. 
+
 }
 
 \author{Lin et al.}

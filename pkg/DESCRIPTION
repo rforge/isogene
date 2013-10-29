@@ -2,8 +2,8 @@ Package: IsoGene
 Type: Package
 Title: Testing for monotonic relationship between gene expression and 
  doses in a microarray experiment.
-Version: 1.0-21
-Date: 2013-03-11
+Version: 1.0-22
+Date: 2013-10-29
 Author: Lin et al.
 Maintainer: Martin Otava <martin.otava@uhasselt.be>
 Description: Several testing procedures including the global likelihood ratio test 
