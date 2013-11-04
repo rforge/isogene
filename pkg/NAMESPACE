@@ -1,3 +1,6 @@
 importFrom(Iso, pava)
+importFrom(ff, ff)
+import(xtable, affy)
+importFrom(Biobase,exprs)
 export(Isoallfdr, IsoBHPlot, Isofudge, IsoGene1, IsoGenem, IsoGenemSAM,
  IsomaxT, IsoPlot, IsopvaluePlot, Isoqqstat, Isoqval, IsoRawp, IsoSAMPlot, IsoTestBH, IsoTestSAM)
