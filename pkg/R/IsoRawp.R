@@ -60,7 +60,7 @@ IsoRawp <- function (x, y, niter, progressBar=TRUE)
     total <- length(seq(along = begpos))
 
     if(progressBar==TRUE){
-    require(tcltk)
+    #require(tcltk)
     pb <- tkProgressBar(title = "progress bar", min = 0, max = total, 
         width = 300)
     }
