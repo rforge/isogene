@@ -1,7 +1,7 @@
 Package: IsoGene
 Type: Package
 Title: Order Restricted Inference for Microarray Experiments
-Version: 1.0-24
+Version: 1.0-23
 Date: 2014-12-03
 Author: Dan Lin, Setia Pramana, Tobias Verbeke and Ziv Shkedy
 Maintainer: Martin Otava <martin.otava@uhasselt.be>
