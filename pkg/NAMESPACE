@@ -2,6 +2,8 @@ importFrom(Iso, pava)
 importFrom(ff, ff)
 import(xtable, affy)
 importFrom(Biobase,exprs)
+importFrom("graphics", "abline", "axis", "legend", "lines", "par", "plot", "points", "title")
+importFrom("stats", "density", "mad", "na.exclude", "p.adjust", "quantile", "var")
 import(tcltk)
 export(Isoallfdr, IsoBHPlot, Isofudge, IsoGene1, IsoGenem, IsoGenemSAM,
  IsomaxT, IsoPlot, IsopvaluePlot, Isoqqstat, Isoqval, IsoRawp, IsoSAMPlot, IsoTestBH, IsoTestSAM)
