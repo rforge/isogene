@@ -1,9 +1,9 @@
 Package: IsoGene
 Type: Package
 Title: Order-Restricted Inference for Microarray Experiments
-Version: 1.0-24
-Date: 2015-07-15
-Author: Dan Lin, Setia Pramana, Tobias Verbeke and Ziv Shkedy
+Version: 1.0-25
+Date: 2017-08-01
+Author: Dan Lin, Setia Pramana, Tobias Verbeke, Ziv Shkedy and Rudradev Sengupta
 Maintainer: Rudradev Sengupta <rudradev.sengupta@uhasselt.be>
 Description: Offers framework for testing for monotonic relationship between gene expression and doses in a microarray experiment. Several testing procedures including the global likelihood-ratio test (Bartholomew, 1961), Williams (1971, 1972), Marcus (1976), M (Hu et al. 2005) and the modified M (Lin et al. 2007) are used to test for the monotonic trend in gene expression with respect to doses. BH (Benjamini and Hochberg 1995) and BY (Benjamini and Yekutieli 2004) FDR controlling procedures are applied to adjust the raw p-values obtained from the permutations.   
 Depends: Iso 

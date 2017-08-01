@@ -1,3 +1,5 @@
+1.0-25
+    o added error message for dataset with less than 10 features
 1.0-15
     o use pava from the Iso package
 1.0-12

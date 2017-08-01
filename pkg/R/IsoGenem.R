@@ -1,7 +1,13 @@
 IsoGenem <- function(x, y){
 
   y <- as.matrix(y)
-  if(dim(y)[[1]]==1){
+  
+  if(dim(y)[[1]]< 10){
+    
+    stop("The dataset does not have enough number of rows, please use IsoGene1 function to do the analysis one by one")
+  }
+  
+  else if(dim(y)[[1]]==1 || dim(y)[[2]]){
     IsoGene1(x = x, y = y)
   } else {
     
